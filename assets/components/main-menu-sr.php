@@ -13,11 +13,11 @@
                 <span class="slide-menu-item accordion-name">O nama</span>
                 <div class="accordion-body">
                     <div class="submenu-content">
-                        <a href="#" class="submenu-link">
+                        <a href="centar-vizuelnih-umjetnosti" class="submenu-link">
                             <i class="ri-home-smile-2-line"></i>
                             <span>Upoznajte centar</span>
                         </a>
-                        <a href="#" class="submenu-link">
+                        <a href="upoznajte-tim" class="submenu-link">
                             <i class="ri-team-line"></i>
                             <span>Upoznajte tim</span>
                         </a>

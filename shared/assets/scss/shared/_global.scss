@@ -24,6 +24,61 @@ h1 {
   }
 }
 
+.img-bck {
+  max-height: 500px;
+  height: 100%;
+  object-position: left;
+  object-fit: cover;
+  position: absolute;
+}
+
+.copy-notif {
+  position: fixed;
+  top: 0;
+  background-color: $color-dark;
+  padding: 5px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  animation: copy 3s ease-out;
+  z-index: 9999;
+  transform: translateY(-30px);
+  align-items: center;
+  color: white;
+
+  .lnc {
+    font-size: 1rem;
+    margin-right: 5px;
+  }
+}
+
+@keyframes copy {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  10% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+
+  90% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+}
+
 section {
   &:not(.landing-section) {
     padding: 60px 0;
@@ -34,9 +89,56 @@ section {
   }
 }
 
+.section {
+  &-row {
+    display: flex;
+    gap: 48px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+
+  &-column {
+    flex-basis: 100%;
+    position: relative;
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    &.column-65 {
+      flex-basis: 65%;
+
+      @media (max-width: 768px) {
+        flex-basis: 100%;
+      }
+    }
+
+    &.column-35 {
+      flex-basis: 35%;
+
+      @media (max-width: 768px) {
+        flex-basis: 100%;
+      }
+    }
+  }
+}
+
+h1 {
+  &.section-heading {
+    font-size: clamp(2.7rem, 6.6vw, 4rem);
+  }
+}
+
+h2 {
+  &.section-heading {
+    font-size: 2.5rem;
+  }
+}
+
 .section-heading {
   margin-bottom: 48px;
-  font-size: 2.5rem;
 
   @media (max-width: 768px) {
     text-align: center;
@@ -84,6 +186,7 @@ body {
   width: 100%;
   padding-left: 48px;
   padding-right: 48px;
+  padding-top: $header-height;
 
   @media (max-width: 991px) {
     padding-left: 20px;
@@ -193,7 +296,7 @@ body {
   max-height: 1080px;
 
   @media (max-width: 991px) {
-    height: calc(100vh - 68px);
+    height: calc(100vh - 68px - 56px);
   }
 }
 

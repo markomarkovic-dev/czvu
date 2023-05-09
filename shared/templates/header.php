@@ -11,18 +11,18 @@
         </div>
         <div class="header-center">
             <div class="menu-desktop">
-                <a href="#" class="menu-desktop-link <?= activePage(''); ?>">Naslovna</a>
-                <a href="#" class="menu-desktop-link">Projekti</a>
-                <a href="#" class="menu-desktop-link">Umjetnici</a>
-                <a href="#" class="menu-desktop-link">Vijesti</a>
+                <a href="/" class="menu-desktop-link <?= activePage(''); ?>">Naslovna</a>
+                <a href="projekti" class="menu-desktop-link <?= activePage('projekti.php'); ?>">Projekti</a>
+                <a href="umjetnici" class="menu-desktop-link <?= activePage('umjetnici.php'); ?>">Umjetnici</a>
+                <a href="vijesti" class="menu-desktop-link <?= activePage('vijesti.php'); ?>">Vijesti</a>
                 <span href="#" class="menu-desktop-link submenu">
                     O nama
                     <div class="submenu-content">
-                        <a href="centar-vizuelnih.php" class="submenu-link">
+                        <a href="centar-vizuelnih-umjetnosti" class="submenu-link <?= activePage('centar-vizuelnih-umjetnosti.php'); ?>">
                             <i class="ri-home-smile-2-line"></i>
                             <span>Upoznajte centar</span>
                         </a>
-                        <a href="#" class="submenu-link">
+                        <a href="upoznajte-tim" class="submenu-link <?= activePage('upoznajte-tim.php'); ?>">
                             <i class="ri-team-line"></i>
                             <span>Upoznajte tim</span>
                         </a>
