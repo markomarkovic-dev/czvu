@@ -64,52 +64,7 @@ require_once "shared/templates/head.php";
             </div>
             <section>
                 <h2 class="section-heading">Latest news</h2>
-                <div class="blog-latest">
-                    <article class="post">
-                        <div class="post-image">
-                            <img src="<?= $rootPath ?>shared/assets/images/news-demo.jpg" alt="">
-                        </div>
-                        <div class="post-body">
-                            <h3 class="post-title">Otvoren konkurs za učešće na drugom Pozorišnom akademskom festivalu...</h3>
-                            <div class="post-meta">
-                                <span class="post-date">23.02.2023.</span>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="post">
-                        <div class="post-image">
-                            <img src="<?= $rootPath ?>shared/assets/images/news-demo.jpg" alt="">
-                        </div>
-                        <div class="post-body">
-                            <h3 class="post-title">Otvoren konkurs za učešće na drugom Pozorišnom akademskom festivalu...</h3>
-                            <div class="post-meta">
-                                <span class="post-date">23.02.2023.</span>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="post">
-                        <div class="post-image">
-                            <img src="<?= $rootPath ?>shared/assets/images/news-demo.jpg" alt="">
-                        </div>
-                        <div class="post-body">
-                            <h3 class="post-title">Otvoren konkurs za učešće na drugom Pozorišnom akademskom festivalu...</h3>
-                            <div class="post-meta">
-                                <span class="post-date">23.02.2023.</span>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="post">
-                        <div class="post-image">
-                            <img src="<?= $rootPath ?>shared/assets/images/news-demo.jpg" alt="">
-                        </div>
-                        <div class="post-body">
-                            <h3 class="post-title">Otvoren konkurs za učešće na drugom Pozorišnom akademskom festivalu...</h3>
-                            <div class="post-meta">
-                                <span class="post-date">23.02.2023.</span>
-                            </div>
-                        </div>
-                    </article>
-                </div>
+                <div class="blog-latest" id="blog-latest"></div>
                 <a href="#" class="action-link blog-more">See more news</a>
             </section>
             <div class="background-img background-left">
@@ -184,6 +139,7 @@ require_once "shared/templates/head.php";
             autoplayTimeout: 3000
         })
     </script>
+    <script src="shared/assets/js/posts-4.js"></script>
 </body>
 
 </html>

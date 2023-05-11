@@ -1,8 +1,8 @@
 // Set the URL for the WordPress REST API endpoint
 const apiUrl = 'https://cvu.hardcode.solutions/wp-json/wp/v2/posts';
 
-// Set the request URL with parameters to retrieve the latest 5 posts
-const requestUrl = `${apiUrl}?per_page=5&_embed`;
+// Set the request URL with parameters to retrieve the latest 4 posts
+const requestUrl = `${apiUrl}?per_page=4&_embed`;
 
 // Fetch the latest 5 blog posts
 fetch(requestUrl)
@@ -26,7 +26,7 @@ fetch(requestUrl)
                 </div>
             </div>
         </article>`;
-      document.getElementByClass('blog-latest').insertAdjacentHTML('beforeend', postElement);
+      document.getElementById('blog-latest').insertAdjacentHTML('beforeend', postElement);
     });
   })
   .catch((error) => console.error(error));
