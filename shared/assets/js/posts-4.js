@@ -1,14 +1,17 @@
-// Set the URL for the WordPress REST API endpoint
+const languageCode = document.documentElement.lang;
+
+const languageCategory = {
+  ['en']: 'categories=15',
+  ['sr']: 'categories=3',
+};
+
 const apiUrl = 'https://cvu.hardcode.solutions/wp-json/wp/v2/posts';
 
-// Set the request URL with parameters to retrieve the latest 4 posts
-const requestUrl = `${apiUrl}?per_page=4&_embed`;
+const requestUrl = `${apiUrl}?per_page=4&_embed&${languageCategory[languageCode]}`;
 
-// Fetch the latest 5 blog posts
 fetch(requestUrl)
   .then((response) => response.json())
   .then((posts) => {
-    // Loop through the retrieved posts and create HTML for each post
     posts.map((post) => {
       const postElement = `                    
         <article class="post">
