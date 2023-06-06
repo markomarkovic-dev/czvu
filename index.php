@@ -65,7 +65,7 @@ require_once "shared/templates/head.php";
             <section>
                 <h2 class="section-heading">Latest news</h2>
                 <div class="blog-latest" id="blog-latest"></div>
-                <a href="#" class="action-link blog-more">See more news</a>
+                <a href="vijesti.php" class="action-link blog-more">See more news</a>
             </section>
             <div class="background-img background-left">
                 <div class="background-wrapper">

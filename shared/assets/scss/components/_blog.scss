@@ -1,12 +1,19 @@
 @use '../variables/variables' as *;
 
-.blog-latest {
+.blog-latest, .blog {
   display: flex;
   gap: 48px;
 
   @media (max-width: 1280px) {
     flex-wrap: wrap;
   }
+}
+
+.blog {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 48px;
+  flex-wrap: wrap;
 }
 
 .post {
