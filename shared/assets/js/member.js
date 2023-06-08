@@ -1,4 +1,4 @@
-const apiUrl = 'https://cvu.hardcode.solutions/wp-json/wp/v2/posts';
+const apiUrl = 'https://cvu.hardcode.solutions/wp-json/wp/v2/clanovi';
 
 const params = new URLSearchParams(window.location.search);
 const url = window.location;
@@ -28,7 +28,7 @@ fetch(requestUrl)
             <div>${post.content.rendered}</div>
             </div>
           </div>`;
-        document.getElementById('post').insertAdjacentHTML('beforeend', postElement);
+          document.getElementById('member').insertAdjacentHTML('beforeend', postElement);
         // loader.style.display = 'none';
       })
       .catch((error) => console.error(error));

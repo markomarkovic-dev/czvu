@@ -23,6 +23,13 @@ function fetchPosts(searchTerm = '') {
     .then((posts) => {
       if (posts.length > 0) {
         posts.forEach((post) => {
+
+          const date = new Date(post.date);
+          const day = String(date.getDate()).padStart(2, '0');
+          const month = String(date.getMonth() + 1).padStart(2, '0');
+          const year = date.getFullYear().toString();
+          const formattedDate = `${day}.${month}.${year}.`;
+
           const postElement = `<article class="post">
             <div class="post-image">
               <img src="${
@@ -32,7 +39,7 @@ function fetchPosts(searchTerm = '') {
             <div class="post-body">
               <a href="post/${post.slug}" class="post-title">${post.title.rendered}</a>
               <div class="post-meta">
-                <span class="post-date">23.02.2023.</span>
+                <span class="post-date">${formattedDate}</span>
               </div>
             </div>
           </article>`;

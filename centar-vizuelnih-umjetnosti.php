@@ -17,13 +17,13 @@ require_once "shared/templates/head.php";
             require_once "shared/templates/header.php";
         ?>
         <main>
-            <div class="background-img background-left">
-                <div class="background-wrapper">
-                    <img src="<?= $rootPath ?>shared/assets/images/grafika-leva.svg" alt="">
-                </div>
-            </div>
-            <section>
+            <section class="visual-art-section">
                 <h1 class="section-heading">Meet the <strong>Center for Visual Art</strong></h1>
+                <div class="background-img background-left">
+                    <div class="background-wrapper">
+                        <img src="<?= $rootPath ?>shared/assets/images/grafika-leva.svg" alt="">
+                    </div>
+                </div>
                 <div class="section-row">
                     <div class="section-column column-65">
                         <p>Centar za vizuelnu umjetnost osnovan je kao produžena ruka Akademije umjetnosti Univerziteta u Banjoj Luci u februaru 2022. godine. Svrha osnivanja ovog udruženja je proizašla iz potrebe za konstruktivnijim povezivanjem institucija visokog obrazovanja, institucija kulture, osnovnih i srednjih škola, u cilju omogućavanja temeljnijeg istraživačkog i praktičnog rada studenata i mladih umjetnika u oblasti savremenog vizuelnog stvaralaštva, sa namjerom da se podstakne generacijsko profesionalno umrežavanje, kao i praktično ovladavanje metodologijom obrazovne i pedagoške prakse.</p>

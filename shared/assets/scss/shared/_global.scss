@@ -530,3 +530,66 @@ body {
     }
   }
 }
+
+.visual-art-section {
+  .column-35 {
+    @media (max-width: 768px) {
+      height: 105vw;
+      display: flex;
+      justify-content: center;
+      flex-basis: unset;
+      overflow-x: clip;
+      margin-left: -20px;
+      margin-right: -20px;
+
+      .img-bck {
+        width: 230vw;
+        max-height: unset;
+      }
+    }
+  };
+}
+
+.members {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+  gap: 48px;
+  margin-bottom: 60px;
+
+  .member {
+    aspect-ratio: 34/42;
+    position: relative;
+    padding: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 65.23%, rgba(0, 0, 0, 0.8) 100%);
+    border-radius: 16px;
+
+    &-photo {
+      height: 100%;
+      overflow: hidden;
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+
+      img {
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .member-name {
+      color: white;
+      font-size: 1.125rem;
+      font-weight: 700;
+    }
+
+    .member-profession {
+      font-size: .875rem;
+      color: $color-red;
+    }
+  }
+}

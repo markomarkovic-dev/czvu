@@ -12,17 +12,17 @@
         <div class="header-center">
             <div class="menu-desktop">
                 <a href="/" class="menu-desktop-link <?= activePage(''); ?>">Naslovna</a>
-                <a href="projekti" class="menu-desktop-link <?= activePage('projekti.php'); ?>">Projekti</a>
-                <a href="umjetnici" class="menu-desktop-link <?= activePage('umjetnici.php'); ?>">Umjetnici</a>
-                <a href="vijesti" class="menu-desktop-link <?= activePage('vijesti.php'); ?>">Vijesti</a>
+                <a href="/czvu/projekti" class="menu-desktop-link <?= activePage('projekti.php'); ?>">Projekti</a>
+                <a href="/czvu/umjetnici" class="menu-desktop-link <?= activePage('umjetnici.php'); ?>">Umjetnici</a>
+                <a href="/czvu/vijesti" class="menu-desktop-link <?= activePage('vijesti.php'); ?>">Vijesti</a>
                 <span href="#" class="menu-desktop-link submenu">
                     O nama
                     <div class="submenu-content">
-                        <a href="centar-vizuelnih-umjetnosti" class="submenu-link <?= activePage('centar-vizuelnih-umjetnosti.php'); ?>">
+                        <a href="/czvu/centar-vizuelnih-umjetnosti" class="submenu-link <?= activePage('centar-vizuelnih-umjetnosti.php'); ?>">
                             <i class="ri-home-smile-2-line"></i>
                             <span>Upoznajte centar</span>
                         </a>
-                        <a href="upoznajte-tim" class="submenu-link <?= activePage('upoznajte-tim.php'); ?>">
+                        <a href="/czvu/upoznajte-tim" class="submenu-link <?= activePage('upoznajte-tim.php'); ?>">
                             <i class="ri-team-line"></i>
                             <span>Upoznajte tim</span>
                         </a>
@@ -47,6 +47,12 @@
                 </div>
                 <div class="navigation-item open-menu" data-slide="language-menu">
                     <i class="ri-earth-line"></i>
+                    <div class="slide-menu" data-menu="language-menu">
+                        <div class="slide-menu-body">
+                            <a href="/en" class="slide-menu-item <?= active("en") ?>">ENG</a>
+                            <a href="/" class="slide-menu-item <?= active("sr") ?>">SRB</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

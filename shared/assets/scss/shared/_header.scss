@@ -274,6 +274,18 @@ header {
       width: 100%;
     }
   }
+
+  &[data-menu="language-menu"] {
+    width: fit-content;
+
+    .slide-menu-item {
+      padding: 5px;
+      
+      &.active {
+        color: $color-red;
+      }
+    }
+  }
 }
 
 .menu-desktop {

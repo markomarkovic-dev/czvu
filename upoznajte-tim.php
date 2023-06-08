@@ -18,18 +18,26 @@ $rootPage = "transparent";
         ?>
         <main>
             <section>
-                <h1 class="section-heading">Meet the <strong>Center for Visual Art</strong></h1>
-                <div class="members">
-                    <div class="member">
-                        <img src="<?= $rootPath ?>shared/assets/images/dragana-purkovic-macan.jpg" alt="">
+                <h1 class="section-heading">We are the <strong>people</strong> who do a lot <strong>for culture</strong></h1>
+                <div class="background-img background-right">
+                    <div class="background-wrapper">
+                        <img src="<?= $rootPath ?>shared/assets/images/grafika-desna.svg" alt="">
                     </div>
+                </div>
+                <h2 class="section-heading">Founders of the center for visual art</h2>
+                <div id="founders" class="members">
+                </div>
+                <h2 class="section-heading">Members of the center for visual art</h2>
+                <div id="members" class="members">
                 </div>
             </section>
         </main>
         <?php
             require_once "shared/templates/footer.php";
+
         ?>
     </div>
+    <script src="shared/assets/js/members.js"></script>
 </body>
 
 </html>
