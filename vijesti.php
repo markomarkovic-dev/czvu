@@ -17,11 +17,8 @@ require_once "shared/templates/head.php";
         require_once "shared/templates/header.php";
         ?>
         <main>
-                <section>
-                <input type="text" id="search-input" placeholder="Search">
-                <button id="search-button">Search</button>
-                <button id="delete-button"></button>
-                <h2 class="section-heading">Latest news</h2>
+            <section>
+                <h1 class="section-heading">Latest <strong>news & activities</strong></h1>
                 <div class="blog" id="blog"></div>
             </section>
         </main>
@@ -31,5 +28,4 @@ require_once "shared/templates/head.php";
     </div>
     <script src="shared/assets/js/all-posts.js"></script>
 </body>
-
 </html>

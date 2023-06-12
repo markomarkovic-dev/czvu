@@ -12,9 +12,9 @@
         <div class="header-center">
             <div class="menu-desktop">
                 <a href="/" class="menu-desktop-link <?= activePage(''); ?>">Naslovna</a>
-                <a href="/czvu/projekti" class="menu-desktop-link <?= activePage('projekti.php'); ?>">Projekti</a>
-                <a href="/czvu/umjetnici" class="menu-desktop-link <?= activePage('umjetnici.php'); ?>">Umjetnici</a>
-                <a href="/czvu/vijesti" class="menu-desktop-link <?= activePage('vijesti.php'); ?>">Vijesti</a>
+                <a href="/czvu/projekti" class="menu-desktop-link <?= activePage('projekti'); ?>">Projekti</a>
+                <a href="/czvu/umjetnici" class="menu-desktop-link <?= activePage('umjetnici'); ?>">Umjetnici</a>
+                <a href="/czvu/vijesti" class="menu-desktop-link <?= activePage('vijesti'); ?>">Vijesti</a>
                 <span href="#" class="menu-desktop-link submenu">
                     O nama
                     <div class="submenu-content">
@@ -22,7 +22,7 @@
                             <i class="ri-home-smile-2-line"></i>
                             <span>Upoznajte centar</span>
                         </a>
-                        <a href="/czvu/upoznajte-tim" class="submenu-link <?= activePage('upoznajte-tim.php'); ?>">
+                        <a href="/czvu/upoznajte-tim" class="submenu-link <?= activePage('upoznajte-tim'); ?>">
                             <i class="ri-team-line"></i>
                             <span>Upoznajte tim</span>
                         </a>

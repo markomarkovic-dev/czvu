@@ -6,9 +6,8 @@ const languageCategory = {
 const apiUrl = 'https://cvu.hardcode.solutions/wp-json/wp/v2/posts';
 
 let currentPage = 1;
-const perPage = 4;
+const perPage = 8;
 let isFetching = false;
-let isSearching = false;
 
 function fetchPosts(searchTerm = '') {
   if (isFetching) return;
@@ -16,7 +15,7 @@ function fetchPosts(searchTerm = '') {
 
   const requestUrl = `${apiUrl}?page=${currentPage}&per_page=${perPage}&_embed&${
     languageCategory[languageCode]
-  }&search=${searchTerm}`;
+  }`;
 
   fetch(requestUrl)
     .then((response) => response.json())
@@ -58,19 +57,7 @@ function fetchPosts(searchTerm = '') {
     });
 }
 
-const searchButton = document.getElementById('search-button');
-const searchInput = document.getElementById('search-input');
-
-searchButton.addEventListener('click', () => {
-  const searchTerm = searchInput.value;
-  currentPage = 1; // Reset current page when performing a new search
-  document.getElementById('blog').innerHTML = ''; // Clear existing posts
-  isSearching = true; // Set the flag to true
-  fetchPosts(searchTerm);
-});
-
 window.addEventListener('scroll', function() {
-  if (isSearching) return; // Return early if searching
   if (window.scrollY >= document.documentElement.scrollHeight - window.innerHeight - 100) {
     fetchPosts();
   }

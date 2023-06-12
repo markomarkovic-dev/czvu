@@ -5,6 +5,11 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Space Grotesk', sans-serif;
+  font-size: 62.5%;
+}
+
+p, a {
+  font-size: 1.6rem;
 }
 
 a {
@@ -21,6 +26,7 @@ h1 {
   line-height: 1;
   > strong {
     color: $color-red;
+    font-size: inherit;
   }
 }
 
@@ -33,9 +39,9 @@ h1 {
   inset: 0;
 
   .circle {
-    width: 150px;
-    height: 150px;
-    border: 20px solid $color-dark;
+    width: 15rem;
+    height: 15rem;
+    border: 2rem solid $color-dark;
     border-bottom-color: transparent;
     border-radius: 50%;
     animation: rotate 2s linear infinite;
@@ -57,7 +63,7 @@ h1 {
 }
 
 .img-bck {
-  max-height: 500px;
+  max-height: 50rem;
   height: 100%;
   object-position: left;
   object-fit: cover;
@@ -68,52 +74,52 @@ h1 {
   position: fixed;
   top: 0;
   background-color: $color-dark;
-  padding: 5px;
+  padding: .5rem;
   width: 100%;
   display: flex;
   justify-content: center;
   animation: copy 3s ease-out;
   z-index: 9999;
-  transform: translateY(-30px);
+  transform: translateY(-3rem);
   align-items: center;
   color: white;
 
   .lnc {
     font-size: 1rem;
-    margin-right: 5px;
+    margin-right: .5rem;
   }
 }
 
 @keyframes copy {
   0% {
     opacity: 0;
-    transform: translateY(-30px);
+    transform: translateY(-3rem);
   }
 
   10% {
     opacity: 1;
-    transform: translateY(0px);
+    transform: translateY(0);
   }
 
   50% {
     opacity: 1;
-    transform: translateY(0px);
+    transform: translateY(0);
   }
 
   90% {
     opacity: 1;
-    transform: translateY(0px);
+    transform: translateY(0);
   }
 
   100% {
     opacity: 0;
-    transform: translateY(-30px);
+    transform: translateY(-3rem);
   }
 }
 
 section {
   &:not(.landing-section) {
-    padding: 60px 0;
+    padding: 6rem 0;
   }
 
   &.action-cards-container {
@@ -124,7 +130,7 @@ section {
 .section {
   &-row {
     display: flex;
-    gap: 48px;
+    gap: 4.8rem;
 
     @media (max-width: 768px) {
       flex-direction: column;
@@ -136,7 +142,7 @@ section {
     position: relative;
 
     p {
-      margin-bottom: 20px;
+      margin-bottom: 2rem;
     }
 
     &.column-65 {
@@ -166,11 +172,15 @@ h1 {
 h2 {
   &.section-heading {
     font-size: 2.5rem;
+
+    strong {
+      color: $color-red;
+    }
   }
 }
 
 .section-heading {
-  margin-bottom: 48px;
+  margin-bottom: 4.8rem;
 
   @media (max-width: 768px) {
     text-align: center;
@@ -189,7 +199,7 @@ h2 {
     transition: inherit;
     font-size: inherit;
     position: relative;
-    top: 2px;
+    top: .2rem;
     color: $color-red;
   }
 
@@ -197,7 +207,7 @@ h2 {
     color: $color-red;
 
     &::after {
-      margin-left: 3px;
+      margin-left: .3rem;
       display: inline-block;
       color: $color-red;
     }
@@ -214,15 +224,15 @@ body {
 }
 
 .layout-container {
-  max-width: 1502px;
+  max-width: 150.2rem;
   width: 100%;
-  padding-left: 48px;
-  padding-right: 48px;
+  padding-left: 4.8rem;
+  padding-right: 4.8rem;
   padding-top: $header-height;
 
   @media (max-width: 991px) {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
 
@@ -243,12 +253,12 @@ body {
 
   .cookie-wrapper {
     background-color: rgba($color-dark, 0.9);
-    border-radius: 8px 8px 0 0;
+    border-radius: .8rem .8rem 0 0;
     max-width: 80%;
-    padding: 15px;
+    padding: 1.5rem;
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 1.5rem;
 
     @media (max-width: 768px) {
       flex-direction: column;
@@ -261,14 +271,14 @@ body {
 
   .btn-wrapper {
     display: flex;
-    gap: 15px;
+    gap: 1.5rem;
   }
 }
 
 .action-cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px 48px;
+  gap: 2rem 4.8rem;
 
   @media (max-width: 1200px) {
     grid-template-columns: repeat(2, 1fr);
@@ -280,9 +290,9 @@ body {
 
   .action-card {
     background-color: $color-dark;
-    padding: 24px 28px;
+    padding: 2.4rem 2.8rem;
     color: white;
-    border-radius: 16px;
+    border-radius: 1.6rem;
     position: relative;
     display: flex;
     align-items: center;
@@ -295,12 +305,12 @@ body {
     h3 {
       font-size: 2rem;
       font-weight: 400;
-      margin-bottom: 10px;
+      margin-bottom: 1rem;
     }
 
     img {
       position: absolute;
-      right: 20px;
+      right: 2rem;
       max-height: 80%;
       z-index: 0;
     }
@@ -324,24 +334,24 @@ body {
 
 .main-slider,
 .slide {
-  height: calc(100vh - 90px);
-  max-height: 1080px;
+  height: calc(100vh - 9rem);
+  max-height: 108rem;
 
   @media (max-width: 991px) {
-    height: calc(100vh - 68px - 56px);
+    height: calc(100vh - 6.8rem - 5.6rem);
   }
 }
 
 .main-slider {
-  margin-bottom: 48px;
+  margin-bottom: 4.8rem;
 }
 
 .slide {
-  padding: 58px;
-  border-radius: 16px;
+  padding: 5.8rem;
+  border-radius: 1.6rem;
 
   @media (max-width: 991px) {
-    padding: 12px;
+    padding: 1.2rem;
   }
 }
 
@@ -364,9 +374,9 @@ body {
   }
 
   h1 {
-    max-width: 559px;
-    font-size: clamp(2.7rem, 6.6vw, 64px);
-    margin-bottom: 20px;
+    max-width: 55.9rem;
+    font-size: clamp(2.7rem, 6.6vw, 6.4rem);
+    margin-bottom: 2rem;
   }
 
   .action-link {
@@ -433,10 +443,10 @@ body {
 .support-partners {
   display: flex;
   justify-content: center;
-  gap: 96px;
+  gap: 9.6rem;
 
   @media (max-width: 991px) {
-    gap: 48px;
+    gap: 4.8rem;
   }
 
   @media (max-width: 991px) {
@@ -445,26 +455,26 @@ body {
 
   img {
     @media (max-width: 991px) {
-      width: calc(50% - 44px);
+      width: calc(50% - 4.4rem);
       height: 11vw;
       object-fit: contain;
-      min-height: 80px;
+      min-height: 8rem;
     }
   }
 }
 
 .testimonials {
   display: flex;
-  gap: 48px;
+  gap: 4.8rem;
 
   @media (max-width: 991px) {
     flex-direction: column;
-    gap: 20px;
+    gap: 2rem;
   }
 
   &-rows {
     display: flex;
-    gap: 16px;
+    gap: 1.6rem;
     flex-direction: column;
   }
 
@@ -475,25 +485,25 @@ body {
     }
 
     img {
-      width: 288px;
+      width: 28.8rem;
 
       @media (max-width: 991px) {
         width: 100%;
-        max-width: 400px;
+        max-width: 40rem;
       }
     }
   }
 
   .testimonial {
     display: flex;
-    gap: 8px;
+    gap: .8rem;
 
     &-quotes {
       font-size: 10rem;
       display: block;
       color: #e8e8e8;
       line-height: 0.8;
-      height: 53px;
+      height: 5.3rem;
 
       @media (max-width: 991px) {
         font-size: 6rem;
@@ -503,16 +513,16 @@ body {
     &-content {
       p {
         margin-bottom: 5px;
-        font-size: 1.25rem;
+        font-size: 2rem;
 
         @media (max-width: 991px) {
-          font-size: 1rem;
+          font-size: 1.6rem;
         }
       }
     }
 
     &-author {
-      font-size: 0.75rem;
+      font-size: 1.2rem;
       strong,
       span {
         font-family: 'Inter', sans-serif;
@@ -521,11 +531,11 @@ body {
 
       strong {
         color: $color-red;
-        font-size: 1rem;
+        font-size: 1.6rem;
       }
 
       span {
-        font-size: 0.75rem;
+        font-size: 1.2rem;
       }
     }
   }
@@ -539,8 +549,8 @@ body {
       justify-content: center;
       flex-basis: unset;
       overflow-x: clip;
-      margin-left: -20px;
-      margin-right: -20px;
+      margin-left: -2rem;
+      margin-right: -2rem;
 
       .img-bck {
         width: 230vw;
@@ -552,19 +562,19 @@ body {
 
 .members {
   display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
-  gap: 48px;
-  margin-bottom: 60px;
+  grid-template-columns: repeat(auto-fill,minmax(25rem,1fr));
+  gap: 4.8rem;
+  margin-bottom: 6rem;
 
   .member {
     aspect-ratio: 34/42;
     position: relative;
-    padding: 20px;
+    padding: 2rem;
     overflow: hidden;
     display: flex;
     align-items: flex-end;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 65.23%, rgba(0, 0, 0, 0.8) 100%);
-    border-radius: 16px;
+    border-radius: 1.6rem;
 
     &-photo {
       height: 100%;
@@ -583,13 +593,53 @@ body {
 
     .member-name {
       color: white;
-      font-size: 1.125rem;
+      font-size: 1.8rem;
       font-weight: 700;
     }
 
     .member-profession {
-      font-size: .875rem;
+      font-size: 1.4rem;
       color: $color-red;
     }
+  }
+}
+
+
+// Projekti
+.block-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 400px;
+  position: relative;
+  isolation: isolate;
+
+  h2 {
+    color: $color-red;
+  }
+
+  h3 {
+    color: white;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(90deg, rgba(29, 29, 29, 0.9) 0%, rgba(29, 29, 29, 0) 50%);
+    z-index: -1;
+  }
+
+  .ri-arrow-right-up-line {
+    font-size: 12rem;
+    line-height: 0.6;
+  }
+
+  &#theatre-festival {
+    background-image: url(../../assets/images/news-demo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
   }
 }
