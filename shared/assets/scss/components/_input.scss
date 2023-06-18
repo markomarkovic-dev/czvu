@@ -1,0 +1,43 @@
+@use '../variables/variables' as *;
+
+input, textarea {
+    border: 2px solid $color-gray;
+    outline: 0;
+    border-radius: 1.6rem;
+    padding: 12px 15px;
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover, 
+    &:-webkit-autofill:focus {
+    border: 2px solid $color-gray;
+    -webkit-text-fill-color: white;
+    -webkit-box-shadow: 0 0 0px 200px $color-dark inset;
+    transition: background-color 5000s ease-in-out 0s;
+    }
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    transition: all .3s linear;
+
+    &-split {
+        display: flex;
+        gap: 2rem;
+
+        .input-wrapper {
+            width: 100%;;
+        }
+    }
+
+    label {
+        margin-bottom: .8rem;
+        transition: all .3s linear;
+    }
+
+    &:focus-within {
+        label {
+            color: white;
+        }
+    }
+}

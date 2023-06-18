@@ -1,0 +1,72 @@
+@use '../variables/variables' as *;
+
+.contact-row {
+    display: flex;
+    gap: 4.8rem;
+
+    @media(max-width: 1200px) {
+        flex-direction: column;
+    }
+
+    .contact-form-column,
+    .contact-location-column {
+        flex-basis: 100%;
+        padding: 2.8rem;
+        border-radius: 20px;
+
+        .section-heading {
+            font-size: clamp(2.7rem,6.6vw,4rem);
+            margin-bottom: 2.4rem;
+        }
+    }
+}
+
+.contact-form-column {
+    background-color: $color-dark;
+    color: $color-gray;
+
+    .section-heading {
+        color: white;
+    }
+
+    label {
+        font-size: 1.4rem;
+    }
+
+    input, textarea {
+        background-color: transparent;
+        color: white;
+    }
+
+    input {
+        &[type="submit"] {
+            color: white;
+            cursor: pointer;
+        }
+    }
+}
+
+.contact-location-column {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    background-color: white;
+
+    a {
+        font-size: 2.4rem;
+        color: $color-red;
+        font-weight: 700;
+        margin-bottom: 2.4rem;
+        display: block;
+
+        [class*="ri-"] {
+            font-size: 2.4rem;
+            color: $color-red;
+            font-weight: 400;
+        }
+    }
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}

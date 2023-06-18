@@ -29,7 +29,7 @@
                     </div>
                 </span>
 
-                <a href="#" class="menu-desktop-link">Contact</a>
+                <a href="kontakt" class="menu-desktop-link">Kontakt</a>
             </div>
         </div>
         <div class="header-right">
