@@ -6,7 +6,7 @@ const postSlug = decodeURIComponent(url.pathname.split('/')[window.location.orig
 const requestUrl = `${apiUrl}?slug=${postSlug}`;
 
 // Loader
-const loader = document.getElementById('loader');
+// const loader = document.getElementById('loader');
 // loader.style.display = 'flex';
 
 fetch(requestUrl)

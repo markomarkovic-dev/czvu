@@ -24,6 +24,7 @@ $rootPath = '../';
                 <div id="post"></div>
             </section>
         </main>
+            <aside>dsasd</aside>
         <?php
             require_once "shared/templates/footer.php";
         ?>

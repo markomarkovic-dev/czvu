@@ -4,6 +4,7 @@ $title = "Upoznajte tim";
 $description = "Ekskluzivni sportski program, najbolji filmski i serijski program, najnovija izdanja glazbe, svjetski poznati informativni kanal lokaliziran za događaje u Srbiji i regiji.";
 $keywords = "sport, kanali, video";
 $rootPage = "transparent";
+$rootPath = '../';
 ?>
 <!DOCTYPE html>
 <html lang=<?= $language ?>>
@@ -17,14 +18,15 @@ $rootPage = "transparent";
             require_once "shared/templates/header.php";
         ?>
         <main>
-            <section>
-                <div class="background-img background-left">
+            <section id="project">
+            </section>
+            <div class="background-img background-right">
                     <div class="background-wrapper">
-                        <img src="<?= $rootPath ?>shared/assets/images/grafika-leva.svg" alt="">
+                        <img src="<?= $rootPath ?>shared/assets/images/grafika-desna.svg" alt="">
                     </div>
                 </div>
-                <h1 class="section-heading"><strong>Projekti</strong> koje smo <strong>oživjeli</strong></h1>
-                <div id="projects"></div>
+            <section>
+                
             </section>
         </main>
         <?php
@@ -32,7 +34,8 @@ $rootPage = "transparent";
 
         ?>
     </div>
-    <script src="<?= $rootPath ?>shared/assets/js/projects.js"></script>
+    <script src="<?= $rootPath ?>shared/assets/js/project.js"></script>
+
 </body>
 
 </html>

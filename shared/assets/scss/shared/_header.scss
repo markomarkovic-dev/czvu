@@ -96,8 +96,8 @@ header {
     [class^='ri-'],
     [class*=' ri-'] {
       color: $color-dark;
-      font-size: 1.2rem;
-      transition: all 0.2s linear;
+      font-size: 1.9rem;
+      transition: all .2s linear;
     }
 
     @media (min-width: 991px) {
@@ -169,7 +169,7 @@ header {
 
     > [class^='ri-'],
     > [class*=' ri-'] {
-      font-size: 1.3rem;
+      font-size: 2.3rem;
     }
 
     > img {
@@ -356,15 +356,16 @@ header {
     border-radius: 1.2rem;
     transition: all 0.2s ease-out;
     gap: .5rem;
+    font-size: 1.8rem;
 
     span {
       font-weight: 600;
       font-family: 'Inter';
-      font-size: 1rem;
+      font-size: 1.6rem;
     }
 
     [class^='ri-'] {
-      font-size: 1.6rem;
+      font-size: 2.6rem;
     }
 
     &:hover {

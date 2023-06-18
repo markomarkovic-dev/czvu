@@ -1,16 +1,29 @@
 RewriteEngine On
 
+# Exclude static assets from rewriting
+RewriteCond %{REQUEST_URI} ^/(post|clan|project|projekti|projekat)/shared/assets/ [NC]
+RewriteRule ^ - [L]
+
 # Remove .php extension
 RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^([^\.]+)/?$ $1.php [L]
 
-# Exclude static assets from rewriting
-RewriteCond %{REQUEST_URI} !^/post/shared/assets/
-
-# Handle post URLsRewriteCond %{REQUEST_FILENAME} !-f
+# Handle post URLs
+RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^post/([^/]+)/?$ post.php?slug=$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^clan/([^/]+)/?$ clan.php?slug=$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^projekat/([^/]+)/?$ projekat.php?slug=$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^project/([^/]+)/?$ project.php?slug=$1 [L]
 
 ErrorDocument 404 /error-404.php
 

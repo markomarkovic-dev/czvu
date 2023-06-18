@@ -8,7 +8,7 @@
   font-size: 62.5%;
 }
 
-p, a {
+p, a, button {
   font-size: 1.6rem;
 }
 
@@ -23,11 +23,32 @@ a {
 }
 
 h1 {
+  font-size: 3rem;
   line-height: 1;
   > strong {
     color: $color-red;
     font-size: inherit;
   }
+}
+
+h2 {
+  font-size: 2.6rem;
+}
+
+h3 {
+  font-size: 2.2rem;
+}
+
+h4 {
+  font-size: 1.8rem;
+}
+
+h5 {
+  font-size: 1.6rem;
+}
+
+h6 {
+  font-size: 1.4rem;
 }
 
 #loader {
@@ -83,9 +104,10 @@ h1 {
   transform: translateY(-3rem);
   align-items: center;
   color: white;
+  font-size: 1.6rem;
 
   .lnc {
-    font-size: 1rem;
+    font-size: 1.6rem;
     margin-right: .5rem;
   }
 }
@@ -266,7 +288,7 @@ body {
   }
 
   p {
-    font-size: 0.8rem;
+    font-size: 1.4rem;
   }
 
   .btn-wrapper {
@@ -613,13 +635,46 @@ body {
   height: 400px;
   position: relative;
   isolation: isolate;
+  padding: 4.8rem;
+  border-radius: 1.6rem;
+  margin-bottom: 4.8rem;
+
+  &-right {
+    @media(max-width: 991px) {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+    }
+  }
+
+  @media(max-width: 991px) {
+    height: unset;
+    aspect-ratio: 32/44;
+    flex-direction: column;
+  }
+
+  h2, h3 {
+    @media(max-width: 991px) {
+      text-align: center;
+    }
+  }
 
   h2 {
     color: $color-red;
+    font-size: 6.4rem;
+
+    @media(max-width: 991px) {
+      font-size: 3.6rem;
+    }
   }
 
   h3 {
     color: white;
+    font-size: 4rem;
+
+    @media(max-width: 991px) {
+      font-size: 2.4rem;
+    }
   }
 
   &::before {
@@ -629,11 +684,21 @@ body {
     pointer-events: none;
     background: linear-gradient(90deg, rgba(29, 29, 29, 0.9) 0%, rgba(29, 29, 29, 0) 50%);
     z-index: -1;
+    border-radius: 1.6rem;
   }
 
   .ri-arrow-right-up-line {
-    font-size: 12rem;
+    font-size: 30rem;
     line-height: 0.6;
+    color: white;
+    display: block;
+    width: 22.6rem;
+
+    @media(max-width: 991px) {
+      transform: rotate(90deg);
+      width: 11.3rem;
+      font-size: 20rem;
+    }
   }
 
   &#theatre-festival {
