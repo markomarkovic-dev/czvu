@@ -99,7 +99,7 @@ $(document).ready(function ($) {
   });
 
   $('.submenu').click(function () {
-    $(this).toggleClass('active');
+    $(this).toggleClass('show');
   });
 
   $(document).scroll(function () {
@@ -150,7 +150,7 @@ $(document).mouseup(function (e) {
 $(document).mouseup(function (e) {
   let container = $('.submenu');
   if (!container.is(e.target) && container.has(e.target).length === 0) {
-    container.removeClass('active');
+    container.removeClass('show');
   }
 });
 

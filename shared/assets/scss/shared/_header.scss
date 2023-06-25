@@ -1,4 +1,4 @@
-@use '../variables/variables' as *;
+@use '../base/variables' as *;
 
 header {
   min-height: $header-height;
@@ -331,10 +331,15 @@ header {
       }
     }
 
-    &.active {
+    &.show {
       .submenu-content {
         display: flex;
       }
+    }
+
+    &.active {
+      text-decoration: underline;
+      color: $color-red;
     }
   }
 

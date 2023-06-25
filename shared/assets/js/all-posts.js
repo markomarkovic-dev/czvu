@@ -21,7 +21,7 @@ function fetchPosts(searchTerm = '') {
     .then((response) => response.json())
     .then((posts) => {
       if (posts.length > 0) {
-        posts.forEach((post) => {
+        posts.map((post) => {
 
           const date = new Date(post.date);
           const day = String(date.getDate()).padStart(2, '0');

@@ -19,9 +19,15 @@ $rootPath = '../';
             require_once "shared/templates/header.php";
         ?>
         <main>
+        <div class="background-img background-left">
+                <div class="background-wrapper">
+                    <img src="<?= $rootPath ?>shared/assets/images/grafika-leva.svg" alt="">
+                </div>
+            </div>
             <section>
-                <a class="mb-5" href="#" onclick="window.history.back()">Nazad</a>
-                <div id="member"></div>
+                <div id="member">
+
+                </div>
             </section>
         </main>
         <?php

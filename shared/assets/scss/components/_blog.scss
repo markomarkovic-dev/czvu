@@ -1,4 +1,4 @@
-@use '../variables/variables' as *;
+@use '../base/variables' as *;
 
 .blog-latest, .blog {
   display: grid;
@@ -64,6 +64,12 @@
   }
 }
 
+#post {
+  .post-date {
+    color: $color-dark;
+  }
+}
+
 .blog-more {
   display: block;
   width: 100%;
@@ -76,12 +82,25 @@
     margin-bottom: 15px;
   }
 
+  > div {
+    font-size: 1.6rem;
+  }
+
   h1, h2, h3, h4, h5, h6 {
     margin-bottom: 15px;
 
     span {
       font-size: inherit;
     }
+  }
+
+  > .section-heading {
+    margin-bottom: 4.8rem;
+    margin-top: 4.8rem;
+  }
+
+  > .featured-image {
+    border-radius: 1.6rem;
   }
 
   .project-header {
@@ -161,4 +180,82 @@
 
 #project {
   padding: 0;
+}
+
+.post-section {
+  display: flex;
+  gap: 4.8rem;
+  padding-top: 0!important;
+
+  @media(max-width: 991px) {
+    flex-direction: column;
+  }
+
+  aside {
+    width: 34rem;
+    flex-shrink: 0;
+    background-color: $color-lightgray;
+    border-radius: 1.6rem;
+    padding: 2rem;
+
+    @media(max-width: 991px) {
+      width: 100%;
+    }
+  }
+
+  #post {
+    flex-grow: 1;
+  }
+
+  #latest-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .section-heading {
+      margin-bottom: 0;
+    }
+  }
+
+  .post-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4.8rem;
+  }
+
+  .post-share {
+    background-color: #F3F3F3;
+    border-radius: 1.2rem;
+    padding: 1.2rem;
+  }
+
+  .post-share {
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+
+    p {
+      margin-bottom: 0;
+      margin-right: 1.2rem;
+    }
+
+    .share-icons {
+      display: flex;
+      gap: 1.2rem;
+      align-items: center;
+
+      a {
+        display: flex;
+      }
+
+      img {
+        max-height: 1.7rem;
+      }
+  
+      [class^=ri-] {
+        font-size: 1.9rem;
+      }
+    }
+  }
 }

@@ -1,10 +1,11 @@
-@use '../variables/variables' as *;
+@use '../base/variables' as *;
 
 input, textarea {
     border: 2px solid $color-gray;
     outline: 0;
     border-radius: 1.6rem;
     padding: 12px 15px;
+    width: 100%;
 
     &:-webkit-autofill,
     &:-webkit-autofill:hover, 

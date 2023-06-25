@@ -1,4 +1,4 @@
-@use '../variables/variables' as *;
+@use '../base/variables' as *;
 
 .contact-row {
     display: flex;
@@ -57,10 +57,18 @@
         margin-bottom: 2.4rem;
         display: block;
 
+        @media(max-width: 991px) {
+            font-size: 1.8rem;
+        }
+
         [class*="ri-"] {
             font-size: 2.4rem;
             color: $color-red;
             font-weight: 400;
+
+            @media(max-width: 991px) {
+                font-size: 1.9rem;
+            }
         }
     }
 }

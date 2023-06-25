@@ -26,7 +26,6 @@ function galleryImage() {
   });
 
   function openImageModal(imageUrl) {
-    console.log(imageUrl);
     var modal = $('<div class="image-modal"></div>');
     var modalImage = $('<img>').attr('src', imageUrl);
     var prevButton = $('<button class="prev-button">Prev</button>');

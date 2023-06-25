@@ -1,8 +1,8 @@
 <?php
 require_once "config.php";
-$title = "Upoznajte tim";
-$description = "Ekskluzivni sportski program, najbolji filmski i serijski program, najnovija izdanja glazbe, svjetski poznati informativni kanal lokaliziran za događaje u Srbiji i regiji.";
-$keywords = "sport, kanali, video";
+// $title = "Post";
+// $description = "Ekskluzivni sportski program, najbolji filmski i serijski program, najnovija izdanja glazbe, svjetski poznati informativni kanal lokaliziran za događaje u Srbiji i regiji.";
+$keywords = "s";
 $rootPage = "transparent";
 $rootPath = '../';
 
@@ -19,16 +19,21 @@ $rootPath = '../';
             require_once "shared/templates/header.php";
         ?>
         <main>
-            <section>
-                <a class="mb-5" href="#" onclick="window.history.back()">Nazad</a>
+            <section class="post-section">
                 <div id="post"></div>
+                <aside id="latest-posts">
+                    <h2 class="section-heading">Recent news</h2>
+                </aside>
             </section>
+            
         </main>
-            <aside>dsasd</aside>
         <?php
             require_once "shared/templates/footer.php";
         ?>
     </div>
+    <script>
+        var rootPathjs = "<?= $rootPath?>";
+    </script>
     <script src="<?= $rootPath ?>shared/assets/js/post.js"></script>
 </body>
 

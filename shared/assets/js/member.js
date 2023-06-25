@@ -1,3 +1,24 @@
+const languageCode = document.documentElement.lang;
+var metaDescription = document.querySelector('meta[name="description"]');
+
+const backButton = {
+  ['sr']: `<a class="back-to" href="/upoznajte-tim"><i class="ri-arrow-left-line"></i> Nazad na osnivače i ćlanove</a>`,
+  ['en']: `<a class="back-to" href="/meet-members"><i class="ri-arrow-left-line"></i> Back to founders and members</a>`,
+};
+
+const transMember = {
+  ['sr']: [
+    "pozicija",
+    "opis"
+  ],
+  ['en']: [
+    "position",
+    "description"
+  ]
+}
+
+// console.log(transMember[languageCode][0]);
+
 const apiUrl = 'https://cvu.hardcode.solutions/wp-json/wp/v2/clanovi';
 
 const params = new URLSearchParams(window.location.search);
@@ -21,14 +42,19 @@ fetch(requestUrl)
       .then((data) => {
         const featuredImageUrl = data.guid.rendered;
         const postElement = `
-          <div class="post-wrapper">
-            <div class="mb-4">
-            <h3>${post.title.rendered}</h3>
+          <div class="profile-aside">
             <img src="${featuredImageUrl}" alt="${post.title.rendered ? post.title.rendered : 'article image'}" />
-            <div>${post.content.rendered}</div>
-            </div>
+            ${backButton[languageCode]}
+          </div>
+          <div class="post-wrapper">
+            <h1 class="section-heading">${post.title.rendered}</h1>
+            <h2 class="section-heading">${post.acf[transMember[languageCode][0]]}</h2>
+            <div>${post.acf[transMember[languageCode][1]]}</div>
           </div>`;
           document.getElementById('member').insertAdjacentHTML('beforeend', postElement);
+          document.title = post.title.rendered + ' - CZVU';
+          var cleanExcerpt = post.excerpt.rendered.replace(/<[^>]+>/g, '');
+          metaDescription.setAttribute('content', cleanExcerpt);
         // loader.style.display = 'none';
       })
       .catch((error) => console.error(error));

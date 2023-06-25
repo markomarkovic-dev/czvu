@@ -1,4 +1,4 @@
-@use '../variables/variables' as *;
+@use '../base/variables' as *;
 
 .gallery {
   display: flex;
@@ -13,7 +13,7 @@
   }
 
   &-caption {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       font-weight: 700;
       text-align: left;
       position: absolute;

@@ -1,0 +1,114 @@
+@use '../base/variables' as *;
+
+.members {
+    display: grid;
+    gap: 4.8rem;
+    margin-bottom: 6rem;
+  
+    .member {
+      aspect-ratio: 34/42;
+      position: relative;
+      padding: 2rem;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 65.23%, rgba(0, 0, 0, 0.8) 100%);
+      border-radius: 1.6rem;
+  
+      &-photo {
+        height: 100%;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+  
+        img {
+          object-fit: cover;
+          object-position: center;
+          width: 100%;
+          height: 100%;
+        }
+      }
+  
+      .member-name {
+        color: white;
+        font-size: 1.8rem;
+        font-weight: 700;
+      }
+  
+      .member-profession {
+        font-size: 1.4rem;
+        color: $color-red;
+      }
+    }
+  }
+
+#founders {
+    grid-template-columns: repeat(auto-fill,minmax(26rem,1fr));
+}
+
+#members {
+    grid-template-columns: repeat(auto-fill,minmax(19rem,1fr));
+
+    .member {
+        .member-name {
+            font-size: 1.4rem;
+        }
+    }
+}
+
+#member {
+  display: flex;
+  gap: 4.8rem;
+
+  .profile-aside {
+    width: 34rem;
+    flex-shrink: 0;
+
+    img {
+      border-radius: 16px;
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .post-wrapper {
+    .section-heading {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    h2 {
+      &.section-heading {
+        color: $color-red;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  .back-to {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    padding: 1.2rem .8rem;
+    margin: 2rem auto 0 auto;
+    width: fit-content;
+
+    [class^=ri-] {
+      font-size: 1.7rem;
+      transition: inherit;
+    }
+
+    &:hover {
+      border-radius: 12px;
+      background-color: $color-lightgray;
+
+      [class^=ri-] {
+        color: $color-red;
+      }
+    }
+  }
+}
