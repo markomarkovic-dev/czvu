@@ -40,14 +40,14 @@ require_once "shared/templates/head.php";
                     <div class="action-card">
                         <div class="action-card-content">
                             <h3>Interested in culture?</h3>
-                            <a href="#" class="action-link">Check out our projects</a>
+                            <a href="/projekti" class="action-link">Check out our projects</a>
                         </div>
                         <img src="<?= $rootPath ?>shared/assets/images/picture-silhouette.svg" alt="">
                     </div>
                     <div class="action-card">
                         <div class="action-card-content">
                             <h3>People for culture!</h3>
-                            <a href="#" class="action-link">Meet the team</a>
+                            <a href="/upoznajte-tim" class="action-link">Meet the team</a>
                         </div>
                         <img src="<?= $rootPath ?>shared/assets/images/user-silhouette.svg" alt="">
                     </div>

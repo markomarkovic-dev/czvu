@@ -1,8 +1,5 @@
 <?php
 require_once "config.php";
-$title = "Upoznajte tim";
-$description = "Ekskluzivni sportski program, najbolji filmski i serijski program, najnovija izdanja glazbe, svjetski poznati informativni kanal lokaliziran za događaje u Srbiji i regiji.";
-$keywords = "sport, kanali, video";
 $rootPage = "transparent";
 $rootPath = '../';
 

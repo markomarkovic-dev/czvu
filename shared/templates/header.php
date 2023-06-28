@@ -12,7 +12,7 @@
         <div class="header-center">
             <?= $baseURL;?>
             <div class="menu-desktop">
-                <a href="/czvu" class="menu-desktop-link <?= activePage(''); ?>">Naslovna</a>
+                <a href="/czvu/" class="menu-desktop-link <?= activePage(''); ?>">Naslovna</a>
                 <a href="/czvu/projekti" class="menu-desktop-link <?= activePage('projekti'); ?>">Projekti</a>
                 <a href="/czvu/umjetnici" class="menu-desktop-link <?= activePage('umjetnici'); ?>">Umjetnici</a>
                 <a href="/czvu/vijesti" class="menu-desktop-link <?= activePage('vijesti'); ?>">Vijesti</a>

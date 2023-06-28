@@ -1,4 +1,5 @@
 const apiUrl = 'https://cvu.hardcode.solutions/wp-json/wp/v2/projekti';
+var metaDescription = document.querySelector('meta[name="description"]');
 
 const params = new URLSearchParams(window.location.search);
 const url = window.location;
@@ -26,25 +27,35 @@ function galleryImage() {
   });
 
   function openImageModal(imageUrl) {
-    var modal = $('<div class="image-modal"></div>');
+    var modal = $(
+      `<div class="image-modal">
+          <i class="ri-close-line image-close"></i>
+          <div class="next-prev-image">
+            <div class="prev-image">
+            <i class="ri-arrow-left-s-line"></i>
+            </div>
+            <div class="next-image">
+            <i class="ri-arrow-right-s-line"></i>
+            </div>
+          </div>
+      </div>`);
     var modalImage = $('<img>').attr('src', imageUrl);
-    var prevButton = $('<button class="prev-button">Prev</button>');
-    var nextButton = $('<button class="next-button">Next</button>');
 
-    modal.append(modalImage);
-    modal.append(prevButton);
-    modal.append(nextButton);
+    modal.prepend(modalImage);
+
     $('body').append(modal);
 
-    modal.click(function(e) {
-      if ($(e.target).hasClass('prev-button')) {
-        showPrevImage();
-      } else if ($(e.target).hasClass('next-button')) {
-        showNextImage();
-      } else {
-        $(this).remove();
-      }
-    });
+    $('.prev-image').click(function(){
+      showPrevImage();
+    })
+
+    $('.next-image').click(function(){
+      showNextImage();
+    })
+
+    $('.image-close').click(function(){
+      $(modal).remove();
+    })
   }
 
   function showPrevImage() {
@@ -90,6 +101,9 @@ fetch(requestUrl)
             <div>${post.content.rendered}</div>
           </div>`;
         document.getElementById('project').insertAdjacentHTML('beforeend', postElement);
+        document.title = post.title.rendered + ' - CZVU';
+        var cleanExcerpt = post.excerpt.rendered.replace(/<[^>]+>/g, '');
+        metaDescription.setAttribute('content', cleanExcerpt);
         // loader.style.display = 'none';
         
         galleryImage();
