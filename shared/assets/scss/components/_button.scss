@@ -1,0 +1,27 @@
+@use '../base/variables' as *;
+
+button, .btn {
+    border: 0;
+    padding: 9px 15px;
+    border-radius: 1.6rem;
+    cursor: pointer;
+    transition: all .2s linear;
+}
+
+.btn-primary {
+    background-color: $color-red;
+    color: white;
+
+    &:hover {
+        background-color: darken($color-red, 5%);
+    }
+}
+
+.btn-white {
+    background-color: white;
+    color: $color-red;
+
+    &:hover {
+        background-color: darken(white, 5%);
+    }
+}

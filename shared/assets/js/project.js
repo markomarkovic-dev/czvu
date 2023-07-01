@@ -1,3 +1,5 @@
+import {galleryImage} from './gallery-modal.js';
+
 const apiUrl = 'https://cvu.hardcode.solutions/wp-json/wp/v2/projekti';
 var metaDescription = document.querySelector('meta[name="description"]');
 
@@ -9,73 +11,6 @@ const requestUrl = `${apiUrl}?slug=${postSlug}`;
 // Loader
 // const loader = document.getElementById('loader');
 // loader.style.display = 'flex';
-
-function galleryImage() {
-
-  var galleryLinks = $('.gallery-item a img');
-  var currentIndex;
-
-  galleryLinks.click(function(event) {
-    event.preventDefault();
-    currentIndex = galleryLinks.index(this);
-
-    let imageUrlWidth = $(this).attr('width');
-    let imageUrlHeight = $(this).attr('height');
-    var prevBigImage = $(this).attr("src").replace(`-${imageUrlWidth}x${imageUrlHeight}`, "");
-
-    openImageModal(prevBigImage);
-  });
-
-  function openImageModal(imageUrl) {
-    var modal = $(
-      `<div class="image-modal">
-          <i class="ri-close-line image-close"></i>
-          <div class="next-prev-image">
-            <div class="prev-image">
-            <i class="ri-arrow-left-s-line"></i>
-            </div>
-            <div class="next-image">
-            <i class="ri-arrow-right-s-line"></i>
-            </div>
-          </div>
-      </div>`);
-    var modalImage = $('<img>').attr('src', imageUrl);
-
-    modal.prepend(modalImage);
-
-    $('body').append(modal);
-
-    $('.prev-image').click(function(){
-      showPrevImage();
-    })
-
-    $('.next-image').click(function(){
-      showNextImage();
-    })
-
-    $('.image-close').click(function(){
-      $(modal).remove();
-    })
-  }
-
-  function showPrevImage() {
-    currentIndex = (currentIndex - 1 + galleryLinks.length) % galleryLinks.length;
-    var prevImageUrl = galleryLinks.eq(currentIndex).attr('src');
-    var prevImageWidth = galleryLinks.eq(currentIndex).attr('width');
-    var prevImageheight = galleryLinks.eq(currentIndex).attr('height');
-    var prevBigImage = prevImageUrl.replace(`-${prevImageWidth}x${prevImageheight}`, "");
-    $('.image-modal img').attr('src', prevBigImage);
-  }
-
-  function showNextImage() {
-    currentIndex = (currentIndex + 1) % galleryLinks.length;
-    var nextImageUrl = galleryLinks.eq(currentIndex).attr('src');
-    var nextImageWidth = galleryLinks.eq(currentIndex).attr('width');
-    var nextImageheight = galleryLinks.eq(currentIndex).attr('height');
-    var nextBigImage = nextImageUrl.replace(`-${nextImageWidth}x${nextImageheight}`, "");
-    $('.image-modal img').attr('src', nextBigImage);
-  }
-}
 
 fetch(requestUrl)
   .then((response) => response.json())

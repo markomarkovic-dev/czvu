@@ -1,3 +1,5 @@
+import {galleryImage} from './gallery-modal.js';
+
 const languageCode = document.documentElement.lang;
 var metaDescription = document.querySelector('meta[name="description"]');
 
@@ -91,6 +93,7 @@ fetch(requestUrl)
         document.title = post.title.rendered + ' - CZVU';
         var cleanExcerpt = post.excerpt.rendered.replace(/<[^>]+>/g, '');
         metaDescription.setAttribute('content', cleanExcerpt);
+        galleryImage();
         // loader.style.display = 'none';
       })
       .catch((error) => console.error(error));

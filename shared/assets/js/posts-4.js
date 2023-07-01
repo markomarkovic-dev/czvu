@@ -13,6 +13,7 @@ fetch(requestUrl)
   .then((response) => response.json())
   .then((posts) => {
     posts.map((post) => {
+      console.log(post)
       const postElement = `                    
         <article class="post">
             <div class="post-image">

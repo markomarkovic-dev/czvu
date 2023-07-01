@@ -116,7 +116,7 @@ function termsBanner() {
     <div class="cookie-wrapper">
     <p>Da bismo pružili najbolje iskustvo, koristimo tehnologije poput kolačića za čuvanje i/ili pristup informacijama o uređaju. Saglasnost sa ovim tehnologijama će nam omogućiti da obrađujemo podatke kao što su ponašanje pri pregledanju ili jedinstveni ID-ovi na ovoj veb lokaciji. Nepristanak ili povlačenje saglasnosti može negativno uticati na određene karakteristike i funkcije.</p>
     <div class="btn-wrapper">
-    <button class="btn btn-white" id="accept-cookie">Prihvatam</button>
+    <button class="btn btn-primary" id="accept-cookie">Prihvatam</button>
     <button class="btn btn-white" id="decline-cookie">Odbijam</button>
     </div>
     </div>
