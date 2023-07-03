@@ -7,7 +7,7 @@ const languageCategory = {
 
 const apiUrl = "https://cvu.hardcode.solutions/wp-json/wp/v2/projekti";
 
-const requestUrl = `${apiUrl}?${languageCategory[languageCode]}`;
+const requestUrl = `${apiUrl}?${languageCategory[languageCode]}&_embed`;
 
 // Loader
 // const loader = document.getElementById('loader');
@@ -41,32 +41,25 @@ fetch(requestUrl)
   .then((response) => response.json())
   .then((data) => {
     const post = data[0];
-    const featuredMediaId = post.featured_media;
-    const mediaUrl = `https://cvu.hardcode.solutions/wp-json/wp/v2/media/${featuredMediaId}`;
+    const featureMediaImage = post._embedded['wp:featuredmedia'] ? post._embedded['wp:featuredmedia'][0].source_url : `${rootPathjs}shared/assets/images/no-image.svg`;
 
-    fetch(mediaUrl)
-      .then((response) => response.json())
-      .then((data) => {
-        const featuredImageUrl = data.guid.rendered;
-        const postElement = `
-        <a href="${languageCode === "en" ? "project" : "projekat"}/${
-          post.slug
-        }" class="block-link" id="theatre-festival">
-          <div class="block-link-left">
-            <h2>${post.title.rendered}</h2>
-              <h3>${post.acf.podnaslov}</h3>
-            </div>
-            <div class="block-link-right">
-                <i class="ri-arrow-right-up-line"></i>
-            </div>
-            <img src="${featuredImageUrl}" class="image-background"/>
-        </a>`;
-        document
-          .getElementById("projects")
-          .insertAdjacentHTML("beforeend", postElement);
-        // loader.style.display = 'none';
-        galleryImage();
-      })
-      .catch((error) => console.error(error));
+    const postElement = `
+    <a href="${languageCode === "en" ? "project" : "projekat"}/${
+      post.slug
+    }" class="block-link" id="theatre-festival">
+      <div class="block-link-left">
+        <h2>${post.title.rendered}</h2>
+          <h3>${post.acf.podnaslov}</h3>
+        </div>
+        <div class="block-link-right">
+            <i class="ri-arrow-right-up-line"></i>
+        </div>
+        <img src="${featureMediaImage}" class="image-background"/>
+    </a>`;
+    document
+      .getElementById("projects")
+      .insertAdjacentHTML("beforeend", postElement);
+    // loader.style.display = 'none';
+    galleryImage();
   })
   .catch((error) => console.error(error));

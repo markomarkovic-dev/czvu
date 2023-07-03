@@ -61,9 +61,17 @@
   display: flex;
   gap: 4.8rem;
 
+  @media(max-width: 991px) {
+    flex-direction: column;
+  }
+
   .profile-aside {
     width: 34rem;
     flex-shrink: 0;
+
+    @media(max-width: 991px) {
+      margin: auto;
+    }
 
     img {
       border-radius: 16px;

@@ -16,16 +16,16 @@
 <body>
    <div class="layout-container">
     <?php
-    require_once "shared/templates/header.php";
+    require_once "../shared/templates/header.php";
     ?>
      <main>
             <section class="error-section">
-                <h1>Stranica ne postoji.</h1>
-                <a href='/' class="btn btn-primary"><i class="lnc lnc-home"></i>Vratite se na početnu</a>
+                <h1>Page not found.</h1>
+                <a href='/en' class="btn btn-primary"><i class="lnc lnc-home"></i>Back to home page</a>
             </section>
      </main>
         <?php
-            require_once "shared/templates/footer.php";
+            require_once "../shared/templates/footer.php";
         ?>
         <script src="<?= $rootPath ?>shared/assets/js/jquery-3.7.0.min.js"></script>
         <script src="<?= $rootPath ?>shared/assets/js/scripts.js" type="module"></script>

@@ -24,7 +24,7 @@ const apiUrl = 'https://cvu.hardcode.solutions/wp-json/wp/v2/clanovi';
 const params = new URLSearchParams(window.location.search);
 const url = window.location;
 const postSlug = decodeURIComponent(url.pathname.split('/')[window.location.origin === 'http://localhost' ? 3 : 2]);
-const requestUrl = `${apiUrl}?slug=${postSlug}`;
+const requestUrl = `${apiUrl}?slug=${postSlug}&_embed`;
 
 // Loader
 // const loader = document.getElementById('loader');
@@ -34,29 +34,22 @@ fetch(requestUrl)
   .then((response) => response.json())
   .then((data) => {
     const post = data[0];
-    const featuredMediaId = post.featured_media;
-    const mediaUrl = `https://cvu.hardcode.solutions/wp-json/wp/v2/media/${featuredMediaId}`;
+    const featureMediaImage = post._embedded['wp:featuredmedia'] ? post._embedded['wp:featuredmedia'][0].source_url : `${rootPathjs}shared/assets/images/no-image.svg`;
 
-    fetch(mediaUrl)
-      .then((response) => response.json())
-      .then((data) => {
-        const featuredImageUrl = data.guid.rendered;
-        const postElement = `
-          <div class="profile-aside">
-            <img src="${featuredImageUrl}" alt="${post.title.rendered ? post.title.rendered : 'article image'}" />
-            ${backButton[languageCode]}
-          </div>
-          <div class="post-wrapper">
-            <h1 class="section-heading">${post.title.rendered}</h1>
-            <h2 class="section-heading">${post.acf[transMember[languageCode][0]]}</h2>
-            <div>${post.acf[transMember[languageCode][1]]}</div>
-          </div>`;
-          document.getElementById('member').insertAdjacentHTML('beforeend', postElement);
-          document.title = post.title.rendered + ' - CZVU';
-          var cleanExcerpt = post.excerpt.rendered.replace(/<[^>]+>/g, '');
-          metaDescription.setAttribute('content', cleanExcerpt);
-        // loader.style.display = 'none';
-      })
-      .catch((error) => console.error(error));
+    const postElement = `
+    <div class="profile-aside">
+      <img src="${featureMediaImage}" alt="${post.title.rendered ? post.title.rendered : 'article image'}" />
+      ${backButton[languageCode]}
+    </div>
+    <div class="post-wrapper">
+      <h1 class="section-heading">${post.title.rendered}</h1>
+      <h2 class="section-heading">${post.acf[transMember[languageCode][0]]}</h2>
+      <div>${post.acf[transMember[languageCode][1]]}</div>
+    </div>`;
+    document.getElementById('member').insertAdjacentHTML('beforeend', postElement);
+    document.title = post.title.rendered + ' - CZVU';
+    var cleanExcerpt = post.excerpt.rendered.replace(/<[^>]+>/g, '');
+    metaDescription.setAttribute('content', cleanExcerpt);
+  // loader.style.display = 'none';
   })
   .catch((error) => console.error(error));

@@ -31,7 +31,10 @@ $rootPath = '../';
             require_once "shared/templates/footer.php";
         ?>
     </div>
-    <script src="<?= $rootPath ?>shared/assets/js/member.js"></script>
+    <script>
+        var rootPathjs = "<?= $rootPath?>";
+    </script>
+    <script src="<?= $rootPath ?>shared/assets/js/member.js" type="module"></script>
 </body>
 
 </html>

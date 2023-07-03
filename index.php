@@ -139,6 +139,9 @@ require_once "shared/templates/head.php";
             autoplayTimeout: 3000
         })
     </script>
+    <script>
+        var rootPathjs = "<?= $rootPath?>";
+    </script>
     <script src="shared/assets/js/posts-4.js"></script>
 </body>
 

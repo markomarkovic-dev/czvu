@@ -32,7 +32,10 @@ $rootPage = "transparent";
 
         ?>
     </div>
-    <script src="<?= $rootPath ?>shared/assets/js/projects.js"></script>
+    <script>
+        var rootPathjs = "<?= $rootPath?>";
+    </script>
+    <script src="<?= $rootPath ?>shared/assets/js/projects.js" type="module"></script>
 </body>
 
 </html>

@@ -7,21 +7,18 @@ const languageCategory = {
 
 const apiUrl = 'https://cvu.hardcode.solutions/wp-json/wp/v2/posts';
 
-const requestUrl = `${apiUrl}?per_page=4&_embed&${languageCategory[languageCode]}`;
+const requestUrl = `${apiUrl}?&_embed&per_page=4&${languageCategory[languageCode]}`;
 
 fetch(requestUrl)
   .then((response) => response.json())
   .then((posts) => {
     posts.map((post) => {
-      console.log(post)
+      const featureMediaImage = post._embedded['wp:featuredmedia'] ? post._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url : `${rootPathjs}shared/assets/images/no-image.svg`;
+           
       const postElement = `                    
         <article class="post">
             <div class="post-image">
-            <img src="${
-              post._embedded['wp:featuredmedia']['0'].source_url
-                ? post._embedded['wp:featuredmedia']['0'].source_url
-                : 'no image'
-            }" alt="${post.title.rendered ? post.title.rendered : 'article image'}" />
+            <img src="${featureMediaImage}" alt="${post.title.rendered ? post.title.rendered : 'article image'}" />
             </div>
             <div class="post-body">
                 <a href="post/${post.slug}" class="post-title">${post.title.rendered}</a>

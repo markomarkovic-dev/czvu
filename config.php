@@ -2,6 +2,7 @@
     $rootPath = '';
     $language = 'sr';  
     $contentLang = 'Serbian';
+    $pagedir = $_SERVER['HTTP_HOST'] === "localhost" ? "/czvu" : "";
 
     function active($currect_lang){
         $language = 'sr';

@@ -26,6 +26,9 @@ require_once "shared/templates/head.php";
         require_once "shared/templates/footer.php";
         ?>
     </div>
-    <script src="shared/assets/js/all-posts.js"></script>
+    <script>
+        var rootPathjs = "<?= $rootPath?>";
+    </script>
+    <script src="shared/assets/js/all-posts.js" type="module"></script>
 </body>
 </html>

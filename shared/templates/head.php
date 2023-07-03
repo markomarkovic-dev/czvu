@@ -20,7 +20,13 @@
     <meta property="twitter:title" content="<?= $title ?> | CZVU">
     <meta property="twitter:description" content="<?= $description ?>">
     <meta property="twitter:image" content="https://czvu.com/shared/assets/images/meta-image.png">
-    <meta name="msapplication-TileColor" content="#00d4f9">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?= $rootPath ?>shared/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?= $rootPath ?>shared/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= $rootPath ?>shared/assets/favicon/favicon-16x16.png">
+
+    <link rel="manifest" href="<?= $rootPath ?>shared/assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="<?= $rootPath ?>shared/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

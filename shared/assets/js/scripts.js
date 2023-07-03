@@ -1,3 +1,5 @@
+export const rootPathjs = "<?= $rootPath?>";
+
 $(document).ready(function ($) {
   $('.open-menu').click(function () {
     $('.slide-menu').removeClass('show');

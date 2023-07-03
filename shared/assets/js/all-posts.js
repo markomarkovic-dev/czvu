@@ -3,17 +3,18 @@ const languageCategory = {
   en: 'categories=15',
   sr: 'categories=15',
 };
+
 const apiUrl = 'https://cvu.hardcode.solutions/wp-json/wp/v2/posts';
 
 let currentPage = 1;
-const perPage = 8;
+const perPage = 4;
 let isFetching = false;
 
-function fetchPosts(searchTerm = '') {
+function fetchPosts() {
   if (isFetching) return;
   isFetching = true;
 
-  const requestUrl = `${apiUrl}?page=${currentPage}&per_page=${perPage}&_embed&${
+  const requestUrl = `${apiUrl}?_embed&page=${currentPage}&per_page=${perPage}&${
     languageCategory[languageCode]
   }`;
 
@@ -22,18 +23,17 @@ function fetchPosts(searchTerm = '') {
     .then((posts) => {
       if (posts.length > 0) {
         posts.map((post) => {
-
           const date = new Date(post.date);
           const day = String(date.getDate()).padStart(2, '0');
           const month = String(date.getMonth() + 1).padStart(2, '0');
           const year = date.getFullYear().toString();
           const formattedDate = `${day}.${month}.${year}.`;
 
+          const featureMediaImage = post._embedded['wp:featuredmedia'] ? post._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url : `${rootPathjs}shared/assets/images/no-image.svg`;
+
           const postElement = `<article class="post">
             <div class="post-image">
-              <img src="${
-                post._embedded['wp:featuredmedia']?.[0]?.source_url || (languageCode === 'sr' ? 'shared/assets/images/no-image.svg' : languageCode + '/shared/assets/images/no-image.svg')
-              }" alt="${post.title.rendered || 'article image'}" />
+              <img src="${featureMediaImage}" alt="${post.title.rendered || 'article image'}" />
             </div>
             <div class="post-body">
               <a href="post/${post.slug}" class="post-title">${post.title.rendered}</a>

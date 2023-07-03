@@ -34,7 +34,8 @@ $rootPath = '../';
     <script>
         var rootPathjs = "<?= $rootPath?>";
     </script>
-    <script src="<?= $rootPath ?>shared/assets/js/post.js"></script>
+    <script src="<?= $rootPath ?>shared/assets/js/gallery-modal.js" type="module"></script>
+    <script src="<?= $rootPath ?>shared/assets/js/post.js" type="module"></script>
 </body>
 
 </html>
