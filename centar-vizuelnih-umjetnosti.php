@@ -1,27 +1,14 @@
-<?php
-require_once "config.php";
-$title = "Upoznajte centar vizuelne umjetnosti";
-$description = "Ekskluzivni sportski program, najbolji filmski i serijski program, najnovija izdanja glazbe, svjetski poznati informativni kanal lokaliziran za događaje u Srbiji i regiji.";
-$keywords = "sport, kanali, video";
-$rootPage = "transparent";
-?>
-<!DOCTYPE html>
-<html lang=<?= $language ?>>
-<?php
-require_once "shared/templates/head.php";
-?>
-
-<body>
-    <div class="layout-container">
+<?php include('includes/global-header.php'); ?>
+   <div class="layout-container">
         <?php
-            require_once "shared/templates/header.php";
+            require_once "templates/header.php";
         ?>
         <main>
             <section class="visual-art-section">
                 <h1 class="section-heading">Meet the <strong>Center for Visual Art</strong></h1>
                 <div class="background-img background-left">
                     <div class="background-wrapper">
-                        <img src="<?= $rootPath ?>shared/assets/images/grafika-leva.svg" alt="">
+                        <img src="assets/images/grafika-leva.svg" alt="">
                     </div>
                 </div>
                 <div class="section-row">
@@ -31,7 +18,7 @@ require_once "shared/templates/head.php";
                         <p>Prvi projekti koji nastaju u produkciji Centra za vizuelnu umjetnost u saradnji sa Akademijom umjetnosti u Banjoj Luci su PAF (Pozorišni akademski festival) i Interakcija. Ovi projekti su već dobili podršku Grada Banje Luke, Ministarstva prosvjete i kulture Republike Srpske i Ministarstva civilnih poslova Bosne i Hercegovine. Institucije koje su podržale ove projekte su Narodno pozorište Republike Srpske, Gradsko pozorište „Jazavacˮ, Dječije pozorište Republike Srpske, Muzej savremene umjetnosti Republike Srpske, Banski dvor, Muzej savremene umetnosti u Beogradu, Dom omladine Beograda i Kuća legata u Beogradu. Akademije i fakulteti koji su se povezali ovim projektima su vodeće visokoškolske institucije na državnom i regionalnom nivou.</p>
                     </div>
                     <div class="section-column column-35">
-                        <img src="<?= $rootPath ?>shared/assets/images/grafika-leva-color.svg" class="img-fluid img-bck" alt="">
+                        <img src="assets/images/grafika-leva-color.svg" class="img-fluid img-bck" alt="">
                     </div>
                 </div>
             </section>
@@ -42,22 +29,20 @@ require_once "shared/templates/head.php";
                             <h3>Interested in culture?</h3>
                             <a href="/projekti" class="action-link">Check out our projects</a>
                         </div>
-                        <img src="<?= $rootPath ?>shared/assets/images/picture-silhouette.svg" alt="">
+                        <img src="assets/images/picture-silhouette.svg" alt="">
                     </div>
                     <div class="action-card">
                         <div class="action-card-content">
                             <h3>People for culture!</h3>
                             <a href="/upoznajte-tim" class="action-link">Meet the team</a>
                         </div>
-                        <img src="<?= $rootPath ?>shared/assets/images/user-silhouette.svg" alt="">
+                        <img src="assets/images/user-silhouette.svg" alt="">
                     </div>
                 </div>
             </section>
         </main>
         <?php
-            require_once "shared/templates/footer.php";
+            require_once "templates/footer.php";
         ?>
     </div>
-</body>
-
-</html>
+    <?php include('includes/global-footer.php'); ?>

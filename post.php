@@ -1,41 +1,108 @@
 <?php
-require_once "config.php";
-// $title = "Post";
-// $description = "Ekskluzivni sportski program, najbolji filmski i serijski program, najnovija izdanja glazbe, svjetski poznati informativni kanal lokaliziran za događaje u Srbiji i regiji.";
-$keywords = "s";
-$rootPage = "transparent";
-$rootPath = '../';
+    $visitor_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "http" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    $url = strtok($visitor_link, '?');
+    $language = basename(dirname($url));
+    $languageCategory = [
+        'en' => 'categories=15',
+        'sr' => 'categories=3',
+    ];
 
-?>
-<!DOCTYPE html>
-<html lang=<?= $language ?>>
-<?php
-    require_once "shared/templates/head.php";
+    $apiUrl = 'https://cvu.hardcode.solutions/wp-json/wp/v2/posts';
+
+    $url = 'http//' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+    $queries = array();
+    parse_str($_SERVER['QUERY_STRING'], $queries);
+
+    $requestUrl = $apiUrl . '?_embed&slug=' . $queries['slug'];
+    $requestUrl4posts = $apiUrl . '?per_page=4&_embed&' . $languageCategory[$language];
+
+    $posts = json_decode(file_get_contents($requestUrl4posts), true);
+    $data = json_decode(file_get_contents($requestUrl), true);
+    $post = $data[0];
+
+    $descriptionString = strip_tags($post['excerpt']['rendered']);
+    $unwantedElements = array("&nbsp;", "<br>", "<br/>", "<p>", "</p>");
+    $cleanedString = str_replace($unwantedElements, "",  $descriptionString);
+
+    $title = $post['title']['rendered'];
+    $description = $cleanedString;
+    
+    $date = new DateTime($post['date']);
+    $day = $date->format('d');
+    $month = $date->format('m');
+    $year = $date->format('Y');
+    $formattedDate = $day . '.' . $month . '.' . $year . '.';
+
+    $featureMediaImage = isset($post['_embedded']['wp:featuredmedia']) ? $post['_embedded']['wp:featuredmedia'][0]['source_url'] : 'assets/images/no-image.svg';
 ?>
 
-<body>
+
+<?php include('includes/global-header.php'); ?>
     <div class="layout-container">
         <?php
-            require_once "shared/templates/header.php";
+        require_once "templates/header.php";
         ?>
         <main>
             <section class="post-section">
-                <div id="post"></div>
+                <div id="post">
+                    <?php
+                    $postEl = '
+                    <div class="post-wrapper">
+                      <img class="featured-image" src="' . $featureMediaImage . '" alt="' . ($post['title']['rendered'] ? $post['title']['rendered'] : 'article image') . '" />
+                      <h1 class="section-heading">' . $post['title']['rendered'] . '</h1>
+                      <div class="post-meta">
+                        <div class="post-date">' . $formattedDate . '</div>
+                        <div class="post-share">
+                          <p>Share: </p>
+                          <div class="share-icons">
+                            <a href="https://www.facebook.com/sharer.php?u=' . $url . '&t=Home&v=3" target="_blank"><i class="ri-facebook-line"></i></a>
+                            <a href="https://www.linkedin.com/shareArticle?mini=true&url=' . $url . '&title=' . $post['title']['rendered'] . '" target="_blank"><i class="ri-linkedin-line"></i></a>
+                            <a href="https://twitter.com/intent/tweet?text=' . $post['title']['rendered'] . '%20' . $url . '" target="_blank"><i class="ri-twitter-line"></i></a>
+                            <a href="viber://forward?text=' . $url . '"><img src="assets/icons/viber.svg"></a>
+                            <a href="whatsapp://send?text=' . $url . '"><i class="ri-whatsapp-line"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div>' . $post['content']['rendered'] . '</div>
+                    </div>';
+                    echo $postEl;
+                    ?>
+                </div>
                 <aside id="latest-posts">
                     <h2 class="section-heading">Recent news</h2>
+
+                    <?php
+                    foreach ($posts as $post4) {
+                        $date = new DateTime($post4['date']);
+                        $day = $date->format('d');
+                        $month = $date->format('m');
+                        $year = $date->format('Y');
+                        $formattedDate = $day . '.' . $month . '.' . $year . '.';
+
+                        $featureMediaImage4 = isset($post4['_embedded']['wp:featuredmedia']) ? $post4['_embedded']['wp:featuredmedia'][0]['media_details']['sizes']['medium']['source_url'] : 'assets/images/no-image.svg';
+
+                        $postRecent = '
+                          <article class="post">
+                              <div class="post-image">
+                              <img src="' . $featureMediaImage4 . '" />
+                              </div>
+                              <div class="post-body">
+                                  <a href="post?slug=' . $post4['slug'] . '" class="post-title">' . $post4['title']['rendered'] . '</a>
+                                  <div class="post-meta">
+                                      <span class="post-date">' . $formattedDate . '</span>
+                                  </div>
+                              </div>
+                          </article>';
+                        echo $postRecent;
+                    }
+                    ?>
                 </aside>
             </section>
-            
+
         </main>
         <?php
-            require_once "shared/templates/footer.php";
+        require_once "templates/footer.php";
         ?>
     </div>
-    <script>
-        var rootPathjs = "<?= $rootPath?>";
-    </script>
-    <script src="<?= $rootPath ?>shared/assets/js/gallery-modal.js" type="module"></script>
-    <script src="<?= $rootPath ?>shared/assets/js/post.js" type="module"></script>
-</body>
-
-</html>
+    <script src="assets/js/gallery-modal.js"></script>
+    <?php include('includes/global-footer.php'); ?>

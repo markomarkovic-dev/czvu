@@ -1,20 +1,7 @@
-<?php
-require_once "config.php";
-$title = "Vijesti";
-$description = "Ekskluzivni sportski program, najbolji filmski i serijski program, najnovija izdanja glazbe, svjetski poznati informativni kanal lokaliziran za događaje u Srbiji i regiji.";
-$keywords = "sport, kanali, video";
-$rootPage = "transparent";
-?>
-<!DOCTYPE html>
-<html lang=<?= $language ?>>
-<?php
-require_once "shared/templates/head.php";
-?>
-
-<body>
+<?php include('includes/global-header.php'); ?>
     <div class="layout-container">
         <?php
-        require_once "shared/templates/header.php";
+        require_once "templates/header.php";
         ?>
         <main>
             <section>
@@ -23,12 +10,9 @@ require_once "shared/templates/head.php";
             </section>
         </main>
         <?php
-        require_once "shared/templates/footer.php";
+        require_once "templates/footer.php";
         ?>
     </div>
-    <script>
-        var rootPathjs = "<?= $rootPath?>";
-    </script>
-    <script src="shared/assets/js/all-posts.js" type="module"></script>
-</body>
-</html>
+    <script src="assets/js/all-posts.js" type="module"></script>
+
+<?php include('includes/global-footer.php'); ?>

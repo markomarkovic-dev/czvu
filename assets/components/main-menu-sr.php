@@ -28,8 +28,8 @@
                 <span class="slide-menu-item accordion-name">Jezik</span>
                 <div class="accordion-body">
                     <div class="lang-switch">
-                        <a href="<?= $pagedir?>/en" class="language <?= active("en") ?>">ENG</a>
-                        <a href="<?= $pagedir?>/" class="language <?= active("sr") ?>">SRB</a>
+                        <a href="<?= $pagedir?>/en" class="language <?= activePage("en") ?>">ENG</a>
+                        <a href="<?= $pagedir?>/" class="language <?= activePage("sr") ?>">SRB</a>
                     </div>
                 </div>
             </div>

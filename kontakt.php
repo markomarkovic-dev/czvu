@@ -1,26 +1,13 @@
-<?php
-require_once "config.php";
-$title = "Upoznajte tim";
-$description = "Ekskluzivni sportski program, najbolji filmski i serijski program, najnovija izdanja glazbe, svjetski poznati informativni kanal lokaliziran za događaje u Srbiji i regiji.";
-$keywords = "sport, kanali, video";
-$rootPage = "transparent";
-?>
-<!DOCTYPE html>
-<html lang=<?= $language ?>>
-<?php
-    require_once "shared/templates/head.php";
-?>
-
-<body>
-    <div class="layout-container">
+<?php include('includes/global-header.php'); ?>
+<div class="layout-container">
         <?php
-            require_once "shared/templates/header.php";
+            require_once "templates/header.php";
         ?>
         <main>
             <section>
             <div class="background-img background-right">
                     <div class="background-wrapper">
-                        <img src="<?= $rootPath ?>shared/assets/images/grafika-desna.svg" alt="">
+                        <img src="assets/images/grafika-desna.svg" alt="">
                     </div>
                 </div>
                 <h1 class="section-heading">Feel free to <strong>contact us</strong> for any questions and suggestions</h1>
@@ -96,10 +83,9 @@ $rootPage = "transparent";
             </section>
         </main>
         <?php
-            require_once "shared/templates/footer.php";
+            require_once "templates/footer.php";
 
         ?>
     </div>
-</body>
 
-</html>
+    <?php include('includes/global-footer.php'); ?>

@@ -18,7 +18,7 @@ $rootPath = '../';
         <main>
         <div class="background-img background-left">
                 <div class="background-wrapper">
-                    <img src="<?= $rootPath ?>shared/assets/images/grafika-leva.svg" alt="">
+                    <img src="assets/images/grafika-leva.svg" alt="">
                 </div>
             </div>
             <section>
@@ -34,7 +34,7 @@ $rootPath = '../';
     <script>
         var rootPathjs = "<?= $rootPath?>";
     </script>
-    <script src="<?= $rootPath ?>shared/assets/js/member.js" type="module"></script>
+    <script src="assets/js/member.js" type="module"></script>
 </body>
 
 </html>

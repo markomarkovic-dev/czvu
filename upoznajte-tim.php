@@ -1,27 +1,14 @@
-<?php
-require_once "config.php";
-$title = "Upoznajte tim";
-$description = "Ekskluzivni sportski program, najbolji filmski i serijski program, najnovija izdanja glazbe, svjetski poznati informativni kanal lokaliziran za događaje u Srbiji i regiji.";
-$keywords = "sport, kanali, video";
-$rootPage = "transparent";
-?>
-<!DOCTYPE html>
-<html lang=<?= $language ?>>
-<?php
-    require_once "shared/templates/head.php";
-?>
-
-<body>
+<?php include('includes/global-header.php'); ?>
     <div class="layout-container">
         <?php
-            require_once "shared/templates/header.php";
+            require_once "templates/header.php";
         ?>
         <main>
             <section>
                 <h1 class="section-heading">We are the <strong>people</strong> who do a lot <strong>for culture</strong></h1>
                 <div class="background-img background-right">
                     <div class="background-wrapper">
-                        <img src="<?= $rootPath ?>shared/assets/images/grafika-desna.svg" alt="">
+                        <img src="assets/images/grafika-desna.svg" alt="">
                     </div>
                 </div>
                 <h2 class="section-heading">Founders of the center for visual art</h2>
@@ -33,11 +20,8 @@ $rootPage = "transparent";
             </section>
         </main>
         <?php
-            require_once "shared/templates/footer.php";
-
+            require_once "templates/footer.php";
         ?>
     </div>
-    <script src="shared/assets/js/members.js"></script>
-</body>
-
-</html>
+    <script src="assets/js/members.js"></script>
+    <?php include('includes/global-footer.php'); ?>

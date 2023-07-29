@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <link rel="stylesheet" href="<?= $rootPath ?>shared/assets/scss/style.min.css">
+    <link rel="stylesheet" href="assets/scss/style.min.css">
 </head>
 
 <body>
@@ -27,8 +27,8 @@
         <?php
             require_once "shared/templates/footer.php";
         ?>
-        <script src="<?= $rootPath ?>shared/assets/js/jquery-3.7.0.min.js"></script>
-        <script src="<?= $rootPath ?>shared/assets/js/scripts.js" type="module"></script>
+        <script src="assets/js/jquery-3.7.0.min.js"></script>
+        <script src="assets/js/scripts.js" type="module"></script>
     </div>      
 </body>
 
