@@ -1,6 +1,6 @@
 <?php
 //global site name		
-$sitename = "Spaceify";
+$sitename = "CZVU";
 $mainlang = 'sr';
 //posjeceni url
 $visitor_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "http" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
@@ -39,6 +39,4 @@ if (is_null($lang)) {
 	header("Location: " . $mainlang . "/home.php", true, 301);
 	die('should have redirected by now');
 }
-
-
 ?>

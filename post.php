@@ -1,7 +1,7 @@
 <?php
     $visitor_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "http" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-    $url = strtok($visitor_link, '?');
-    $language = basename(dirname($url));
+    $url2 = strtok($visitor_link, '?');
+    $language = basename(dirname($url2));
     $languageCategory = [
         'en' => 'categories=15',
         'sr' => 'categories=3',
@@ -13,7 +13,7 @@
     $queries = array();
     parse_str($_SERVER['QUERY_STRING'], $queries);
 
-    $requestUrl = $apiUrl . '?_embed&slug=' . $queries['slug'];
+    $requestUrl = $apiUrl . '?_embed&slug=' . $queries['id'];
     $requestUrl4posts = $apiUrl . '?per_page=4&_embed&' . $languageCategory[$language];
 
     $posts = json_decode(file_get_contents($requestUrl4posts), true);
@@ -87,7 +87,7 @@
                               <img src="' . $featureMediaImage4 . '" />
                               </div>
                               <div class="post-body">
-                                  <a href="post?slug=' . $post4['slug'] . '" class="post-title">' . $post4['title']['rendered'] . '</a>
+                                  <a href="post?id=' . $post4['slug'] . '" class="post-title">' . $post4['title']['rendered'] . '</a>
                                   <div class="post-meta">
                                       <span class="post-date">' . $formattedDate . '</span>
                                   </div>

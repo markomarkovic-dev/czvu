@@ -1,4 +1,8 @@
-<?php include('./config.php'); ?>
+<?php 
+    include('./config.php'); 
+    $checkMetaImg = isset($featureMediaImage) ? $featureMediaImage : "https://techhosted.ba/wp-content/uploads/2022/08/tech_hosted_fb.jpg";
+    
+    ?>
 <!DOCTYPE html>
 <html lang="<?php echo $language;?>">
 <head>
@@ -6,8 +10,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="<?= $lang[$pagename]['title'] ?> | CZVU">
     <title><?= $lang[$pagename]['title'] ?> | CZVU</title>
+    <meta name="title" content="<?= $lang[$pagename]['title'] ?> | CZVU">
     <meta name="description" content="<?= $lang[$pagename]['description'] ?>">
     <meta name="keywords" content="">
     <meta name="robots" content="index, follow">
@@ -16,13 +20,13 @@
     <meta property="og:url" content="https://czvu.com/">
     <meta property="og:title" content="<?= $lang[$pagename]['title'] ?> | CZVU">
     <meta property="og:description" content="<?= $lang[$pagename]['description'] ?> ">
-    <meta property="og:image" content="https://czvu.com/assets/images/meta-image.png">
+    <meta property="og:image" content="<?= $checkMetaImg?>">
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://czvu.com/">
     <meta property="twitter:title" content="<?= $lang[$pagename]['title'] ?> | CZVU">
     <meta property="twitter:description" content="<?= $lang[$pagename]['description']?>">
-    <meta property="twitter:image" content="https://czvu.com/assets/images/meta-image.png">
+    <meta property="twitter:image" content="<?= $checkMetaImg?>">    
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
@@ -37,7 +41,7 @@
     <link rel="stylesheet" href="assets/remix-icons/remixicon.css">
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="assets/scss/style.min.css">
+    <link rel="stylesheet" href="assets/scss/main.css">
 
 	<?php 
 		//generisanje alternate linkova za multijezicke sajtove

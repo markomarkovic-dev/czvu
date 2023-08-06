@@ -9,10 +9,14 @@ const apiUrl = 'https://cvu.hardcode.solutions/wp-json/wp/v2/posts';
 let currentPage = 1;
 const perPage = 4;
 let isFetching = false;
+let hasMorePosts = true; // Add a flag to track if there are more posts to fetch
 
 function fetchPosts() {
-  if (isFetching) return;
+  if (isFetching || !hasMorePosts) return;
   isFetching = true;
+
+  
+  document.querySelector('#loader').style.display = "flex";
 
   const requestUrl = `${apiUrl}?_embed&page=${currentPage}&per_page=${perPage}&${
     languageCategory[languageCode]
@@ -36,7 +40,7 @@ function fetchPosts() {
               <img src="${featureMediaImage}" alt="${post.title.rendered || 'article image'}" />
             </div>
             <div class="post-body">
-              <a href="post?slug=${post.slug}" class="post-title">${post.title.rendered}</a>
+              <a href="post?id=${post.slug}" class="post-title">${post.title.rendered}</a>
               <div class="post-meta">
                 <span class="post-date">${formattedDate}</span>
               </div>
@@ -45,10 +49,12 @@ function fetchPosts() {
           document.getElementById('blog').insertAdjacentHTML('beforeend', postElement);
         });
         currentPage++;
+        document.querySelector('#loader').style.display = "none";
         isFetching = false;
       } else {
+        document.querySelector('#loader').style.display = "none";
         // No more posts to fetch
-        $(window).off('scroll'); // Remove the scroll event listener
+        $(window).off('scroll', handleScroll); // Remove the scroll event listener
       }
     })
     .catch((error) => {
@@ -57,11 +63,13 @@ function fetchPosts() {
     });
 }
 
-window.addEventListener('scroll', function() {
+function handleScroll() {
   if (window.scrollY >= document.documentElement.scrollHeight - window.innerHeight - 100) {
     fetchPosts();
   }
-});
+}
+
+window.addEventListener('scroll', handleScroll); // Add the event listener
 
 // Initial fetch
 fetchPosts();

@@ -63,6 +63,7 @@ h6 {
   border-bottom-color: transparent;
   border-radius: 50%;
   animation: rotate 2s linear infinite;
+  display: block;
 }
 
 @keyframes rotate {

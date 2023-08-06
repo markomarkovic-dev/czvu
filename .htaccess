@@ -5,34 +5,26 @@ Options +FollowSymlinks
 #RewriteCond %{HTTPS} off
 #RewriteCond %{HTTP:X-Forwarded-Proto} !https
 #RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}?_&%{QUERY_STRING} [R,L]
-
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^\.]+)$ $1.php [NC,L]
-
 RewriteEngine on 
 RewriteCond %{THE_REQUEST} /([^.]+)\.php [NC]
 RewriteRule ^ /%1 [NC,L,R]
-
 RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^ %{REQUEST_URI}.php [NC,L]
-
 # Handle post URLs
 #RewriteCond %{REQUEST_FILENAME} !-f
 #RewriteCond %{REQUEST_FILENAME} !-d
 #RewriteRule ^(sr|en)/post/([^/]+)/?$ post.php?slug=$2 [L]
-
 ##RewriteCond %{REQUEST_FILENAME} !-f
 #RewriteCond %{REQUEST_FILENAME} !-d
 #RewriteRule ^(sr|en)/clan/([^/]+)/?$ clan.php?slug=$1 [L]
-
 #RewriteCond %{REQUEST_FILENAME} !-f
 #RewriteCond %{REQUEST_FILENAME} !-d
 #RewriteRule ^(sr|en)/projekat/([^/]+)/?$ projekat.php?slug=$1 [L]
-
 #RewriteCond %{REQUEST_FILENAME} !-f
 #RewriteCond %{REQUEST_FILENAME} !-d
 #RewriteRule ^(sr|en)/project/([^/]+)/?$ project.php?slug=$1 [L]
-
 #Ove dvije linije treba postaviti za svaku novu drzavu
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^sr/(.*)$ $1?country=sr [QSA,L]
@@ -75,7 +67,6 @@ RewriteRule images/(.*)$ images/$1
    php_flag zlib.output_compression Off
 </IfModule>
 # END cPanel-generated php ini directives, do not edit
-
 # php -- BEGIN cPanel-generated handler, do not edit
 # Set the “ea-php74” package as the default “PHP” programming language.
 <IfModule mime_module>

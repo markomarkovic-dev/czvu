@@ -6,7 +6,10 @@
         <main>
             <section>
                 <h1 class="section-heading">Latest <strong>news & activities</strong></h1>
-                <div class="blog" id="blog"></div>
+                <div class="blog" id="blog"></div>            
+                <div id="loader">
+                    <span class="circle"></span>
+                </div>
             </section>
         </main>
         <?php
