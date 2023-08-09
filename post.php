@@ -1,8 +1,8 @@
 <?php
     $visitor_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "http" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
     $url2 = strtok($visitor_link, '?');
-    $language = basename(dirname($url2));
-    $languageCategory = [
+    $postLanguage = basename(dirname($url2));
+    $postLanguageCategory = [
         'en' => 'categories=15',
         'sr' => 'categories=3',
     ];
@@ -14,7 +14,7 @@
     parse_str($_SERVER['QUERY_STRING'], $queries);
 
     $requestUrl = $apiUrl . '?_embed&slug=' . $queries['id'];
-    $requestUrl4posts = $apiUrl . '?per_page=4&_embed&' . $languageCategory[$language];
+    $requestUrl4posts = $apiUrl . '?per_page=4&_embed&' . $postLanguageCategory[$postLanguage];
 
     $posts = json_decode(file_get_contents($requestUrl4posts), true);
     $data = json_decode(file_get_contents($requestUrl), true);

@@ -38,6 +38,11 @@
 			'description' => 'Contact',
 		  ),
 
+		  'projekat' => array(
+			'title' => (isset($title)) ? $title : "CZVU",
+			'description' => (isset($description)) ? $description : "CZVU", 
+		  ),
+
 		  'vijesti' => array(
 			'title' => 'Vijesti', 
 			'description' => 'Najnovije vijesti i aktivnosti',
@@ -46,6 +51,11 @@
 		  'upoznajte-tim' => array(
 			'title' => 'Contact', 
 			'description' => 'Contact',
+		  ),
+
+		  'clan' => array(
+			'title' => (isset($title)) ? $title : "CZVU",
+			'description' => (isset($description)) ? $description : "CZVU", 
 		  ),
 
 		  'centar-vizuelnih-umjetnosti' => array(

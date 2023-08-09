@@ -85,7 +85,7 @@
                               <img src="' . $featureMediaImage4 . '" />
                               </div>
                               <div class="post-body">
-                                  <a href="post?slug=' . $post4['slug'] . '" class="post-title">' . $post4['title']['rendered'] . '</a>
+                                  <a href="post?id=' . $post4['slug'] . '" class="post-title">' . $post4['title']['rendered'] . '</a>
                                   <div class="post-meta">
                                       <span class="post-date">' . $formattedDate . '</span>
                                   </div>

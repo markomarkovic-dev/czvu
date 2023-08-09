@@ -17,7 +17,6 @@
 
 		),
 
-
           'thank-you-page' => array(
 		  'title' => 'Thank you page', 
 			'description' => 'Thank you page', 
@@ -51,6 +50,11 @@
 		  'upoznajte-tim' => array(
 			'title' => 'Contact', 
 			'description' => 'Contact',
+		  ),
+
+		  'clan' => array(
+			'title' => (isset($title)) ? $title : "CZVU",
+			'description' => (isset($description)) ? $description : "CZVU", 
 		  ),
 
 		  'centar-vizuelnih-umjetnosti' => array(

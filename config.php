@@ -7,7 +7,8 @@ $visitor_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "http"
 // uklanjanje parametara url-a
 $url = strtok($visitor_link, '?');
 // folder/jezik 
-$language = "$_SERVER[HTTP_HOST]" === 'localhost' ? 'sr' : basename(dirname($url));
+$language = basename(dirname($url));
+var_dump($language);
 $pagename = basename($url);
 //naziv stranice/fajla bez ekstenzije
 $pagename = preg_replace('/\\.[^.\\s]{3,4}$/', '', $pagename);
