@@ -14,37 +14,39 @@
                 <div class="contact-row">
                     <div class="contact-form-column">
                     <?php
-                        $message = '';
-                        if(isset($_POST['submit'])){
-                            $name = $_POST['name'];
-                            $surname = $_POST['surname'];
-                            $email = $_POST['email'];
-                            $phone = $_POST['phone'];
-                            $message = $_POST['message'];
-                            // Validate input
-                            if(empty($name) || empty($surname) || empty($email) || empty($phone) || empty($message)){
-                                $message = 'Please fill in all the fields.';
-                            }
-                            elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-                                $message = 'Invalid email format.';
+                    $message = '';
+                    if(isset($_POST['submit'])){
+                        $name = $_POST['name'];
+                        $surname = $_POST['surname'];
+                        $email = $_POST['email'];
+                        $phone = $_POST['phone'];
+                        $message = $_POST['message'];
+                        $honeypot = $_POST['honeypot'];
+
+                        // Validate input and check honeypot
+                        if(empty($name) || empty($surname) || empty($email) || empty($phone) || empty($message) || !empty($honeypot)){
+                            $message = 'Provjerite polja';
+                        }
+                        elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+                            $message = 'Invalid email format.';
+                        }
+                        else{
+                            // Send the email
+                            $to = 'markomarko988@gmail.com'; // Replace with your email address
+                            $subject = 'Kontakt forma';
+                            $body = "Name: $name\nSurname: $surname\nEmail: $email\nPhone: $phone\nMessage: $message";
+                            $headers = "From: nopreply@cvu.com"; // Replace with the masked "From" address
+                            if(mail($to, $subject, $body, $headers)){
+                                $message = 'Message sent successfully.';
                             }
                             else{
-                                // Send the email
-                                $to = 'markomarko988@gmail.com'; // Replace with your email address
-                                $subject = 'Contact Form Submission';
-                                $body = "Name: $name\nSurname: $surname\nEmail: $email\nPhone: $phone\nMessage: $message";
-                                $headers = "From: nopreply@cvu.com"; // Replace with the masked "From" address
-                                if(mail($to, $subject, $body, $headers)){
-                                    $message = 'Message sent successfully.';
-                                }
-                                else{
-                                    $message = 'An error occurred while sending the message.';
-                                }
+                                $message = 'An error occurred while sending the message.';
                             }
                         }
+                    }
                     ?>
                     <h2 class="section-heading">Write to us</h2>
-                    <form method="post" action="" class="contact-form">
+                    <form method="post" action="" class="contact-form" id="contact-form">
                         <div class="input-wrapper-split">
                             <div class="input-wrapper">
                                 <label for="name">Name:</label>
@@ -69,6 +71,12 @@
                             <label for="message">Message:</label>
                             <textarea name="message" id="message" rows="5" required></textarea>
                         </div>
+                        <!-- Honeypot field -->
+                        <div class="input-wrapper hidden-field">
+                            <label for="honeypot">Leave this field blank:</label>
+                            <input type="text" name="honeypot" id="honeypot">
+                        </div>
+
                         <input type="submit" name="submit" value="Send message &#8594">
                     </form>
                         <p><?php echo $message; ?></p>
@@ -81,6 +89,9 @@
                     </div>
                 </div>
             </section>
+            <section>
+                <iframe id="enscapeframe" src="https://api2.enscape3d.com/v1/view/1bdd5d91-cd8a-4a3f-8bce-a7f48d49b624" width="100%" height="600px" style="border: 0;border-radius: 20px"></iframe>
+            </section>
         </main>
         <?php
             require_once "templates/footer.php";
@@ -89,3 +100,10 @@
     </div>
 
     <?php include('includes/global-footer.php'); ?>
+    <script>
+        $(document).ready(function () {
+            $("#enscapeframe").on("mouseenter", function() {
+                $(this).focus();
+            });
+        });
+    </script>

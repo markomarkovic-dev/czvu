@@ -2,8 +2,8 @@ const languageCode = document.documentElement.lang;
 var metaDescription = document.querySelector('meta[name="description"]');
 
 const backButton = {
-  ['sr']: `<a class="back-to" href="/upoznajte-tim"><i class="ri-arrow-left-line"></i> Nazad na osnivače i ćlanove</a>`,
-  ['en']: `<a class="back-to" href="/meet-members"><i class="ri-arrow-left-line"></i> Back to founders and members</a>`,
+  ['sr']: `<a class="back-to" href="upoznajte-tim"><i class="ri-arrow-left-line"></i> Nazad na osnivače i ćlanove</a>`,
+  ['en']: `<a class="back-to" href="meet-members"><i class="ri-arrow-left-line"></i> Back to founders and members</a>`,
 };
 
 const transMember = {

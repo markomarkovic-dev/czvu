@@ -1,22 +1,17 @@
 <?php
-session_start(); // Start or resume the current session
-$visitor_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-$url = strtok($visitor_link, '?');
-$language = basename(dirname($url));
+include('includes/global-header.php');
+
 $languageCategory = [
     'en' => 'categories=24',
     'sr' => 'categories=24',
 ];
 
-$apiUrl = 'https://cvu.hardcode.solutions/wp-json/wp/v2/projekti';
-
+$apiUrl = "$backendUrl/wp-json/wp/v2/projekti";
 $requestUrlProjects = $apiUrl . '?_embed&' . $languageCategory[$language];
-
 $projects = json_decode(file_get_contents($requestUrlProjects), true);
 
 ?>
 
-<?php include('includes/global-header.php'); ?>
 <div class="layout-container">
     <?php require_once "templates/header.php"; ?>
     <main>

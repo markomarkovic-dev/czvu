@@ -1,10 +1,8 @@
 <?php
-$visitor_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "http" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-$url2 = strtok($visitor_link, '?');
-$postLanguage = basename(dirname($url2));
+    require 'post-config.php';
     $backButton = array(
-        'sr' => "<a class='back-to' href='/upoznajte-tim'><i class='ri-arrow-left-line'></i> Nazad na osnivače i članove</a>",
-        'en' => "<a class='back-to' href='/meet-members'><i class='ri-arrow-left-line'></i> Back to founders and members</a>",
+        'sr' => "<a class='back-to' href='upoznajte-tim'><i class='ri-arrow-left-line'></i> Nazad na osnivače i članove</a>",
+        'en' => "<a class='back-to' href='upoznajte-tim'><i class='ri-arrow-left-line'></i> Back to founders and members</a>",
     );    
       
     $transMember = array(
@@ -18,9 +16,8 @@ $postLanguage = basename(dirname($url2));
         )
     );
 
-    $apiUrl = 'https://cvu.hardcode.solutions/wp-json/wp/v2/clanovi';
+    $apiUrl = "$backendUrl/wp-json/wp/v2/clanovi";
 
-    $url = 'http//' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
     $queries = array();
     parse_str($_SERVER['QUERY_STRING'], $queries);
 
@@ -29,12 +26,10 @@ $postLanguage = basename(dirname($url2));
     $data = json_decode(file_get_contents($requestUrl), true);
     $post = $data[0];
 
-    $descriptionString = strip_tags($post['excerpt']['rendered']);
-    $unwantedElements = array("&nbsp;", "<br>", "<br/>", "<p>", "</p>");
-    $cleanedString = str_replace($unwantedElements, "",  $descriptionString);
+    $shortenedString = substr($post['acf'][$transMember[$postLanguage][1]], 0, 152) . '...';
 
-    $title = $post['title']['rendered'];
-    $description = $cleanedString;
+    $postTitle = $post['title']['rendered'];
+    $postDescription = $shortenedString;
     
     $date = new DateTime($post['date']);
     $day = $date->format('d');
@@ -43,8 +38,8 @@ $postLanguage = basename(dirname($url2));
     $formattedDate = $day . '.' . $month . '.' . $year . '.';
 
     $featureMediaImage = isset($post['_embedded']['wp:featuredmedia']) ? $post['_embedded']['wp:featuredmedia'][0]['source_url'] : 'assets/images/no-image.svg';
+    include('includes/global-header.php');
 ?>
-<?php include('includes/global-header.php'); ?>
     <div class="layout-container">
         <?php
             require_once "templates/header.php";
@@ -71,7 +66,6 @@ $postLanguage = basename(dirname($url2));
                     </div>';
 
                     echo $member;
-                    var_dump($post['acf'][$transMember[$postLanguage][0]]);
                     ?>
                 </div>
             </section>

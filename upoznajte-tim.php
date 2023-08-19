@@ -1,22 +1,22 @@
 <?php
-session_start(); // Start or resume the current session
-$visitor_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-$url = strtok($visitor_link, '?');
-$language = basename(dirname($url));
-// $languageCategory = [
-//     'en' => 'categories=24',
-//     'sr' => 'categories=24',
-// ];
+include('includes/global-header.php');
 
-$apiUrl = 'https://cvu.hardcode.solutions/wp-json/wp/v2/clanovi';
+$transMember = array(
+    'sr' => array(
+        "pozicija"
+    ),
+    'en' => array(
+        "position"
+    )
+);
+
+$apiUrl = "$backendUrl/wp-json/wp/v2/clanovi";
 
 $requestUrlMembers = $apiUrl . '?_embed';
 
 $members = json_decode(file_get_contents($requestUrlMembers), true);
 
 ?>
-
-<?php include('includes/global-header.php'); ?>
     <div class="layout-container">
         <?php
             require_once "templates/header.php";
@@ -44,7 +44,7 @@ $members = json_decode(file_get_contents($requestUrlMembers), true);
                                     </div>
                                     <div class="member-data">
                                     <p class="member-name">' . $member['title']['rendered'] . '</p>
-                                    <p class="member-profession">' . $member['acf']['pozicija'] . '</p>
+                                    <p class="member-profession">' . $member['acf'][$transMember[$language][0]] . '</p>
                                     </div>
                                 </div>
                             </a>';
@@ -70,7 +70,7 @@ $members = json_decode(file_get_contents($requestUrlMembers), true);
                                     </div>
                                     <div class="member-data">
                                     <p class="member-name">' . $member['title']['rendered'] . '</p>
-                                    <p class="member-profession">' . $member['acf']['pozicija'] . '</p>
+                                    <p class="member-profession">' . $member['acf'][$transMember[$language][0]] . '</p>
                                     </div>
                                 </div>
                             </a>';

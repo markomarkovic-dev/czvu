@@ -1,31 +1,32 @@
 <?php 
     include('./config.php'); 
-    $checkMetaImg = isset($featureMediaImage) ? $featureMediaImage : "https://techhosted.ba/wp-content/uploads/2022/08/tech_hosted_fb.jpg";
-    
-    ?>
+    $checkMetaImg = isset($featureMediaImage) ? $featureMediaImage : "$siteUrl/assets/images/cvu-metaimg.png";
+    $pageTitle = isset($postTitle) ? $postTitle : $lang[$pagename]['title'];
+    $pageDescription = isset($postDescription) ? $postDescription : $lang[$pagename]['description'];
+?>
 <!DOCTYPE html>
 <html lang="<?php echo $language;?>">
 <head>
-    <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-TWD07E888C"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-TWD07E888C'); </script>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $lang[$pagename]['title'] ?> | CZVU</title>
-    <meta name="title" content="<?= $lang[$pagename]['title'] ?> | CZVU">
-    <meta name="description" content="<?= $lang[$pagename]['description'] ?>">
+    <title><?= $pageTitle . " | " . $siteName?></title>
+    <meta name="title" content="<?= $pageTitle ?> | <?= $siteName ?>">
+    <meta name="description" content="<?= $pageDescription ?>">
     <meta name="keywords" content="">
     <meta name="robots" content="index, follow">
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://czvu.com/">
-    <meta property="og:title" content="<?= $lang[$pagename]['title'] ?> | CZVU">
-    <meta property="og:description" content="<?= $lang[$pagename]['description'] ?> ">
+    <meta property="og:url" content="<?= $siteUrl?>">
+    <meta property="og:title" content="<?= $pageTitle ?> | <?= $siteName ?>">
+    <meta property="og:description" content="<?= $pageDescription ?> ">
     <meta property="og:image" content="<?= $checkMetaImg?>">
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://czvu.com/">
-    <meta property="twitter:title" content="<?= $lang[$pagename]['title'] ?> | CZVU">
-    <meta property="twitter:description" content="<?= $lang[$pagename]['description']?>">
+    <meta property="twitter:url" content="<?= $siteUrl?>">
+    <meta property="twitter:title" content="<?= $pageTitle ?> | <?= $siteName ?>">
+    <meta property="twitter:description" content="<?= $pageDescription?>">
     <meta property="twitter:image" content="<?= $checkMetaImg?>">    
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
@@ -52,7 +53,7 @@
 	?>
 
 	<script src="assets/js/jquery-3.7.0.min.js"></script>
-	<script src="https://www.google.com/recaptcha/api.js?render=6LdKF0YjAAAAAPh5asW9ZV3IZMxTOnxs6QdXXvhJ"></script>
+	<!-- <script src="https://www.google.com/recaptcha/api.js?render=6LdKF0YjAAAAAPh5asW9ZV3IZMxTOnxs6QdXXvhJ"></script> -->
 	
 </head>
-<body class="<?php echo $pagename;?>-page">
+<body class="<?= $pagename;?>-page">

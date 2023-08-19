@@ -1,4 +1,4 @@
-<?php include('includes/global-header.php'); ?>
+<?php include 'includes/global-header.php'; ?>
    <div class="layout-container">
         <?php
             require_once "templates/header.php";
@@ -24,20 +24,20 @@
             </section>
             <section class="action-cards-container">
                 <div class="action-cards">
-                    <div class="action-card">
+                    <a href="projekti" class="action-card">
                         <div class="action-card-content">
                             <h3>Interested in culture?</h3>
-                            <a href="/projekti" class="action-link">Check out our projects</a>
+                            <p class="action-link">Check out our projects</p>
                         </div>
                         <img src="assets/images/picture-silhouette.svg" alt="">
-                    </div>
-                    <div class="action-card">
+                    </a>
+                    <a href="upoznajte-tim" class="action-card">
                         <div class="action-card-content">
                             <h3>People for culture!</h3>
-                            <a href="/upoznajte-tim" class="action-link">Meet the team</a>
+                            <p class="action-link">Meet the team</p>
                         </div>
                         <img src="assets/images/user-silhouette.svg" alt="">
-                    </div>
+                    </a>
                 </div>
             </section>
         </main>
@@ -45,4 +45,4 @@
             require_once "templates/footer.php";
         ?>
     </div>
-    <?php include('includes/global-footer.php'); ?>
+    <?php include 'includes/global-footer.php'; ?>

@@ -79,7 +79,7 @@ fetch(requestUrl)
               <a href="https://www.facebook.com/sharer.php?u=${window.location.href}&t=Home&v=3" target="_blank"><i class="ri-facebook-line"></i></a>
               <a href="https://www.linkedin.com/shareArticle?mini=true&url=${window.location.href}&title=${post.title.rendered}" target="_blank"><i class="ri-linkedin-line"></i></a>
               <a href="https://twitter.com/intent/tweet?text=${post.title.rendered}%20${window.location.href}" target="_blank"><i class="ri-twitter-line"></i></a>
-              <a href="viber://forward?text=${window.location.href}"><img src="../shared/assets/icons/viber.svg"></a>
+              <a href="viber://forward?text=${window.location.href}"><img src="assets/icons/viber.svg"></a>
               <a href="whatsapp://send?text=${window.location.href}"><i class="ri-whatsapp-line"></i></a>
             </div>
           </div>

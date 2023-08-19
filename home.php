@@ -25,40 +25,40 @@
                 <div class="owl-carousel main-slider">
                     <div class="slide we-are-slide">
                         <h1>We are the <strong>people</strong> who do a lot <strong>for culture!</strong></h1>
-                        <a href="/upoznajte-tim" class="action-link">Check us out</a>
+                        <a href="upoznajte-tim" class="action-link">Check us out</a>
                     </div>
                 </div>
             </section>
             <section class="action-cards-container">
                 <div class="action-cards">
-                    <div class="action-card">
+                    <a href="projekti" href="projekti" class="action-card">
                         <div class="action-card-content">
                             <h3>Interested in culture?</h3>
-                            <a href="projekti" class="action-link">Check out our projects</a>
+                            <p class="action-link">Check out our projects</p>
                         </div>
                         <img src="assets/images/picture-silhouette.svg" alt="">
-                    </div>
-                    <div class="action-card">
+                    </a>
+                    <a href="kontakt" class="action-card">
                         <div class="action-card-content">
                             <h3>Want to get involved?</h3>
-                            <a href="kontakt" class="action-link">Make a move, call us</a>
+                            <p class="action-link">Make a move, call us</p>
                         </div>
                         <img src="assets/images/s-silhouette.svg" alt="">
-                    </div>
-                    <div class="action-card">
+                    </a>
+                    <a href="vijesti" class="action-card">
                         <div class="action-card-content">
                             <h3>Want to support?</h3>
-                            <a href="vijesti" class="action-link">See who else did it</a>
+                            <p class="action-link">See who else did it</p>
                         </div>
                         <img src="assets/images/heart-silhouette.svg" alt="">
-                    </div>
-                    <div class="action-card">
+                    </a>
+                    <a href="umjetnici" class="action-card">
                         <div class="action-card-content">
                             <h3>Artists who participated?</h3>
-                            <a href="umjetnici" class="action-link">Check them out</a>
+                            <p class="action-link">Check them out</p>
                         </div>
                         <img src="assets/images/user-silhouette.svg" alt="">
-                    </div>
+                    </a>
                 </div>
             </section>
             <div class="background-img background-right">
@@ -162,7 +162,7 @@
     <?php include('includes/global-footer.php'); ?>
     <script>
         $('.main-slider').owlCarousel({
-            loop: true,
+            loop: false,
             margin: 10,
             nav: true,
             dots: true,

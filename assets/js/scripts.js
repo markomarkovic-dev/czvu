@@ -1,5 +1,3 @@
-export const rootPathjs = "<?= $rootPath?>";
-
 $(document).ready(function ($) {
   $('.open-menu').click(function () {
     $('.slide-menu').removeClass('show');
@@ -103,6 +101,12 @@ $(document).ready(function ($) {
   $('.submenu').click(function () {
     $(this).toggleClass('show');
   });
+
+  if ($(document).scrollTop() >= 30) {
+    $('header').addClass('transparent-disabled');
+  } else {
+    $('header').removeClass('transparent-disabled');
+  }
 
   $(document).scroll(function () {
     if ($(this).scrollTop() >= 30) {

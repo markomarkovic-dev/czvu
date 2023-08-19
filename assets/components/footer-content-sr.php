@@ -1,7 +1,7 @@
 <div class="footer-container">
     <div class="footer-row">
         <div class="footer-column">
-            <img class="footer-logo" src="<?= $rootPath ?>shared/assets/images/logo.svg" alt="">
+            <img class="footer-logo" src="assets/images/logo.svg" alt="">
         </div>
         <div class="footer-column footer-column-link">
             <a href="tel:+387 51 348 807"><i class="ri-phone-line"></i> +387 51 348 807</a>

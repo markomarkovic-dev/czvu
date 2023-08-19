@@ -16,6 +16,9 @@
         require_once "templates/footer.php";
         ?>
     </div>
+    <script>
+        let backendUrl = "<?= $backendUrl?>";
+    </script>
     <script src="assets/js/all-posts.js" type="module"></script>
 
 <?php include('includes/global-footer.php'); ?>

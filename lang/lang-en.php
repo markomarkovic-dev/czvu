@@ -39,8 +39,8 @@
 		  ),
 
 		  'projekat' => array(
-			'title' => (isset($title)) ? $title : "CZVU",
-			'description' => (isset($description)) ? $description : "CZVU", 
+			'title' => (isset($title)) ? $title : $siteName,
+			'description' => (isset($description)) ? $description : $siteName, 
 		  ),
 
 		  'vijesti' => array(
@@ -54,8 +54,8 @@
 		  ),
 
 		  'clan' => array(
-			'title' => (isset($title)) ? $title : "CZVU",
-			'description' => (isset($description)) ? $description : "CZVU", 
+			'title' => (isset($title)) ? $title : $siteName,
+			'description' => (isset($description)) ? $description : $siteName, 
 		  ),
 
 		  'centar-vizuelnih-umjetnosti' => array(
@@ -69,8 +69,8 @@
 		  ),
 		  		  
 		  'post' => array(
-			'title' => (isset($title)) ? $title : "CZVU",
-			'description' => (isset($description)) ? $description : "CZVU", 
+			'title' => (isset($title)) ? $title : $siteName,
+			'description' => (isset($description)) ? $description : $siteName, 
 		  ),
 );
 

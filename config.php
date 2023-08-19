@@ -1,17 +1,29 @@
 <?php
 //global site name		
-$sitename = "CZVU";
+$siteName = "CZVU";
 $mainlang = 'sr';
+
+$siteUrl = "https://cvupage.hardcode.solution";
+$backendUrl = "https://cvu.hardcode.solutions";
+
 //posjeceni url
 $visitor_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "http" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+// Ukloni zadnja dva dijela URL-a - potrebno za promjenu jezika
+$parts = explode('/', rtrim($visitor_link, '/'));
+array_pop($parts); // Ukloni zadnji dio
+array_pop($parts); // Ukloni predzadnji dio
+$cleanUrl = implode('/', $parts) . '/';
+
 // uklanjanje parametara url-a
 $url = strtok($visitor_link, '?');
 // folder/jezik 
 $language = basename(dirname($url));
-var_dump($language);
+//$lang = $language;
+//echo $language;
 $pagename = basename($url);
 //naziv stranice/fajla bez ekstenzije
-$pagename = preg_replace('/\\.[^.\\s]{3,4}$/', '', $pagename);
+//$pagename = preg_replace('/\\.[^.\\s]{3,4}$/', '', $pagename); // potrebno u slucaju da url sadrzi .php ekstenziju
 //include odgovarajuceg jezika
 include('lang/lang-'.$language.'.php');
 // include('lang/lang-en.php');

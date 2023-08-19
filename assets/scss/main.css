@@ -6,7 +6,7 @@
   font-size: 62.5%;
 }
 
-p, a, button, input, textarea {
+p, a, li, button, input, textarea {
   font-size: 1.6rem;
 }
 
@@ -194,6 +194,7 @@ h2.section-heading strong {
   color: #eb4836;
   font-weight: 700;
   display: inline-block;
+  transition: all 0.1s linear;
 }
 .action-link::after {
   content: "\ea70";
@@ -228,6 +229,7 @@ body {
   padding-left: 4.8rem;
   padding-right: 4.8rem;
   padding-top: 4.8rem;
+  min-height: 100dvh;
 }
 @media (max-width: 991px) {
   .layout-container {
@@ -297,6 +299,7 @@ body {
   display: flex;
   align-items: center;
   flex-basis: 100%;
+  isolation: isolate;
 }
 @media (max-width: 650px) {
   .action-cards .action-card {
@@ -312,7 +315,7 @@ body {
   position: absolute;
   right: 2rem;
   max-height: 80%;
-  z-index: 0;
+  z-index: -1;
 }
 .action-cards .action-card h3,
 .action-cards .action-card a {
@@ -321,6 +324,11 @@ body {
 }
 .action-cards .action-card a {
   font-weight: 700;
+}
+.action-cards .action-card:hover .action-link::after {
+  margin-left: 0.3rem;
+  display: inline-block;
+  color: #eb4836;
 }
 .action-cards .action-card a,
 .action-cards .action-card [class^=ri-] {
@@ -569,7 +577,7 @@ header {
 }
 header.transparent-disabled {
   background-color: white;
-  box-shadow: 0px 0px 2rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 1rem 2rem rgba(0, 0, 0, 0.1);
 }
 header .header-container {
   display: flex;
@@ -591,6 +599,9 @@ header .logo {
 }
 
 .header-left {
+  display: flex;
+}
+.header-left > a {
   display: flex;
 }
 .header-right {
@@ -1152,7 +1163,23 @@ footer {
 }
 
 .post-wrapper p {
-  margin-bottom: 15px;
+  margin-bottom: 1.5rem;
+}
+.post-wrapper p span, .post-wrapper p del, .post-wrapper p strong {
+  font-size: inherit;
+}
+.post-wrapper p a {
+  text-decoration: underline;
+  color: #eb4836;
+}
+.post-wrapper ul, .post-wrapper ol {
+  padding-left: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+.post-wrapper hr {
+  margin-bottom: 1.5rem;
+  border: 0;
+  border-bottom: 1px solid #e1e1e1;
 }
 .post-wrapper > div {
   font-size: 1.6rem;
@@ -1404,6 +1431,7 @@ footer {
   height: 100%;
   border-radius: 1.6rem;
   aspect-ratio: 1;
+  cursor: pointer;
 }
 .gallery-caption {
   font-size: 1.5rem;
@@ -1529,6 +1557,9 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 }
 .input-wrapper:focus-within label {
   color: white;
+}
+.input-wrapper.hidden-field {
+  display: none;
 }
 
 button, .btn {

@@ -5,7 +5,7 @@ Options +FollowSymlinks
 #RewriteCond %{HTTPS} off
 #RewriteCond %{HTTP:X-Forwarded-Proto} !https
 
-ErrorDocument 404 https://%{HTTP_HOST}/error-404.php
+#ErrorDocument 404 https://%{HTTP_HOST}/error-404.php
 
 # Remove .php extension
 RewriteCond %{REQUEST_FILENAME} !-f

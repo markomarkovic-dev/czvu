@@ -1,15 +1,7 @@
 <?php
-    $visitor_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "http" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-    $url2 = strtok($visitor_link, '?');
-    $language = basename(dirname($url2));
-    $languageCategory = [
-        'en' => 'categories=15',
-        'sr' => 'categories=3',
-    ];
+    include 'post-config.php';
+    $apiUrl = "$backendUrl/wp-json/wp/v2/projekti";
 
-    $apiUrl = 'https://cvu.hardcode.solutions/wp-json/wp/v2/projekti';
-
-    $url = 'http//' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
     $queries = array();
     parse_str($_SERVER['QUERY_STRING'], $queries);
 
@@ -32,10 +24,9 @@
     $formattedDate = $day . '.' . $month . '.' . $year . '.';
 
     $featureMediaImage = isset($post['_embedded']['wp:featuredmedia']) ? $post['_embedded']['wp:featuredmedia'][0]['source_url'] : 'assets/images/no-image.svg';
+    include('includes/global-header.php');
 ?>
 
-
-<?php include('includes/global-header.php'); ?>
     <div class="layout-container">
         <?php
         require_once "templates/header.php";

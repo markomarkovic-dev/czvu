@@ -1,6 +1,6 @@
 function galleryImage() {
 
-    var galleryLinks = $('.gallery-item a img');
+    var galleryLinks = $('.gallery-item img');
     var currentIndex;
   
     galleryLinks.click(function(event) {

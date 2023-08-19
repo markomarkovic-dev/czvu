@@ -1,15 +1,13 @@
 <?php
-    $visitor_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "http" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-    $url2 = strtok($visitor_link, '?');
-    $postLanguage = basename(dirname($url2));
+    require 'post-config.php';
+
     $postLanguageCategory = [
         'en' => 'categories=15',
         'sr' => 'categories=3',
     ];
 
-    $apiUrl = 'https://cvu.hardcode.solutions/wp-json/wp/v2/posts';
+    $apiUrl = "$backendUrl/wp-json/wp/v2/posts";
 
-    $url = 'http//' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
     $queries = array();
     parse_str($_SERVER['QUERY_STRING'], $queries);
 
@@ -24,8 +22,8 @@
     $unwantedElements = array("&nbsp;", "<br>", "<br/>", "<p>", "</p>");
     $cleanedString = str_replace($unwantedElements, "",  $descriptionString);
 
-    $title = $post['title']['rendered'];
-    $description = $cleanedString;
+    $postTitle = $post['title']['rendered'];
+    $postDescription = $cleanedString;
     
     $date = new DateTime($post['date']);
     $day = $date->format('d');
@@ -34,10 +32,9 @@
     $formattedDate = $day . '.' . $month . '.' . $year . '.';
 
     $featureMediaImage = isset($post['_embedded']['wp:featuredmedia']) ? $post['_embedded']['wp:featuredmedia'][0]['source_url'] : 'assets/images/no-image.svg';
+    include 'includes/global-header.php';
 ?>
 
-
-<?php include('includes/global-header.php'); ?>
     <div class="layout-container">
         <?php
         require_once "templates/header.php";
@@ -55,11 +52,11 @@
                         <div class="post-share">
                           <p>Share: </p>
                           <div class="share-icons">
-                            <a href="https://www.facebook.com/sharer.php?u=' . $url . '&t=Home&v=3" target="_blank"><i class="ri-facebook-line"></i></a>
-                            <a href="https://www.linkedin.com/shareArticle?mini=true&url=' . $url . '&title=' . $post['title']['rendered'] . '" target="_blank"><i class="ri-linkedin-line"></i></a>
-                            <a href="https://twitter.com/intent/tweet?text=' . $post['title']['rendered'] . '%20' . $url . '" target="_blank"><i class="ri-twitter-line"></i></a>
-                            <a href="viber://forward?text=' . $url . '"><img src="assets/icons/viber.svg"></a>
-                            <a href="whatsapp://send?text=' . $url . '"><i class="ri-whatsapp-line"></i></a>
+                            <a href="https://www.facebook.com/sharer.php?u=' . $visitor_link . '&t=' . $post['title']['rendered'] . '&v=3" target="_blank"><i class="ri-facebook-line"></i></a>
+                            <a href="https://www.linkedin.com/shareArticle?mini=true&url=' . $visitor_link . '&title=' . $post['title']['rendered'] . '" target="_blank"><i class="ri-linkedin-line"></i></a>
+                            <a href="https://twitter.com/intent/tweet?text=' . $post['title']['rendered'] . '%20' . $visitor_link . '" target="_blank"><i class="ri-twitter-line"></i></a>
+                            <a href="viber://forward?text=' . $visitor_link . '"><img src="assets/icons/viber.svg"></a>
+                            <a href="whatsapp://send?text=' . $visitor_link . '"><i class="ri-whatsapp-line"></i></a>
                           </div>
                         </div>
                       </div>
