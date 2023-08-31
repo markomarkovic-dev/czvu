@@ -23,13 +23,13 @@ $members = json_decode(file_get_contents($requestUrlMembers), true);
         ?>
         <main>
             <section>
-                <h1 class="section-heading">We are the <strong>people</strong> who do a lot <strong>for culture</strong></h1>
+                <h1 class="section-heading"><?= $lang['global']['heading']?></h1>
                 <div class="background-img background-right">
                     <div class="background-wrapper">
                         <img src="assets/images/grafika-desna.svg" alt="">
                     </div>
                 </div>
-                <h2 class="section-heading">Founders of the center for visual art</h2>
+                <h2 class="section-heading"><?= $lang[$pagename]['founders-of']?></h2>
                 <div id="founders" class="members">
                  <?php
                         foreach ($members as $member) {
@@ -55,7 +55,7 @@ $members = json_decode(file_get_contents($requestUrlMembers), true);
                         }
                     ?>
                 </div>
-                <h2 class="section-heading">Members of the center for visual art</h2>
+                <h2 class="section-heading"><?= $lang[$pagename]['members-of']?></h2>
                 <div id="members" class="members">
                 <?php
                         foreach ($members as $member) {

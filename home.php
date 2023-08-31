@@ -4,7 +4,7 @@
     $language = basename(dirname($url));
     $languageCategory = [
         'en' => 'categories=15',
-        'sr' => 'categories=15',
+        'sr' => 'categories=3',
     ];
 
     $apiUrl = 'https://cvu.hardcode.solutions/wp-json/wp/v2/posts';
@@ -24,8 +24,8 @@
             <section class="landing-section">
                 <div class="owl-carousel main-slider">
                     <div class="slide we-are-slide">
-                        <h1>We are the <strong>people</strong> who do a lot <strong>for culture!</strong></h1>
-                        <a href="upoznajte-tim" class="action-link">Check us out</a>
+                        <h1><?= $lang['global']['heading']?></h1>
+                        <a href="upoznajte-tim" class="action-link"><?= $lang[$pagename]['subheading']?></a>
                     </div>
                 </div>
             </section>
@@ -33,29 +33,29 @@
                 <div class="action-cards">
                     <a href="projekti" href="projekti" class="action-card">
                         <div class="action-card-content">
-                            <h3>Interested in culture?</h3>
-                            <p class="action-link">Check out our projects</p>
+                            <h3><?= $lang['global']['interested']?></h3>
+                            <p class="action-link"><?= $lang['global']['check-projects']?></p>
                         </div>
                         <img src="assets/images/picture-silhouette.svg" alt="">
                     </a>
                     <a href="kontakt" class="action-card">
                         <div class="action-card-content">
-                            <h3>Want to get involved?</h3>
-                            <p class="action-link">Make a move, call us</p>
+                            <h3><?= $lang[$pagename]['involved']?></h3>
+                            <p class="action-link"><?= $lang[$pagename]['call-us']?></p>
                         </div>
                         <img src="assets/images/s-silhouette.svg" alt="">
                     </a>
                     <a href="vijesti" class="action-card">
                         <div class="action-card-content">
-                            <h3>Want to support?</h3>
-                            <p class="action-link">See who else did it</p>
+                            <h3><?= $lang[$pagename]['support-us']?></h3>
+                            <p class="action-link"><?= $lang[$pagename]['supporters']?></p>
                         </div>
                         <img src="assets/images/heart-silhouette.svg" alt="">
                     </a>
-                    <a href="umjetnici" class="action-card">
+                    <a href="upoznajte-tim" class="action-card">
                         <div class="action-card-content">
-                            <h3>Artists who participated?</h3>
-                            <p class="action-link">Check them out</p>
+                            <h3><?= $lang[$pagename]['participated']?></h3>
+                            <p class="action-link"><?= $lang[$pagename]['participants']?></p>
                         </div>
                         <img src="assets/images/user-silhouette.svg" alt="">
                     </a>
@@ -67,7 +67,7 @@
                 </div>
             </div>
             <section>
-                <h2 class="section-heading">Latest news</h2>
+                <h2 class="section-heading"><?= $lang[$pagename]['latest-news']?></h2>
                 <div class="blog-latest" id="blog-latest">
                 <?php
                     foreach ($posts as $post4) {
@@ -95,7 +95,7 @@
                     }
                     ?>
                 </div>
-                <a href="vijesti.php" class="action-link blog-more">See more news</a>
+                <a href="vijesti.php" class="action-link blog-more"><?= $lang[$pagename]['more-news']?></a>
             </section>
             <div class="background-img background-left">
                 <div class="background-wrapper">
@@ -103,7 +103,7 @@
                 </div>
             </div>
             <section class="testimonial-section">
-                <h2 class="section-heading">What they say about us</h2>
+                <h2 class="section-heading"><?= $lang[$pagename]['others-say']?></h2>
                 <div class="testimonials">
                     <div class="testimonials-images">
                         <img src="assets/images/testimonials.png" alt="">
@@ -145,7 +145,7 @@
                 </div>
             </div>
             <section>
-                <h2 class="section-heading">Who supported us</h2>
+                <h2 class="section-heading"><?= $lang[$pagename]['supporters']?></h2>
                 <div class="support-partners">
                     <img src="assets/images/nprs.png" alt="">
                     <img src="assets/images/ubl.svg" alt="">

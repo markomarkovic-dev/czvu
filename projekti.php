@@ -16,7 +16,7 @@ $projects = json_decode(file_get_contents($requestUrlProjects), true);
     <?php require_once "templates/header.php"; ?>
     <main>
         <section>
-            <h1 class="section-heading">Latest <strong>news & activities</strong></h1>
+            <h1 class="section-heading"><?= $lang[$pagename]['heading']?></h1>
             <div class="projects" id="projects">
             <?php
                 foreach ($projects as $project) {

@@ -15,10 +15,10 @@
     </div>
     <div class="footer-row footer-row-bottom">
         <div class="footer-column">
-            <p>&copy; <?= date("Y") ?> Center for Visual Art</p>
+            <p>&copy; <?= date("Y") ?> <?= $lang['global']['copy'] ?></p>
         </div>
         <div class="footer-column">
-            <p>All rights reserved</p>
+            <p><?= $lang['global']['rights'] ?></p>
         </div>
     </div>
 </div>

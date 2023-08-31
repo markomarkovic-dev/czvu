@@ -1533,6 +1533,10 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
   -webkit-transition: background-color 5000s ease-in-out 0s;
   transition: background-color 5000s ease-in-out 0s;
 }
+input.disabled, textarea.disabled {
+  opacity: 0.65;
+  pointer-events: none;
+}
 
 .input-wrapper {
   display: flex;
@@ -1658,6 +1662,11 @@ button, .btn {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+}
+
+.help-block.with-errors li {
+  color: #eb4836;
+  list-style: none;
 }
 
 .members {

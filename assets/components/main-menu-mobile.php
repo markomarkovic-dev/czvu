@@ -5,20 +5,20 @@
             <img src="assets/images/logo.svg" alt="" class="logo">
         </a>
         <div class="mobile-menu-items">
-            <a href="home" class="slide-menu-item <?= activePage('home'); ?>">Naslovna</a>
-            <a href="projekti" class="slide-menu-item <?= activePage('projekti'); ?>">Projekti</a>
-            <a href="vijesti" class="slide-menu-item <?= activePage('vijesti'); ?>">Vijesti</a>
+            <a href="home" class="slide-menu-item <?= activePage('home'); ?>"><?= $lang['global']['nav-home']?></a>
+            <a href="projekti" class="slide-menu-item <?= activePage('projekti'); ?>"><?= $lang['global']['nav-projects']?></a>
+            <a href="vijesti" class="slide-menu-item <?= activePage('vijesti'); ?>"><?= $lang['global']['nav-news']?></a>
             <div class="slide-menu-accordion accordion">
-                <span class="slide-menu-item accordion-name">O nama</span>
+                <span class="slide-menu-item accordion-name"><?= $lang['global']['nav-about']?></span>
                 <div class="accordion-body">
                     <div class="submenu-content">
                         <a href="centar-vizuelnih-umjetnosti" class="submenu-link">
                             <i class="ri-home-smile-2-line"></i>
-                            <span>Upoznajte centar</span>
+                            <span><?= $lang['global']['nav-meet-center']?></span>
                         </a>
                         <a href="upoznajte-tim" class="submenu-link">
                             <i class="ri-team-line"></i>
-                            <span>Upoznajte tim</span>
+                            <span><?= $lang['global']['nav-meet-team']?></span>
                         </a>
                     </div>
                 </div>

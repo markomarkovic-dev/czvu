@@ -5,7 +5,7 @@
         ?>
         <main>
             <section>
-                <h1 class="section-heading">Latest <strong>news & activities</strong></h1>
+                <h1 class="section-heading"><?= $lang[$pagename]['heading']?></h1>
                 <div class="blog" id="blog"></div>            
                 <div id="loader">
                     <span class="circle"></span>
