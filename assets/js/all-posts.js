@@ -4,7 +4,7 @@ const languageCategory = {
   sr: 'categories=3',
 };
 
-const apiUrl = 'https://cvu.hardcode.solutions/wp-json/wp/v2/posts';
+const apiUrl = `${backendUrl}/wp-json/wp/v2/posts`;
 
 let currentPage = 1;
 const perPage = 4;

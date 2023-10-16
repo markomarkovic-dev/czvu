@@ -24,11 +24,11 @@
                 </div>
             </div>
             <div class="slide-menu-accordion accordion">
-                <span class="slide-menu-item accordion-name">Jezik</span>
+                <span class="slide-menu-item accordion-name"><?= $lang['global']['language']?></span>
                 <div class="accordion-body">
                     <div class="lang-switch">
-                        <a href="<?= $cleanUrl?>en/home" class="language <?= $language === 'en' ? 'active' : '' ?>">ENG</a>
-                        <a href="<?= $cleanUrl?>sr/home" class="language <?= $language === 'sr' ? 'active' : '' ?>">SRB</a>
+                        <a href="<?= switchLang("/sr/", '/en/')?>" class="language <?= $language === 'en' ? 'active' : '' ?>">ENG</a>
+                        <a href="<?= switchLang("/en/", '/sr/')?>" class="language <?= $language === 'sr' ? 'active' : '' ?>">SRB</a>
                     </div>
                 </div>
             </div>

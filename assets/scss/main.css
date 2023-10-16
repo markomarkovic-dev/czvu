@@ -1162,15 +1162,22 @@ footer {
   margin-top: 4.8rem;
 }
 
-.post-wrapper p {
+.post-wrapper p, .post-wrapper li {
   margin-bottom: 1.5rem;
 }
-.post-wrapper p span, .post-wrapper p del, .post-wrapper p strong {
+.post-wrapper p span, .post-wrapper p del, .post-wrapper p strong, .post-wrapper li span, .post-wrapper li del, .post-wrapper li strong {
   font-size: inherit;
 }
-.post-wrapper p a {
-  text-decoration: underline;
+.post-wrapper a {
+  font-size: inherit;
   color: #eb4836;
+}
+.post-wrapper a:hover {
+  text-decoration: underline;
+}
+.post-wrapper iframe, .post-wrapper video {
+  width: 100%;
+  border: 0;
 }
 .post-wrapper ul, .post-wrapper ol {
   padding-left: 2.5rem;
@@ -1338,6 +1345,10 @@ footer {
 }
 .post-section .post-share .share-icons a {
   display: flex;
+}
+.post-section .post-share .share-icons a:hover {
+  color: unset;
+  text-decoration: unset;
 }
 .post-section .post-share .share-icons img {
   max-height: 1.7rem;

@@ -13,7 +13,7 @@ $postMeta = array(
     'description' => isset($description) ? $description : 'CZVU', // Set a default value if $description is not defined
 );
 
-$apiUrl = 'https://cvu.hardcode.solutions/wp-json/wp/v2/posts';
+$apiUrl = "$backendUrl/wp-json/wp/v2/posts";
 
 $posts_per_page = 4; // Number of posts to fetch per request
 $currentPage = isset($_GET['page']) ? intval($_GET['page']) : 1;

@@ -1,5 +1,4 @@
 <?php
-$postTitle;
 $postDescription;
 	$lang = array(
 		'global' => array(
@@ -10,6 +9,7 @@ $postDescription;
 			'nav-contact' => 'Contact',
 			'nav-meet-center' => 'Meet the center',
 			'nav-meet-team' => 'Meet the team',
+			'language' => 'Language',
 			'copy' => 'Center for Visual Art',
 			'rights' => 'All rights reserved',
             'captcha-text' => 'Website je zaštićen',
@@ -36,6 +36,9 @@ $postDescription;
 			'message-error' => 'Error while trying to send, please try again.',
 			'field-required' => 'Field required',
 			'email-error' => 'Email not valid',
+
+			
+			'field-check' => "Check all fields",
 
 		),
 

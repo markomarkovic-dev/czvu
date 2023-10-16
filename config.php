@@ -9,11 +9,11 @@ $backendUrl = "https://cvu.hardcode.solutions";
 //posjeceni url
 $visitor_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "http" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
-// Ukloni zadnja dva dijela URL-a - potrebno za promjenu jezika
-$parts = explode('/', rtrim($visitor_link, '/'));
-array_pop($parts); // Ukloni zadnji dio
-array_pop($parts); // Ukloni predzadnji dio
-$cleanUrl = implode('/', $parts) . '/';
+function switchLang($currentLang, $otherLang) {
+	global $visitor_link;
+	$replacedUrl = str_replace($currentLang, $otherLang, $visitor_link);
+	return $replacedUrl;
+}
 
 // uklanjanje parametara url-a
 $url = strtok($visitor_link, '?');

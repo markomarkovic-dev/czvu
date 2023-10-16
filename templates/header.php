@@ -44,8 +44,8 @@
                     <i class="ri-earth-line"></i>
                     <div class="slide-menu" data-menu="language-menu">
                         <div class="slide-menu-body">
-                            <a href="<?= $cleanUrl?>en/home" class="slide-menu-item <?= $language === 'en' ? 'active' : '' ?>">ENG</a>
-                            <a href="<?= $cleanUrl?>sr/home" class="slide-menu-item <?= $language === 'sr' ? 'active' : '' ?>">SRB</a>
+                            <a href="<?= switchLang("/sr/", '/en/')?>" class="slide-menu-item <?= $language === 'en' ? 'active' : '' ?>">ENG</a>
+                            <a href="<?= switchLang("/en/", '/sr/')?>" class="slide-menu-item <?= $language === 'sr' ? 'active' : '' ?>">SRB</a>
                         </div>
                     </div>
                 </div>

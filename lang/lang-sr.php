@@ -8,6 +8,7 @@
 			'nav-contact' => 'Kontakt',
 			'nav-meet-center' => 'Upoznajte centar',
 			'nav-meet-team' => 'Upoznajte tim',
+			'language' => 'Jezik',
 			'copy' => 'Centar za vizuelnu umjetnost',
 			'rights' => 'Sva prava zadržana',
             'captcha-text' => 'Website je zaštićen',
@@ -34,6 +35,8 @@
 			'message-error' => 'Greška u slanju, probajte ponovo.',
 			'field-required' => 'Polje je obavezno',
 			'email-error' => 'Email nije validan',
+
+			'field-check' => "Provjerite sva polja",
 		),
 
 		'home' => array(

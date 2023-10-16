@@ -10,21 +10,23 @@
     $data = json_decode(file_get_contents($requestUrl), true);
     $post = $data[0];
 
+    $titleString = strip_tags($post['title']['rendered']);
     $descriptionString = strip_tags($post['excerpt']['rendered']);
-    $unwantedElements = array("&nbsp;", "<br>", "<br/>", "<p>", "</p>");
-    $cleanedString = str_replace($unwantedElements, "",  $descriptionString);
-
-    $title = $post['title']['rendered'];
-    $description = $cleanedString;
     
-    $date = new DateTime($post['date']);
-    $day = $date->format('d');
-    $month = $date->format('m');
-    $year = $date->format('Y');
-    $formattedDate = $day . '.' . $month . '.' . $year . '.';
+    $unwantedElements = array("&nbsp;", "<br>", "<br/>", "<p>", "</p>", "<strong>", "</strong>", "[…]");
+    
+    //Očisti stringove od HTML tagova
+    $cleanedDescString = str_replace($unwantedElements, "",  $descriptionString);
+    $cleanedTitleString = str_replace($unwantedElements, "",  $titleString);
+    
+    $postTitle = $cleanedTitleString;
+    $postDescription = $cleanedDescString;
 
     $featureMediaImage = isset($post['_embedded']['wp:featuredmedia']) ? $post['_embedded']['wp:featuredmedia'][0]['source_url'] : 'assets/images/no-image.svg';
     include('includes/global-header.php');
+
+    //u slučaju da je na wordpressu postavljen direktan link prema fajlu/slici, uredi ga da cilja na backend tj lokaciju Wordpress-a gdje je i sam fajl.
+    $postContent = str_replace($siteUrl, $backendUrl, $post['content']['rendered']);  
 ?>
 
     <div class="layout-container">
@@ -39,13 +41,13 @@
                     <div class="post-wrapper">
                         <div class="project-header">
                         <div class="project-title">
-                            <h1>' . $post['title']['rendered'] . '</h1>
+                            <h1>' . $postTitle . '</h1>
                             <h2>' . $post['acf']['podnaslov'] . '</h2>
                         </div>
                         <i class="ri-arrow-down-line"></i>
                         <img src="' . $featureMediaImage . '" />
                         </div>
-                        <div>' . $post['content']['rendered'] . '</div>
+                        <div>' . $postContent . '</div>
                     </div>';
                     echo $postEl;
                     ?>

@@ -78,17 +78,26 @@
 }
 
 .post-wrapper {
-  p {
+  p, li {
     margin-bottom: 1.5rem;
 
     span, del, strong {
       font-size: inherit;
     }
+  }
 
-    a {
+  a {
+    font-size: inherit;
+    color: $color-red;
+
+    &:hover {
       text-decoration: underline;
-      color: $color-red;
     }
+  }
+
+  iframe, video {
+    width: 100%;
+    border: 0;
   }
 
   ul, ol {
@@ -272,6 +281,11 @@
 
       a {
         display: flex;
+
+        &:hover {
+          color: unset;
+          text-decoration: unset;
+        }
       }
 
       img {

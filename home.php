@@ -1,15 +1,14 @@
 <?php
-    $visitor_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "http" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-    $url = strtok($visitor_link, '?');
-    $language = basename(dirname($url));
+    require 'post-config.php';
+
     $languageCategory = [
         'en' => 'categories=15',
         'sr' => 'categories=3',
     ];
 
-    $apiUrl = 'https://cvu.hardcode.solutions/wp-json/wp/v2/posts';
+    $apiUrl = "$backendUrl/wp-json/wp/v2/posts";
 
-    $requestUrl4posts = $apiUrl . '?per_page=4&_embed&' . $languageCategory[$language];
+    $requestUrl4posts = $apiUrl . '?per_page=4&_embed&' . $languageCategory[$postLanguage];
 
     $posts = json_decode(file_get_contents($requestUrl4posts), true);
 
@@ -71,11 +70,7 @@
                 <div class="blog-latest" id="blog-latest">
                 <?php
                     foreach ($posts as $post4) {
-                        $date = new DateTime($post4['date']);
-                        $day = $date->format('d');
-                        $month = $date->format('m');
-                        $year = $date->format('Y');
-                        $formattedDate = $day . '.' . $month . '.' . $year . '.';
+                    $postDate = formatDate($post4['date']);
 
                         $featureMediaImage4 = isset($post4['_embedded']['wp:featuredmedia']) ? $post4['_embedded']['wp:featuredmedia'][0]['media_details']['sizes']['medium']['source_url'] : 'assets/images/no-image.svg';
 
@@ -87,7 +82,7 @@
                               <div class="post-body">
                                   <a href="post?id=' . $post4['slug'] . '" class="post-title">' . $post4['title']['rendered'] . '</a>
                                   <div class="post-meta">
-                                      <span class="post-date">' . $formattedDate . '</span>
+                                      <span class="post-date">' . $postDate . '</span>
                                   </div>
                               </div>
                           </article>';
@@ -95,7 +90,7 @@
                     }
                     ?>
                 </div>
-                <a href="vijesti.php" class="action-link blog-more"><?= $lang[$pagename]['more-news']?></a>
+                <a href="vijesti" class="action-link blog-more"><?= $lang[$pagename]['more-news']?></a>
             </section>
             <div class="background-img background-left">
                 <div class="background-wrapper">

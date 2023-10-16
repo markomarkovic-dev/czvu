@@ -28,14 +28,19 @@
 
     $shortenedString = substr($post['acf'][$transMember[$postLanguage][1]], 0, 152) . '...';
 
-    $postTitle = $post['title']['rendered'];
-    $postDescription = $shortenedString;
+    $titleString = strip_tags($post['title']['rendered']);
+    $descriptionString = strip_tags($post['excerpt']['rendered']);
     
-    $date = new DateTime($post['date']);
-    $day = $date->format('d');
-    $month = $date->format('m');
-    $year = $date->format('Y');
-    $formattedDate = $day . '.' . $month . '.' . $year . '.';
+    $unwantedElements = array("&nbsp;", "<br>", "<br/>", "<p>", "</p>", "<strong>", "</strong>", "[…]");
+    
+    //Očisti stringove od HTML tagova
+    $cleanedDescString = str_replace($unwantedElements, "",  $descriptionString);
+    $cleanedTitleString = str_replace($unwantedElements, "",  $titleString);
+
+    $postTitle = $cleanedTitleString;
+    $postDescription = $cleanedDescString;
+
+    $postDate = formatDate($post['date']);
 
     $featureMediaImage = isset($post['_embedded']['wp:featuredmedia']) ? $post['_embedded']['wp:featuredmedia'][0]['source_url'] : 'assets/images/no-image.svg';
     include('includes/global-header.php');
@@ -56,11 +61,11 @@
                     global $postLanguage;
                     $member = '
                     <div class="profile-aside">
-                    <img src="' . $featureMediaImage . '" alt="' . ($post['title']['rendered'] ? $post['title']['rendered'] : 'article image') . '" />
+                    <img src="' . $featureMediaImage . '" alt="' . ($postTitle ? $postTitle : 'article image') . '" />
                     ' . $backButton[$postLanguage] . '
                     </div>
                     <div class="post-wrapper">
-                    <h1 class="section-heading">' . $post['title']['rendered'] . '</h1>
+                    <h1 class="section-heading">' . $postTitle . '</h1>
                     <h2 class="section-heading">' . $post['acf'][$transMember[$postLanguage][0]] . '</h2>
                     <div>' . $post['acf'][$transMember[$postLanguage][1]] . '</div>
                     </div>';

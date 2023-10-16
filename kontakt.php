@@ -1,4 +1,39 @@
-<?php include('includes/global-header.php'); ?>
+<?php
+    include 'includes/global-header.php';
+    $message = '';
+    if(isset($_POST['submit'])){
+        $name = $_POST['name'];
+        $surname = $_POST['surname'];
+        $email = $_POST['email'];
+        $phone = $_POST['phone'];
+        $message = $_POST['message'];
+        $honeypot = $_POST['honeypot'];
+
+        // Validate input and check honeypot
+        if(empty($name) || empty($surname) || empty($email) || empty($phone) || empty($message) || !empty($honeypot)){
+            $message = $lang['global']['field-check'];
+        }
+        elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+            $message = $lang['global']['email-error'];
+        }
+        else{
+            // Send the email
+            $to = 'markomarko988@gmail.com'; // Replace with your email address
+            $subject = 'Kontakt forma';
+            $body = "Ime: $name\nPrezime: $surname\nEmail: $email\nTelefon: $phone\nPoruka: $message";
+            $body = iconv(mb_detect_encoding($body, mb_detect_order(), true), "UTF-8", $body);
+            $headers = "From: nopreply@cvu.com\r\n";
+            $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+            if(mail($to, $subject, $body, $headers)){
+                $message = $lang['global']['message-success'];
+            }
+            else{
+                $message = $lang['global']['message-error'];
+            }
+        }
+    }
+?>
+
 <div class="layout-container">
         <?php
             require_once "templates/header.php";
@@ -13,40 +48,6 @@
                 <h1 class="section-heading"><?= $lang[$pagename]['heading']?></h1>
                 <div class="contact-row">
                     <div class="contact-form-column">
-                    <?php
-                    $message = '';
-                    if(isset($_POST['submit'])){
-                        $name = $_POST['name'];
-                        $surname = $_POST['surname'];
-                        $email = $_POST['email'];
-                        $phone = $_POST['phone'];
-                        $message = $_POST['message'];
-                        $honeypot = $_POST['honeypot'];
-
-                        // Validate input and check honeypot
-                        if(empty($name) || empty($surname) || empty($email) || empty($phone) || empty($message) || !empty($honeypot)){
-                            $message = 'Provjerite polja';
-                        }
-                        elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-                            $message = 'Invalid email format.';
-                        }
-                        else{
-                            // Send the email
-                            $to = 'markomarko988@gmail.com'; // Replace with your email address
-                            $subject = 'Kontakt forma';
-                            $body = "Ime: $name\nPrezime: $surname\nEmail: $email\nTelefon: $phone\nPoruka: $message";
-                            $body = iconv(mb_detect_encoding($body, mb_detect_order(), true), "UTF-8", $body);
-                            $headers = "From: nopreply@cvu.com\r\n";
-                            $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
-                            if(mail($to, $subject, $body, $headers)){
-                                $message = $lang['global']['message-success'];
-                            }
-                            else{
-                                $message = $lang['global']['message-error'];
-                            }
-                        }
-                    }
-                    ?>
                     <h2 class="section-heading"><?= $lang[$pagename]['write-us']?></h2>
                     <form method="post" action="" class="contact-form" id="contact-form">
                         <div class="input-wrapper-split">

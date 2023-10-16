@@ -3,6 +3,7 @@
     $checkMetaImg = isset($featureMediaImage) ? $featureMediaImage : "$siteUrl/assets/images/cvu-metaimg.png";
     $pageTitle = isset($postTitle) ? $postTitle : $lang[$pagename]['title'];
     $pageDescription = isset($postDescription) ? $postDescription : $lang[$pagename]['description'];
+    $contentLang = $language === 'en' ? "English" : "Serbian";
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $language;?>">
@@ -16,15 +17,16 @@
     <meta name="description" content="<?= $pageDescription ?>">
     <meta name="keywords" content="">
     <meta name="robots" content="index, follow">
+    <meta name="language" content="<?= $contentLang ?>">
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="<?= $siteUrl?>">
+    <meta property="og:url" content="<?= $visitor_link?>">
     <meta property="og:title" content="<?= $pageTitle ?> | <?= $siteName ?>">
     <meta property="og:description" content="<?= $pageDescription ?> ">
     <meta property="og:image" content="<?= $checkMetaImg?>">
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="<?= $siteUrl?>">
+    <meta property="twitter:url" content="<?= $visitor_link?>">
     <meta property="twitter:title" content="<?= $pageTitle ?> | <?= $siteName ?>">
     <meta property="twitter:description" content="<?= $pageDescription?>">
     <meta property="twitter:image" content="<?= $checkMetaImg?>">    
@@ -52,7 +54,6 @@
 	?>
 
 	<script src="assets/js/jquery-3.7.0.min.js"></script>
-	<!-- <script src="https://www.google.com/recaptcha/api.js?render=6LdKF0YjAAAAAPh5asW9ZV3IZMxTOnxs6QdXXvhJ"></script> -->
 	
 </head>
 <body class="<?= $pagename;?>-page">
