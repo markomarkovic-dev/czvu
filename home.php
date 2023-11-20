@@ -4,6 +4,7 @@
     $languageCategory = [
         'en' => 'categories=15',
         'sr' => 'categories=3',
+        'rs' => 'categories=3',
     ];
 
     $apiUrl = "$backendUrl/wp-json/wp/v2/posts";

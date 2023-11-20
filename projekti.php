@@ -3,7 +3,8 @@ include('includes/global-header.php');
 
 $languageCategory = [
     'en' => 'categories=24',
-    'sr' => 'categories=24',
+    'sr' => 'categories=33',
+    'rs' => 'categories=22',
 ];
 
 $apiUrl = "$backendUrl/wp-json/wp/v2/projekti";

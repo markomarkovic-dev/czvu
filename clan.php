@@ -2,17 +2,23 @@
     require 'post-config.php';
     $backButton = array(
         'sr' => "<a class='back-to' href='upoznajte-tim'><i class='ri-arrow-left-line'></i> Nazad na osnivače i članove</a>",
+        'rs' => "<a class='back-to' href='upoznajte-tim'><i class='ri-arrow-left-line'></i> Назад на осниваче и чланове</a>",
         'en' => "<a class='back-to' href='upoznajte-tim'><i class='ri-arrow-left-line'></i> Back to founders and members</a>",
     );    
       
     $transMember = array(
         'sr' => array(
             "pozicija",
-            "opis"
+            "opis",
+        ),
+        'rs' => array(
+            "позиција",
+            "опис",
+            "име-презиме"
         ),
         'en' => array(
             "position",
-            "description"
+            "description",
         )
     );
 
@@ -44,6 +50,7 @@
 
     $featureMediaImage = isset($post['_embedded']['wp:featuredmedia']) ? $post['_embedded']['wp:featuredmedia'][0]['source_url'] : 'assets/images/no-image.svg';
     include('includes/global-header.php');
+ 
 ?>
     <div class="layout-container">
         <?php
@@ -59,17 +66,17 @@
                 <div id="member">
                 <?php
                     global $postLanguage;
-                    $member = '
-                    <div class="profile-aside">
-                    <img src="' . $featureMediaImage . '" alt="' . ($postTitle ? $postTitle : 'article image') . '" />
-                    ' . $backButton[$postLanguage] . '
-                    </div>
-                    <div class="post-wrapper">
-                    <h1 class="section-heading">' . $postTitle . '</h1>
-                    <h2 class="section-heading">' . $post['acf'][$transMember[$postLanguage][0]] . '</h2>
-                    <div>' . $post['acf'][$transMember[$postLanguage][1]] . '</div>
-                    </div>';
-
+                    $langCheckName = $language === "rs" ? $post["acf"][$transMember[$language][2]] : $post["title"]["rendered"];
+                        $member = '
+                        <div class="profile-aside">
+                            <img src="' . $featureMediaImage . '" alt="' . ($postTitle ? $postTitle : 'article image') . '" />
+                            ' . $backButton[$postLanguage] . '
+                        </div>
+                        <div class="post-wrapper">
+                            <h1 class="section-heading">' . $langCheckName . '</h1>
+                            <h2 class="section-heading">' . $post['acf'][$transMember[$postLanguage][0]] . '</h2>
+                            <div class="member-desc">' . $post['acf'][$transMember[$postLanguage][1]] . '</div>
+                        </div>';
                     echo $member;
                     ?>
                 </div>

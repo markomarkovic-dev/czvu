@@ -1094,10 +1094,14 @@ footer {
   color: rgba(255, 255, 255, 0.5);
 }
 
-.blog-latest, .blog {
+.blog-latest, .blog, .related-posts {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
   gap: 4.8rem;
+}
+
+.related-posts {
+  margin-bottom: 6rem;
 }
 
 .post {
@@ -1123,6 +1127,11 @@ footer {
   -webkit-box-orient: vertical;
   overflow: hidden;
   line-height: 1.2;
+  text-decoration: none !important;
+  color: #1d1d1d;
+}
+.post-body .post-title:hover {
+  color: #eb4836;
 }
 .post-image {
   display: flex;
@@ -1162,49 +1171,49 @@ footer {
   margin-top: 4.8rem;
 }
 
-.post-wrapper p, .post-wrapper li {
+.post-wrapper p, .post-wrapper li, .visual-art-section p, .visual-art-section li {
   margin-bottom: 1.5rem;
 }
-.post-wrapper p span, .post-wrapper p del, .post-wrapper p strong, .post-wrapper li span, .post-wrapper li del, .post-wrapper li strong {
+.post-wrapper p span, .post-wrapper p del, .post-wrapper p strong, .post-wrapper p b, .post-wrapper p em, .post-wrapper li span, .post-wrapper li del, .post-wrapper li strong, .post-wrapper li b, .post-wrapper li em, .visual-art-section p span, .visual-art-section p del, .visual-art-section p strong, .visual-art-section p b, .visual-art-section p em, .visual-art-section li span, .visual-art-section li del, .visual-art-section li strong, .visual-art-section li b, .visual-art-section li em {
   font-size: inherit;
 }
-.post-wrapper a {
+.post-wrapper a, .visual-art-section a {
   font-size: inherit;
   color: #eb4836;
 }
-.post-wrapper a:hover {
+.post-wrapper a:hover, .visual-art-section a:hover {
   text-decoration: underline;
 }
-.post-wrapper iframe, .post-wrapper video {
+.post-wrapper iframe, .post-wrapper video, .visual-art-section iframe, .visual-art-section video {
   width: 100%;
   border: 0;
 }
-.post-wrapper ul, .post-wrapper ol {
+.post-wrapper ul, .post-wrapper ol, .visual-art-section ul, .visual-art-section ol {
   padding-left: 2.5rem;
   margin-bottom: 1.5rem;
 }
-.post-wrapper hr {
+.post-wrapper hr, .visual-art-section hr {
   margin-bottom: 1.5rem;
   border: 0;
   border-bottom: 1px solid #e1e1e1;
 }
-.post-wrapper > div {
+.post-wrapper > div, .visual-art-section > div {
   font-size: 1.6rem;
 }
-.post-wrapper h1, .post-wrapper h2, .post-wrapper h3, .post-wrapper h4, .post-wrapper h5, .post-wrapper h6 {
+.post-wrapper h1, .post-wrapper h2, .post-wrapper h3, .post-wrapper h4, .post-wrapper h5, .post-wrapper h6, .visual-art-section h1, .visual-art-section h2, .visual-art-section h3, .visual-art-section h4, .visual-art-section h5, .visual-art-section h6 {
   margin-bottom: 15px;
 }
-.post-wrapper h1 span, .post-wrapper h2 span, .post-wrapper h3 span, .post-wrapper h4 span, .post-wrapper h5 span, .post-wrapper h6 span {
+.post-wrapper h1 span, .post-wrapper h2 span, .post-wrapper h3 span, .post-wrapper h4 span, .post-wrapper h5 span, .post-wrapper h6 span, .visual-art-section h1 span, .visual-art-section h2 span, .visual-art-section h3 span, .visual-art-section h4 span, .visual-art-section h5 span, .visual-art-section h6 span {
   font-size: inherit;
 }
-.post-wrapper > .section-heading {
+.post-wrapper > .section-heading, .visual-art-section > .section-heading {
   margin-bottom: 4.8rem;
   margin-top: 4.8rem;
 }
-.post-wrapper > .featured-image {
+.post-wrapper > .featured-image, .visual-art-section > .featured-image {
   border-radius: 1.6rem;
 }
-.post-wrapper .project-header {
+.post-wrapper .project-header, .visual-art-section .project-header {
   display: flex;
   align-items: center;
   position: relative;
@@ -1215,18 +1224,18 @@ footer {
   height: calc(100dvh - 9rem);
 }
 @media (max-width: 991px) {
-  .post-wrapper .project-header {
+  .post-wrapper .project-header, .visual-art-section .project-header {
     height: calc(100dvh - 6.7rem);
   }
 }
-.post-wrapper .project-header img {
+.post-wrapper .project-header img, .visual-art-section .project-header img {
   border-radius: 1.6rem;
   -o-object-fit: cover;
      object-fit: cover;
   height: 100%;
   width: 100%;
 }
-.post-wrapper .project-header::before {
+.post-wrapper .project-header::before, .visual-art-section .project-header::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -1235,33 +1244,33 @@ footer {
   border-radius: 1.6rem;
 }
 @media (max-width: 991px) {
-  .post-wrapper .project-header {
+  .post-wrapper .project-header, .visual-art-section .project-header {
     align-items: flex-start;
     justify-content: center;
   }
-  .post-wrapper .project-header::before {
+  .post-wrapper .project-header::before, .visual-art-section .project-header::before {
     background: linear-gradient(180deg, rgba(29, 29, 29, 0.8) 0%, rgba(29, 29, 29, 0) 51.05%);
   }
 }
-.post-wrapper .project-header .project-title {
+.post-wrapper .project-header .project-title, .visual-art-section .project-header .project-title {
   position: absolute;
   padding: 4rem;
   z-index: 1;
 }
-.post-wrapper .project-header .project-title h1 {
+.post-wrapper .project-header .project-title h1, .visual-art-section .project-header .project-title h1 {
   font-size: clamp(2.2rem, 6.6vw, 6.4rem);
   color: #eb4836;
 }
-.post-wrapper .project-header .project-title h2 {
+.post-wrapper .project-header .project-title h2, .visual-art-section .project-header .project-title h2 {
   font-size: clamp(2.2rem, 4vw, 4rem);
   color: white;
 }
 @media (max-width: 991px) {
-  .post-wrapper .project-header .project-title {
+  .post-wrapper .project-header .project-title, .visual-art-section .project-header .project-title {
     text-align: center;
   }
 }
-.post-wrapper .project-header .ri-arrow-down-line {
+.post-wrapper .project-header .ri-arrow-down-line, .visual-art-section .project-header .ri-arrow-down-line {
   color: white;
   position: absolute;
   bottom: 0;
@@ -1271,9 +1280,16 @@ footer {
   padding: 4.2rem;
 }
 @media (max-width: 991px) {
-  .post-wrapper .project-header .ri-arrow-down-line {
+  .post-wrapper .project-header .ri-arrow-down-line, .visual-art-section .project-header .ri-arrow-down-line {
     font-size: 5rem;
   }
+}
+
+.member-desc span, .member-desc i, .member-desc a {
+  margin-bottom: 1.5rem;
+  display: block;
+  font-size: 1.6rem;
+  line-height: 1.6;
 }
 
 #project {
@@ -1783,6 +1799,10 @@ button, .btn {
 }
 #member .back-to:hover [class^=ri-] {
   color: #eb4836;
+}
+
+.members-subheading {
+  margin-bottom: 12rem;
 }
 
 .block-link {

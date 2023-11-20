@@ -27,8 +27,9 @@
                 <span class="slide-menu-item accordion-name"><?= $lang['global']['language']?></span>
                 <div class="accordion-body">
                     <div class="lang-switch">
-                        <a href="<?= switchLang("/sr/", '/en/')?>" class="language <?= $language === 'en' ? 'active' : '' ?>">ENG</a>
-                        <a href="<?= switchLang("/en/", '/sr/')?>" class="language <?= $language === 'sr' ? 'active' : '' ?>">SRB</a>
+                        <a href="<?= switchLang('/' . $language . '/', '/en/')?>" class="language <?= $language === 'en' ? 'active' : '' ?>">ENG</a>
+                        <a href="<?= switchLang('/' . $language . '/', '/sr/')?>" class="language <?= $language === 'sr' ? 'active' : '' ?>">LAT</a>
+                        <a href="<?= switchLang('/' . $language . '/', '/rs/')?>" class="language <?= $language === 'sr-cir' ? 'active' : '' ?>">ЋИР</a>
                     </div>
                 </div>
             </div>

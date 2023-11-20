@@ -1,9 +1,13 @@
 @use '../base/variables' as *;
 
-.blog-latest, .blog {
+.blog-latest, .blog, .related-posts {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
   gap: 4.8rem;
+}
+
+.related-posts {
+  margin-bottom: 6rem;
 }
 
 .post {
@@ -29,6 +33,12 @@
       -webkit-box-orient: vertical;
       overflow: hidden;
       line-height: 1.2;
+      text-decoration: none!important;
+      color: $color-dark;
+
+      &:hover {
+        color: $color-red;
+      }
     }
   }
 
@@ -77,11 +87,11 @@
   margin-top: 4.8rem;
 }
 
-.post-wrapper {
+.post-wrapper, .visual-art-section {
   p, li {
     margin-bottom: 1.5rem;
 
-    span, del, strong {
+    span, del, strong, b, em {
       font-size: inherit;
     }
   }
@@ -204,6 +214,15 @@
         font-size: 5rem;
       }
     }
+  }
+}
+
+.member-desc {
+   span, i, a {
+    margin-bottom: 1.5rem;
+    display: block;
+    font-size:  1.6rem; 
+    line-height: 1.6;
   }
 }
 

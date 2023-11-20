@@ -10,6 +10,11 @@
     $data = json_decode(file_get_contents($requestUrl), true);
     $post = $data[0];
 
+    //povezani projekti, prošlogodišnji projekti
+    $includeIDs = is_array($post["acf"]["povezani_projekti"]) ? implode(',', $post["acf"]["povezani_projekti"]) : $post["acf"]["povezani_projekti"];
+    $requestUrlRelatedPost = $apiUrl . '?_embed&include=' . $includeIDs;
+    $dataRelatedPost = json_decode(file_get_contents($requestUrlRelatedPost), true);
+
     $titleString = strip_tags($post['title']['rendered']);
     $descriptionString = strip_tags($post['excerpt']['rendered']);
     
@@ -36,21 +41,34 @@
         <main>
             <section id="project">
                 <div id="post">
-                    <?php
-                    $postEl = '
-                    <div class="post-wrapper">
-                        <div class="project-header">
+                <div class="post-wrapper">
+                    <div class="project-header">
                         <div class="project-title">
-                            <h1>' . $postTitle . '</h1>
-                            <h2>' . $post['acf']['podnaslov'] . '</h2>
+                            <h1><?= $postTitle ?></h1>
+                            <h2><?= $post['acf']['podnaslov'] ?></h2>
                         </div>
                         <i class="ri-arrow-down-line"></i>
-                        <img src="' . $featureMediaImage . '" />
+                        <img src="<?= $featureMediaImage ?>" />
+                    </div>
+                    <div><?= $postContent ?></div>
+                    <?php if ($post["acf"]["povezani_projekti"] !== ""): ?>
+                        <div class="related-posts">
+                            <?php foreach ($dataRelatedPost as $relatedPost): ?>
+                                <?php  
+                                    $featureRelatedMediaImage = isset($relatedPost['_embedded']['wp:featuredmedia']) ? $relatedPost['_embedded']['wp:featuredmedia'][0]['source_url'] : 'assets/images/no-image.svg';
+                                ?>
+                                <article class="post">
+                                    <div class="post-image">
+                                        <img src="<?= $featureRelatedMediaImage ?>">
+                                    </div>
+                                    <div class="post-body">
+                                        <a href="projekat?id=<?= $relatedPost["slug"] ?>" class="post-title"><?= $relatedPost["title"]["rendered"] ?></a>
+                                    </div>
+                                </article>
+                            <?php endforeach; ?>
                         </div>
-                        <div>' . $postContent . '</div>
-                    </div>';
-                    echo $postEl;
-                    ?>
+                    <?php endif; ?>
+                </div>
                 </div>
                 <div class="background-img background-right">
                     <div class="background-wrapper">

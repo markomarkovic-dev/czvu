@@ -3,6 +3,8 @@
         $copyLink = "Kopiraj link";
     } else if ($language == "en") {
         $copyLink = "Copy link";
+    } else if ($language == "rs") {
+        $copyLink = "Копирај линк";
     }
 ?>
 
