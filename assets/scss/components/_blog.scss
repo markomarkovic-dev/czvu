@@ -7,7 +7,7 @@
 }
 
 .related-posts {
-  margin-bottom: 6rem;
+  margin: 6rem 0;
 }
 
 .post {
@@ -90,6 +90,10 @@
 .post-wrapper, .visual-art-section {
   p, li {
     margin-bottom: 1.5rem;
+
+    &:empty {
+      display: none;
+    }
 
     span, del, strong, b, em {
       font-size: inherit;
@@ -314,6 +318,48 @@
       [class^=ri-] {
         font-size: 1.9rem;
       }
+    }
+  }
+}
+
+// blok za nagrade
+
+.rewards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+  margin: 4.8rem 0;
+
+  @media(max-width: 991px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  @media(max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .reward-block {
+    background-color: #F2F2F2;
+    padding: 2rem;
+    border-radius: 1.6rem;
+    height: fit-content;
+
+    h4 {
+      color: red;
+      font-weight: 700;
+    }
+
+    h5 {
+      color: #626262;
+      font-size: 1.4rem;
+      margin-bottom: 2rem;
+    }
+
+    p {
+      color: $color-dark;
+      margin-bottom: 0;
     }
   }
 }

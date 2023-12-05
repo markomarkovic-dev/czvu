@@ -150,12 +150,10 @@
                 </div>
             </section>
         </main>
-        <?php
-            require_once "templates/footer.php";
-        ?>
+        <?php include('includes/global-footer.php'); ?>
     </div>
 
-    <?php include('includes/global-footer.php'); ?>
+    
     <script>
         $('.main-slider').owlCarousel({
             loop: false,

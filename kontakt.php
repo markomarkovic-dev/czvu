@@ -91,7 +91,7 @@
                     <div class="contact-location-column">
                         <h2 class="section-heading"><?= $lang[$pagename]['call-us']?></h2>
                         <a href="tel:+387 51 348 807"><i class="ri-phone-line"></i> +387 51 348 807</a>
-                        <a href="https://goo.gl/maps/2yZGk8XFgEBbfT5WA" target="_blank"><i class="ri-map-pin-2-line"></i> Bulevar vojvode Petra Bojovića 1a, Banja Luka</a>
+                        <a href="https://goo.gl/maps/2yZGk8XFgEBbfT5WA" target="_blank"><i class="ri-map-pin-2-line"></i> <?= $lang[$pagename]['street-address']?></a>
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2832.2308115034302!2d17.2096021!3d44.776099599999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475e030ce3584a55%3A0x25597e601326f8f6!2sBulevar%20vojvode%20Petra%20Bojovi%C4%87a%201A%2C%20Banja%20Luka%2078000!5e0!3m2!1shr!2sba!4v1687106524704!5m2!1shr!2sba" width="100%" height="313" style="border:0;border-radius:16px" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
@@ -100,13 +100,10 @@
                 <iframe id="enscapeframe" src="https://api2.enscape3d.com/v1/view/1bdd5d91-cd8a-4a3f-8bce-a7f48d49b624" width="100%" height="600px" style="border: 0;border-radius: 20px"></iframe>
             </section>
         </main>
-        <?php
-            require_once "templates/footer.php";
 
-        ?>
+        <?php include('includes/global-footer.php'); ?>
     </div>
 
-    <?php include('includes/global-footer.php'); ?>
     <script>
         $(document).ready(function () {
             $("#enscapeframe").on("mouseenter", function() {

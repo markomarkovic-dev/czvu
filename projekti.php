@@ -41,6 +41,5 @@ $projects = json_decode(file_get_contents($requestUrlProjects), true);
             </div>
         </section>
     </main>
-    <?php require_once "templates/footer.php"; ?>
-</div>
 <?php include('includes/global-footer.php'); ?>
+</div>

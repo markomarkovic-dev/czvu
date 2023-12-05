@@ -103,7 +103,7 @@
 			'heading' => 'Slobodno <strong>nas kontaktirajte</strong> za sva pitanja i prijedloge',
 			'write-us' => 'Pišite nam',
 			'call-us' => 'Pozovite nas ili nas posjetite',
-
+			'street-address' => 'Bulevar vojvode Petra Bojovića 1a, Banja Luka'
 		  ),
 		  		  
 		  'post' => array(

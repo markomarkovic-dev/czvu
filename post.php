@@ -97,9 +97,6 @@
             </section>
 
         </main>
-        <?php
-        require_once "templates/footer.php";
-        ?>
+        <?php include('includes/global-footer.php'); ?>
     </div>
     <script src="assets/js/gallery-modal.js"></script>
-    <?php include('includes/global-footer.php'); ?>

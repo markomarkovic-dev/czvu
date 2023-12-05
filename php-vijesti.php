@@ -84,8 +84,6 @@ $_SESSION['loaded_posts'] = array_merge($_SESSION['loaded_posts'], $posts);
             <?php } ?>
         </section>
     </main>
-    <?php
-    require_once "templates/footer.php";
-    ?>
-</div>
+    
 <?php include('includes/global-footer.php'); ?>
+</div>

@@ -92,8 +92,5 @@ $members = json_decode(file_get_contents($requestUrlMembers), true);
                 </div>
             </section>
         </main>
-        <?php
-            require_once "templates/footer.php";
-        ?>
+        <?php include('includes/global-footer.php'); ?>
     </div>
-    <?php include('includes/global-footer.php'); ?>

@@ -63,6 +63,31 @@ function galleryImage() {
       var nextBigImage = nextImageUrl.replace(`-${nextImageWidth}x${nextImageheight}`, "");
       $('.image-modal img').attr('src', nextBigImage);
     }
+
+    $('.gallery').addClass('owl-carousel');
+    $('.gallery').owlCarousel({
+        loop: false,
+        margin: 48,
+        nav: true,
+        navText: ["<i class='ri-arrow-left-line'></i>","<i class='ri-arrow-right-line'></i>"],
+        dots: true,
+        items: 4,
+        autoplay: false,
+        responsive: {
+            991 : {
+                items: 5,
+            },
+
+            768 : {
+                items: 2,
+            },
+
+            0 : {
+                items: 1
+            }
+        }
+    })
   }
+
 
   galleryImage();

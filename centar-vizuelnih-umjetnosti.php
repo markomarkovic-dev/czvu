@@ -39,8 +39,6 @@
                 </div>
             </section>
         </main>
-        <?php
-            require_once "templates/footer.php";
-        ?>
-    </div>
+        
     <?php include 'includes/global-footer.php'; ?>
+    </div>

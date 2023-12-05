@@ -3,14 +3,43 @@
 .gallery {
   display: flex;
   gap: 4.8rem;
-  flex-wrap: wrap;
+  position: relative;
+  margin-bottom: 4.8rem;
 
   img {
     object-fit: cover;
     height: 100%;
     border-radius: 1.6rem;
-    aspect-ratio: 1;
     cursor: pointer;
+    aspect-ratio: 30/20;
+  }
+
+  .gallery-item, img {
+    aspect-ratio: 30/20;
+  }
+
+  .owl-nav {
+    position: absolute;
+    width: 100%;
+    top: calc(50% - (4rem / 2));
+    z-index: 99999;
+    height: 15px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+    padding: 0 1.6rem;
+    height: 0;
+
+    .owl-prev,
+    .owl-next {
+
+      i {
+        font-size: 3.2rem;
+        padding: .4rem!important;
+        background: rgba(white, .4)!important;
+        border-radius: 1.6rem;
+      }
+    }
   }
 
   &-caption {

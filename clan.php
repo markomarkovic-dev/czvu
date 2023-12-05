@@ -28,11 +28,39 @@
     parse_str($_SERVER['QUERY_STRING'], $queries);
 
     $requestUrl = $apiUrl . '?_embed&slug=' . $queries['id'];
+    var_dump($queries['id']);
 
     $data = json_decode(file_get_contents($requestUrl), true);
     $post = $data[0];
 
-    $shortenedString = substr($post['acf'][$transMember[$postLanguage][1]], 0, 152) . '...';
+    $currentSlug = $queries['id'];
+
+    // Find the index of the current member in the fetched data based on slug
+    $currentMemberIndex = -1;
+    foreach ($apiUrl as $index => $member) {
+        if ($member['slug'] === $currentSlug) {
+            $currentMemberIndex = $index;
+            break;
+        }
+    }
+
+if ($currentMemberIndex !== -1) {
+    $totalMembers = count($data);
+
+    // Calculate indexes for previous and next members
+    $prevIndex = ($currentMemberIndex - 1 + $totalMembers) % $totalMembers;
+    $nextIndex = ($currentMemberIndex + 1) % $totalMembers;
+
+    // Get the slugs of previous and next members
+    $prevMemberSlug = $data[$prevIndex]['slug'];
+    $nextMemberSlug = $data[$nextIndex]['slug'];
+
+    // Construct links for the previous and next members
+    $prevMemberLink = "https://cvupage.hardcode.solutions/sr/clan?id=$prevMemberSlug";
+    $nextMemberLink = "https://cvupage.hardcode.solutions/sr/clan?id=$nextMemberSlug";
+}
+
+    // $shortenedString = substr($post['acf'][$transMember[$postLanguage][1]], 0, 152) . '...';
 
     $titleString = strip_tags($post['title']['rendered']);
     $descriptionString = strip_tags($post['excerpt']['rendered']);
@@ -76,16 +104,16 @@
                             <h1 class="section-heading">' . $langCheckName . '</h1>
                             <h2 class="section-heading">' . $post['acf'][$transMember[$postLanguage][0]] . '</h2>
                             <div class="member-desc">' . $post['acf'][$transMember[$postLanguage][1]] . '</div>
+                            <a href="'.$prevMemberLink.'">Previous Member</a>
+                            <a href="'.$nextMemberLink.'">Next Member</a>
                         </div>';
                     echo $member;
                     ?>
                 </div>
             </section>
         </main>
-        <?php
-            require_once "templates/footer.php";
-        ?>
+        
+    <?php include('includes/global-footer.php'); ?>
     </div>
 
     <script src="assets/js/gallery-modal.js"></script>
-    <?php include('includes/global-footer.php'); ?>

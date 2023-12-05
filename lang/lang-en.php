@@ -108,7 +108,7 @@ $postDescription;
 			'heading' => 'Feel free to <strong>contact us</strong> for any questions and suggestions',
 			'write-us' => 'Write to us',
 			'call-us' => 'Call us or visit us',
-
+			'street-address' => 'Bulevar vojvode Petra Bojovića 1a, Banja Luka'
 		  ),
 		  		  
 		  'post' => array(

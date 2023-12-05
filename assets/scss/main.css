@@ -238,8 +238,7 @@ body {
   }
 }
 
-[class^=ri-],
-[class*=" ri-"] {
+i {
   color: #1d1d1d;
 }
 
@@ -1101,7 +1100,7 @@ footer {
 }
 
 .related-posts {
-  margin-bottom: 6rem;
+  margin: 6rem 0;
 }
 
 .post {
@@ -1173,6 +1172,9 @@ footer {
 
 .post-wrapper p, .post-wrapper li, .visual-art-section p, .visual-art-section li {
   margin-bottom: 1.5rem;
+}
+.post-wrapper p:empty, .post-wrapper li:empty, .visual-art-section p:empty, .visual-art-section li:empty {
+  display: none;
 }
 .post-wrapper p span, .post-wrapper p del, .post-wrapper p strong, .post-wrapper p b, .post-wrapper p em, .post-wrapper li span, .post-wrapper li del, .post-wrapper li strong, .post-wrapper li b, .post-wrapper li em, .visual-art-section p span, .visual-art-section p del, .visual-art-section p strong, .visual-art-section p b, .visual-art-section p em, .visual-art-section li span, .visual-art-section li del, .visual-art-section li strong, .visual-art-section li b, .visual-art-section li em {
   font-size: inherit;
@@ -1373,6 +1375,45 @@ footer {
   font-size: 1.9rem;
 }
 
+.rewards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+  margin: 4.8rem 0;
+}
+@media (max-width: 991px) {
+  .rewards-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+@media (max-width: 768px) {
+  .rewards-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+.rewards-container .reward-block {
+  background-color: #F2F2F2;
+  padding: 2rem;
+  border-radius: 1.6rem;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.rewards-container .reward-block h4 {
+  color: red;
+  font-weight: 700;
+}
+.rewards-container .reward-block h5 {
+  color: #626262;
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+}
+.rewards-container .reward-block p {
+  color: #1d1d1d;
+  margin-bottom: 0;
+}
+
 .image-modal {
   position: fixed;
   inset: 50px;
@@ -1450,15 +1491,38 @@ footer {
 .gallery {
   display: flex;
   gap: 4.8rem;
-  flex-wrap: wrap;
+  position: relative;
+  margin-bottom: 4.8rem;
 }
 .gallery img {
   -o-object-fit: cover;
      object-fit: cover;
   height: 100%;
   border-radius: 1.6rem;
-  aspect-ratio: 1;
   cursor: pointer;
+  aspect-ratio: 30/20;
+}
+.gallery .gallery-item, .gallery img {
+  aspect-ratio: 30/20;
+}
+.gallery .owl-nav {
+  position: absolute;
+  width: 100%;
+  top: calc(50% - 2rem);
+  z-index: 99999;
+  height: 15px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 10;
+  padding: 0 1.6rem;
+  height: 0;
+}
+.gallery .owl-nav .owl-prev i,
+.gallery .owl-nav .owl-next i {
+  font-size: 3.2rem;
+  padding: 0.4rem !important;
+  background: rgba(255, 255, 255, 0.4) !important;
+  border-radius: 1.6rem;
 }
 .gallery-caption {
   font-size: 1.5rem;
