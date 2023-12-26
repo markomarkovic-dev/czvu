@@ -9,6 +9,7 @@ $postDescription;
 			'nav-contact' => 'Contact',
 			'nav-meet-center' => 'Meet the center',
 			'nav-meet-team' => 'Meet the team',
+			'nav-artists' => 'Artists',
 			'language' => 'Language',
 			'copy' => 'Center for Visual Art',
 			'rights' => 'All rights reserved',
@@ -46,7 +47,7 @@ $postDescription;
 		  	'title' => 'Home', 
 			'description' => 'Home', 
 			//content
-			'subheading' => 'Check us out',
+			'subheading' => 'See more',
 			'involved' => 'Want to get involved?',
 			'call-us' => 'Make a move, call us',
 			'support-us' => 'Want to support?',
@@ -82,6 +83,11 @@ $postDescription;
 			'description' => '', 
 		  ),
 
+		  'osnivac' => array(
+			'title' => '',
+			'description' => '', 
+		  ),
+
 		  'centar-vizuelnih-umjetnosti' => array(
 			'title' => 'Center for Visual Art', 
 			'description' => 'Meet the Center for Visual Art',
@@ -101,6 +107,13 @@ $postDescription;
 			'members-of' => 'Members of the center for visual art',
 			'members-description' => 'The members of the team of the Center for Visual Art, which is constantly increasing, are connected by a common desire and effort to popularise art, both through a gradual but constant change in social awareness of its importance, and through the realisation of concrete projects. We are pleased that in a short time we have become an association whose activities are recognized as high quality, well thought out and responsibly implemented. This is evidenced by the fact that we enjoy continuous support from public donors, but also more and more private entities that want to contribute to the achievement of our association\'s goals.',
 		  ),
+
+		  'umjetnici' => array(
+			'title' => 'Artists', 
+			'description' => 'We are the artists who participated in the projects of the center for visual arts',
+			'artists-title' => 'We are the <strong>artists who participated</strong> in the projects of the center for visual arts',
+			'artists-desc' => 'A large number of artists from different fields of art participated in our projects. Many actors, photographers, sculptors, painters, designers and others have left their mark on the cultural and artistic scene through the work of the center for visual arts.',
+		  ),
 		  
 		  'kontakt' => array(
 			'title' => 'Contact', 
@@ -113,7 +126,8 @@ $postDescription;
 		  		  
 		  'post' => array(
 			'title' => '',
-			'description' => ''
+			'description' => '',
+			'recent-news' => 'Recent news'
 		  ),
 );
 

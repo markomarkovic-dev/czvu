@@ -7,6 +7,15 @@
     font-family: 'Space Grotesk', sans-serif;
     font-size: 62.5%;
   }
+
+  html, body {
+    scroll-behavior: smooth;
+  }
+
+  ::selection {
+    background-color: $color-red;
+    color: white;
+  }
   
   p, a, li, button, input, textarea {
     font-size: 1.6rem;
@@ -49,4 +58,8 @@
   
   h6 {
     font-size: 1.4rem;
+  }
+
+  p, label, li, button, input, a {
+    font-family: 'Inter', sans-serif;
   }

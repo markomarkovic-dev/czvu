@@ -8,6 +8,7 @@
 			'nav-contact' => 'Kontakt',
 			'nav-meet-center' => 'Upoznajte centar',
 			'nav-meet-team' => 'Upoznajte tim',
+			'nav-artists' => 'Umjetnici',
 			'language' => 'Jezik',
 			'copy' => 'Centar za vizuelnu umjetnost',
 			'rights' => 'Sva prava zadržana',
@@ -43,7 +44,7 @@
 		  	'title' => 'Home', 
 			'description' => 'Home', 
 			//content
-			'subheading' => 'Posjetite nas',
+			'subheading' => 'Čitaj više',
 			'involved' => 'Želite li se uključiti?',
 			'call-us' => 'Napravite potez, pozovite nas',
 			'support-us' => 'Želite nas podržati?',
@@ -78,6 +79,11 @@
 			'description' => '', 
 		  ),
 
+		  'osnivac' => array(
+			'title' => '',
+			'description' => '', 
+		  ),
+
 		  'centar-vizuelnih-umjetnosti' => array(
 			'title' => 'Centar za vizuelnu umetnost', 
 			'description' => 'Upoznajte Centar za vizuelnu umetnost',
@@ -96,6 +102,13 @@
 			'members-of' => 'Članovi centra za vizuelnu umetnost',
 			'members-description' => 'Članove tima Centra za vizuelnu umjetnost koji se stalno uvećava, povezuje zajednička želja i nastojanje da se popularizuje umjetnost, kako kroz postepenu ali stalnu promjenu društvene svijesti o njenoj važnosti, tako i kroz realizaciju konkretnih projekata. Raduje nas što smo za kratko vrijeme postali udruženje čije se aktivnosti prepoznaju kao kvalitetne, dobro osmišljene i odgovorno sprovođene u djelo. O tome svjedoči i činjenica da uživamo kontinuiranu podršku javnih donatora, ali i sve više privatnih subjekata koji žele da doprinesu ostvarenju ciljeva našeg udruženja.',
 		  ),
+
+		  'umjetnici' => array(
+			'title' => 'Umjetnici', 
+			'description' => 'Mi smo umjetnici koji su učestvovali u projektima Centra za vizualne umjetnosti',
+			'artists-title' => 'Mi smo <strong>umjetnici koji su učestvovali</strong> u projektima Centra za vizualne umjetnosti',
+			'artists-desc' => 'U našim projektima učestvovao je veliki broj umjetnika iz različitih oblasti umjetnosti. Mnogi glumci, fotografi, vajari, slikari, dizajneri i drugi ostavili su trag na kulturno-umjetničkoj sceni kroz rad Centra za vizualne umjetnosti.',
+		  ),
 		  
 		  'kontakt' => array(
 			'title' => 'Kontakt', 
@@ -108,7 +121,8 @@
 		  		  
 		  'post' => array(
 			'title' => '',
-			'description' => ''
+			'description' => '',
+			'recent-news' => 'Skorašnje vijesti'
 		  ),
 );
 

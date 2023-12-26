@@ -96,18 +96,7 @@
                     </div>
                 </div>
             </section>
-            <section>
-                <iframe id="enscapeframe" src="https://api2.enscape3d.com/v1/view/1bdd5d91-cd8a-4a3f-8bce-a7f48d49b624" width="100%" height="600px" style="border: 0;border-radius: 20px"></iframe>
-            </section>
         </main>
 
         <?php include('includes/global-footer.php'); ?>
     </div>
-
-    <script>
-        $(document).ready(function () {
-            $("#enscapeframe").on("mouseenter", function() {
-                $(this).focus();
-            });
-        });
-    </script>

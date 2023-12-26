@@ -22,7 +22,7 @@
         )
     );
 
-    $apiUrl = "$backendUrl/wp-json/wp/v2/clanovi";
+    $apiUrl = "$backendUrl/wp-json/wp/v2/osnivaci";
 
     $queries = array();
     parse_str($_SERVER['QUERY_STRING'], $queries);

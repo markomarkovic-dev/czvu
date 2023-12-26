@@ -1,7 +1,8 @@
 const languageCode = document.documentElement.lang;
 const languageCategory = {
   en: 'categories=15',
-  sr: 'categories=3',
+  sr: 'categories=35',
+  rs: 'categories=3',
 };
 
 const apiUrl = `${backendUrl}/wp-json/wp/v2/posts`;

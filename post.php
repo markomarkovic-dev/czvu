@@ -3,7 +3,8 @@
 
     $postLanguageCategory = [
         'en' => 'categories=15',
-        'sr' => 'categories=3',
+        'sr' => 'categories=35',
+        'rs' => 'categories=3',
     ];
 
     $apiUrl = "$backendUrl/wp-json/wp/v2/posts";
@@ -70,7 +71,7 @@
                     ?>
                 </div>
                 <aside id="latest-posts">
-                    <h2 class="section-heading">Recent news</h2>
+                    <h2 class="section-heading"><?= $lang[$pagename]["recent-news"]?></h2>
 
                     <?php
                     foreach ($posts as $post4) {

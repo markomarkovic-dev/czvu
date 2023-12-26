@@ -10,6 +10,7 @@ const languageCode = document.documentElement.lang;
 const languageCategory = {
   ['en']: 'categories=15',
   ['sr']: 'categories=15',
+  ['rs']: 'categories=15',
 };
 
 const apiUrl = 'https://cvu.hardcode.solutions/wp-json/wp/v2/posts';

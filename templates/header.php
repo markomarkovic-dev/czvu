@@ -9,8 +9,9 @@
             <div class="menu-desktop">
                 <a href="home" class="menu-desktop-link <?= activePage('home'); ?>"><?= $lang['global']['nav-home']?></a>
                 <a href="projekti" class="menu-desktop-link <?= activePage('projekti'); ?>"><?= $lang['global']['nav-projects']?></a>
+                <a href="umjetnici" class="menu-desktop-link <?= activePage('umjetnici'); ?>"><?= $lang['global']['nav-artists']?></a>
                 <a href="vijesti" class="menu-desktop-link <?= activePage('vijesti'); ?>"><?= $lang['global']['nav-news']?></a>
-                <span href="#" class="menu-desktop-link submenu <?= activePage('centar-vizuelnih-umjetnosti'); activePage('upoznajte-tim'); ?>">
+                <span class="menu-desktop-link submenu about-page <?= activePage('centar-vizuelnih-umjetnosti'); activePage('upoznajte-tim');?>">
 
                     <?= $lang['global']['nav-about']?>
                     <div class="submenu-content">

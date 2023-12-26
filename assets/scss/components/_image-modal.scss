@@ -5,6 +5,18 @@
   inset: 50px;
   z-index: 9999;
   isolation: isolate;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &-container {
+    overflow: hidden;
+    border-radius: 1.6rem;
+    padding: 2rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
 
   @media(max-width: 991px) {
     inset: 0;
@@ -20,8 +32,12 @@
 
   img {
     width: 100%;
-    height: 100%;
     object-fit: contain;
+    border-radius: 1.6rem;
+
+    @media(min-width: 992px) {
+      height: 100%;
+    }
   }
 
   .next-prev-image {
@@ -34,7 +50,6 @@
     .prev-image {
       flex-basis: 50%;
       display: flex;
-      justify-content: center;
       align-items: center;
       cursor: pointer;
 
@@ -56,12 +71,14 @@
     }
 
     .next-image {
+      justify-content: flex-end;
       @media(max-width: 991px) {
         justify-content: flex-end;
       }
     }
 
     .prev-image {
+      justify-content: flex-start;
       @media(max-width: 991px) {
         justify-content: flex-start;
       }

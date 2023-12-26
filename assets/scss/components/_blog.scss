@@ -87,6 +87,13 @@
   margin-top: 4.8rem;
 }
 
+#post {
+  .background-img {
+    z-index: -1;
+    transform: translateY(-270px);
+  }
+}
+
 .post-wrapper, .visual-art-section {
   p, li {
     margin-bottom: 1.5rem;
@@ -96,7 +103,11 @@
     }
 
     span, del, strong, b, em {
-      font-size: inherit;
+      font: inherit;
+    }
+
+    strong {
+      font-weight: 600;
     }
   }
 
@@ -110,8 +121,13 @@
   }
 
   iframe, video {
-    width: 100%;
+    width: 50%;
     border: 0;
+    border-radius: 1.6rem;
+
+    @media(max-width: 991px) {
+      width: 100%;
+    }
   }
 
   ul, ol {
@@ -157,7 +173,7 @@
     height: calc(100dvh - 9rem);
 
     @media(max-width: 991px) {
-      height: calc(100dvh - 6.7rem);
+      height: calc(100dvh - 30rem);
     }
 
     img {
@@ -191,13 +207,17 @@
       z-index: 1;
 
       h1 {
-        font-size: clamp(2.2rem, 6.6vw, 6.4rem);
+        font-size: clamp(3.5rem, 6.6vw, 6.4rem);
         color: $color-red;
       }
 
       h2 {
         font-size: clamp(2.2rem, 4vw, 4rem);
         color: white;
+
+        @media(max-width: 991px) {
+          font-weight: 400;
+        }
       }
 
       @media(max-width: 991px) {
@@ -213,6 +233,7 @@
       left: 50%;
       transform: translateX(-50%);
       padding: 4.2rem;
+      cursor: pointer;
 
       @media(max-width: 991px) {
         font-size: 5rem;
@@ -222,7 +243,10 @@
 }
 
 .member-desc {
-   span, i, a {
+  font-size:  1.6rem; 
+  line-height: 1.6;
+
+   span, strong, i, a, p {
     margin-bottom: 1.5rem;
     display: block;
     font-size:  1.6rem; 
@@ -257,6 +281,10 @@
 
   #post {
     flex-grow: 1;
+
+    @media(min-width: 992px) {
+      max-width: calc(100% - 34rem);
+    }
   }
 
   #latest-posts {
@@ -271,6 +299,10 @@
 
     .post-meta {
       margin-bottom: 0;
+    }
+
+    .post-title {
+      font-size: 1.8rem;
     }
   }
 

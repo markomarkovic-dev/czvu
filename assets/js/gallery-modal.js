@@ -18,6 +18,7 @@ function galleryImage() {
       var modal = $(
         `<div class="image-modal">
             <i class="ri-close-line image-close"></i>
+            <div class="image-modal-container"></div>
             <div class="next-prev-image">
               <div class="prev-image">
               <i class="ri-arrow-left-s-line"></i>
@@ -29,7 +30,7 @@ function galleryImage() {
         </div>`);
       var modalImage = $('<img>').attr('src', imageUrl);
   
-      modal.prepend(modalImage);
+      modal.children(".image-modal-container").prepend(modalImage);
   
       $('body').append(modal);
   
@@ -52,7 +53,7 @@ function galleryImage() {
       var prevImageWidth = galleryLinks.eq(currentIndex).attr('width');
       var prevImageheight = galleryLinks.eq(currentIndex).attr('height');
       var prevBigImage = prevImageUrl.replace(`-${prevImageWidth}x${prevImageheight}`, "");
-      $('.image-modal img').attr('src', prevBigImage);
+      $('.image-modal .image-modal-container img').attr('src', prevBigImage);
     }
   
     function showNextImage() {
@@ -61,7 +62,7 @@ function galleryImage() {
       var nextImageWidth = galleryLinks.eq(currentIndex).attr('width');
       var nextImageheight = galleryLinks.eq(currentIndex).attr('height');
       var nextBigImage = nextImageUrl.replace(`-${nextImageWidth}x${nextImageheight}`, "");
-      $('.image-modal img').attr('src', nextBigImage);
+      $('.image-modal .image-modal-container img').attr('src', nextBigImage);
     }
 
     $('.gallery').addClass('owl-carousel');
@@ -88,6 +89,5 @@ function galleryImage() {
         }
     })
   }
-
 
   galleryImage();

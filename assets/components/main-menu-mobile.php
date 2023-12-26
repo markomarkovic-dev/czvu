@@ -7,9 +7,10 @@
         <div class="mobile-menu-items">
             <a href="home" class="slide-menu-item <?= activePage('home'); ?>"><?= $lang['global']['nav-home']?></a>
             <a href="projekti" class="slide-menu-item <?= activePage('projekti'); ?>"><?= $lang['global']['nav-projects']?></a>
+            <a href="umjetnici" class="slide-menu-item <?= activePage('umjetnici'); ?>"><?= $lang['global']['nav-artists']?></a>
             <a href="vijesti" class="slide-menu-item <?= activePage('vijesti'); ?>"><?= $lang['global']['nav-news']?></a>
             <div class="slide-menu-accordion accordion">
-                <span class="slide-menu-item accordion-name"><?= $lang['global']['nav-about']?></span>
+                <span class="slide-menu-item accordion-name about-page"><?= $lang['global']['nav-about']?></span>
                 <div class="accordion-body">
                     <div class="submenu-content">
                         <a href="centar-vizuelnih-umjetnosti" class="submenu-link">

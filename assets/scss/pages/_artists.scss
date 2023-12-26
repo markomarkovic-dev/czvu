@@ -1,0 +1,9 @@
+@use '../base/variables' as *;
+
+.artist-profile {
+    cursor: pointer;
+    
+    .member-desc {
+        display: none;
+    }
+}

@@ -100,7 +100,7 @@ header {
     [class^='ri-'],
     [class*=' ri-'] {
       color: $color-dark;
-      font-size: 1.9rem;
+      font-size: 2rem;
       transition: all .2s linear;
     }
 
@@ -120,7 +120,7 @@ header {
   flex-direction: column;
   position: fixed;
   top: 0;
-  transform: translateY(calc(-100% - 1px));
+  transform: translateY(calc(-100% - 10px));
   transition: all 0.2s ease-out;
   padding: .8rem;
   border-radius: 0 0 1.6rem 1.6rem;
@@ -244,6 +244,12 @@ header {
         justify-content: center;
         padding: .8rem .8rem .8rem .8rem;
         font-size: 3.2vh;
+
+        &.active {
+          text-decoration: underline;
+          text-underline-offset: 6px;
+          color: $color-red;
+        }
       }
     }
 
@@ -283,7 +289,7 @@ header {
     width: fit-content;
 
     .slide-menu-item {
-      padding: .5rem;
+      padding: .8rem .5rem;
       
       &.active {
         color: $color-red;
@@ -301,9 +307,11 @@ header {
     font-weight: 500;
     font-size: 1.8rem;
     cursor: pointer;
+    font-family: "Space Grotesk", sans-serif;
 
     span {
       white-space: nowrap;
+      font: inherit;
     }
 
     &:hover,
@@ -329,6 +337,7 @@ header {
 
       .submenu-link {
         color: $color-dark;
+        font-family: "Space Grotesk", sans-serif;
         &:hover {
           color: $color-red;
         }

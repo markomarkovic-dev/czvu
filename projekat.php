@@ -50,7 +50,7 @@ $postContent = str_replace($siteUrl, $backendUrl, $post['content']['rendered']);
                         <i class="ri-arrow-down-line"></i>
                         <img src="<?= $featureMediaImage ?>" />
                     </div>
-                    <div><?= $postContent ?></div>
+                    <div class="post-content"><?= $postContent ?></div>
                     <?php if ($post["acf"]["povezani_projekti"] !== "") : ?>
                         <div class="related-posts">
                             <?php foreach ($dataRelatedPost as $relatedPost) : ?>
@@ -80,4 +80,8 @@ $postContent = str_replace($siteUrl, $backendUrl, $post['content']['rendered']);
     </main>
     <?php include('includes/global-footer.php'); ?>
 </div>
+<script src="assets/js/project.js"></script>
 <script src="assets/js/gallery-modal.js"></script>
+<script>
+        $("a[href='projekti']").addClass("active");
+</script>

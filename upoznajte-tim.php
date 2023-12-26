@@ -8,7 +8,6 @@ $transMember = array(
     ),
     'rs' => array(
         "позиција",
-        "име-презиме"
     ),
     'en' => array(
         "position",
@@ -16,11 +15,15 @@ $transMember = array(
     )
 );
 
-$apiUrl = "$backendUrl/wp-json/wp/v2/clanovi";
+$foundersApiUrl = "$backendUrl/wp-json/wp/v2/osnivaci";
+$requestUrlfounders = $foundersApiUrl . '?_embed';
 
-$requestUrlMembers = $apiUrl . '?_embed';
+$membersApiUrl = "$backendUrl/wp-json/wp/v2/clanovi";
+$requestUrlMembers = $membersApiUrl . '?_embed';
+
 
 $members = json_decode(file_get_contents($requestUrlMembers), true);
+$founders = json_decode(file_get_contents($requestUrlfounders ), true);
 
 ?>
     <div class="layout-container">
@@ -39,13 +42,13 @@ $members = json_decode(file_get_contents($requestUrlMembers), true);
                 <h2 class="section-heading"><?= $lang[$pagename]['founders-of']?></h2>
                 <div id="founders" class="members">
                  <?php
-                        foreach ($members as $member) {
+                        foreach ($founders as $member) {
                             $featureMediaImage = isset($member['_embedded']['wp:featuredmedia']) ? $member['_embedded']['wp:featuredmedia'][0]['media_details']['sizes']['full']['source_url'] : 'assets/images/no-image.svg';
 
-                            $langCheckName = $language === "rs" ? $member["acf"][$transMember[$language][1]] : $member["title"]["rendered"];
+                            $langCheckName = $language === "rs" ? $member["acf"]["име-презиме"] : $member["title"]["rendered"];
 
                             $memberItem = '
-                            <a href="clan?id=' . $member['slug'] . '" class="members">
+                            <a href="osnivac?id=' . $member['slug'] . '">
                                 <div class="member">
                                     <div class="member-photo">
                                     <img src="' . $featureMediaImage . '" alt="" />
@@ -56,9 +59,7 @@ $members = json_decode(file_get_contents($requestUrlMembers), true);
                                     </div>
                                 </div>
                             </a>';
-                            if($member['acf']['clanstvo'] === "osnivac") {
-                                echo $memberItem;
-                            }
+                            echo $memberItem;
                         }
                     ?>
                 </div>
@@ -69,10 +70,10 @@ $members = json_decode(file_get_contents($requestUrlMembers), true);
 
                             $featureMediaImage = isset($member['_embedded']['wp:featuredmedia']) ? $member['_embedded']['wp:featuredmedia'][0]['media_details']['sizes']['full']['source_url'] : 'assets/images/no-image.svg';
 
-                            $langCheckName = $language === "rs" ? $member["acf"][$transMember[$language][1]] : $member["title"]["rendered"];
+                            $langCheckName = $language === "rs" ? $member["acf"]["име-презиме"] : $member["title"]["rendered"];
 
                             $memberItem = '
-                            <a href="clan?id=' . $member['slug'] . '" class="members">
+                            <a href="clan?id=' . $member['slug'] . '">
                                 <div class="member">
                                     <div class="member-photo">
                                     <img src="' . $featureMediaImage . '" alt="" />
@@ -84,9 +85,7 @@ $members = json_decode(file_get_contents($requestUrlMembers), true);
                                 </div>
                             </a>';
                             
-                            if($member['acf']['clanstvo'] === "clan") {
-                                echo $memberItem;
-                            }
+                            echo $memberItem;
                         }
                     ?>
                 </div>

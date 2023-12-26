@@ -1,4 +1,4 @@
-@import 'base/resets.scss';
+@import 'base/resets';
 @import 'shared/global';
 @import 'shared/header';
 @import 'shared/footer';
@@ -7,6 +7,8 @@
 @import 'components/gallery';
 @import 'components/input';
 @import 'components/button';
+@import 'components/modal';
 @import 'pages/contact';
 @import 'pages/members';
 @import 'pages/projects';
+@import 'pages/artists';
