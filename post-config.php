@@ -1,6 +1,6 @@
 <?php
 
-	$siteUrl = "https://cvupage.hardcode.solution";
+	$siteUrl = "https://czvu.net/";
 	$backendUrl = "https://cms.czvu.net/";
 
 	//formatiranje wp datuma u dd.mm.yyyy.

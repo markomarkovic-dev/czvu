@@ -383,7 +383,7 @@ i {
 }
 
 .we-are-slide {
-  background-image: url('../images/slider.jpg');
+  background-image: url('../images/cvu-bck.png');
 
   @media (max-width: 991px) {
     align-items: center;
@@ -459,6 +459,25 @@ i {
   + .background-right {
     img {
       transform: translateY(0);
+    }
+  }
+}
+
+.visual-art-background {
+
+  @media(max-width: 768px) {
+    position: static;
+  }
+
+  img {
+    right: 0!important;
+    transform: translate(20vw, 11vw) !important;
+    width: 57vw!important;
+
+    @media(max-width: 768px) {
+      right: 0 !important;
+      transform: translate(71vw, 57vw) !important;
+      width: 236vw !important;
     }
   }
 }

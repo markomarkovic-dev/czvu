@@ -3,7 +3,7 @@
 $siteName = "CZVU";
 $mainlang = 'sr';
 
-$siteUrl = "https://cvupage.hardcode.solution";
+$siteUrl = "https://czvu.net/";
 $backendUrl = "https://cms.czvu.net/";
 
 //posjeceni url
@@ -19,7 +19,7 @@ function switchLang($currentLang, $otherLang) {
 $url = strtok($visitor_link, '?');
 // folder/jezik 
 $language = basename(dirname($url));
-//$lang = $language;
+// $lang = $language;
 //echo $language;
 $pagename = basename($url);
 //naziv stranice/fajla bez ekstenzije

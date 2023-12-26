@@ -15,10 +15,16 @@
                     <div class="section-column column-65">
                     <?= $lang[$pagename]['text']?>
                     </div>
-                    <div class="section-column column-35">
-                        <img src="assets/images/grafika-leva-color.svg" class="img-fluid img-bck" alt="">
+                    <div class="background-img background-right visual-art-background">
+                    <div class="background-wrapper">
+                        <img src="assets/images/grafika-leva-color.svg" alt="">
                     </div>
                 </div>
+                    <div class="section-column column-35">
+
+                    </div>
+                </div>
+
             </section>
             <section class="action-cards-container">
                 <div class="action-cards">
