@@ -101,3 +101,6 @@
         <?php include('includes/global-footer.php'); ?>
     </div>
     <script src="assets/js/gallery-modal.js"></script>
+    <script>
+        $("a[href='vijesti']").addClass("active");
+    </script>

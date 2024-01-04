@@ -12,7 +12,6 @@
         'sr' => 'categories=33',
         'rs' => 'categories=22',
     ];
-    
 
     $apiUrl = "$backendUrl/wp-json/wp/v2/posts";
     $requestUrl4posts = $apiUrl . '?per_page=4&_embed&' . $languageCategory[$postLanguage];
@@ -119,8 +118,8 @@
                     <img src="assets/images/grafika-leva.svg" alt="">
                 </div>
             </div>
-            <section>
-                <iframe id="enscapeframe" src="https://api2.enscape3d.com/v1/view/1bdd5d91-cd8a-4a3f-8bce-a7f48d49b624" width="100%" height="600px" style="border: 0;border-radius: 20px"></iframe>
+            <section class="virtual-exhibition">
+                <a href="#" class="action-link modal-open" data-trigger="view3d"><?= $lang[$pagename]['virtual-exhibition']?></a>
             </section>
             <div class="background-img background-right">
                 <div class="background-wrapper">
@@ -141,26 +140,17 @@
         </main>
         <?php include('includes/global-footer.php'); ?>
     </div>
+    <div class="modal modal-view3d" data-modal="view3d">
+        <div class="modal-content modal-xl">
+            <i class="ri-close-line modal-close"></i>
+            <div class="modal-content-body">
+                <div id="view3d">
 
-    
-    <script>
-        $('.main-slider').owlCarousel({
-            loop: true,
-            margin: 10,
-            nav: true,
-            items: 1,
-            autoplay: true,
-            autoplayTimeout: 3000,
-            navText : ["<i class='ri-arrow-left-line'></i>","<i class='ri-arrow-right-line'></i>"]
-        })
+                </div>
+            </div>
+        </div>
+    </div>
 
-        $('.owl-nav').css("width", $(".owl-dots").width() + 50);
+<script src="assets/js/modal.js"></script>
+<script src="assets/js/home.js"></script>
 
-    </script>
-<script>
-    $(document).ready(function () {
-        $("#enscapeframe").on("mouseenter", function() {
-            $(this).focus();
-        });
-    });
-</script>

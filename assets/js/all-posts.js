@@ -16,7 +16,6 @@ function fetchPosts() {
   if (isFetching || !hasMorePosts) return;
   isFetching = true;
 
-  
   document.querySelector('#loader').style.display = "flex";
 
   const requestUrl = `${apiUrl}?_embed&page=${currentPage}&per_page=${perPage}&${

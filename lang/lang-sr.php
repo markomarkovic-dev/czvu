@@ -54,7 +54,8 @@
 			'more-news' => 'Pogledajte sve vijesti',
 			'others-say' => 'Šta kažu o nama',
 			'supporters' => 'Ko nas je podržao',
-			'mladen' => 'It was such a pleasure to be involved with the CVU. The project was amazing, and the organization was top notch. I loved getting to hear so many wonderful minds, and work with CVU crew. Congratulations to all involved for producing such a tremendous event.'
+			'mladen' => 'It was such a pleasure to be involved with the CVU. The project was amazing, and the organization was top notch. I loved getting to hear so many wonderful minds, and work with CVU crew. Congratulations to all involved for producing such a tremendous event.',
+			'virtual-exhibition' => 'Virtuelna izložba'
 		),
 
 		  'projekti' => array(

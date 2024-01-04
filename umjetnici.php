@@ -37,7 +37,7 @@ $members = json_decode(file_get_contents($requestUrlMembers), true);
                     </div>
                 </div>
                 <p class="members-subheading"><?= $lang[$pagename]['artists-desc']?></p>
-                <h2 class="section-heading">Artists</h2>
+                <h2 class="section-heading"><?= $lang[$pagename]['title']?></h2>
                 <div id="members" class="members">
                     <?php
                         foreach ($members as $member) {
@@ -65,22 +65,23 @@ $members = json_decode(file_get_contents($requestUrlMembers), true);
             </section>
         </main>
         <div class="modal" data-modal="artist">
-    <div class="modal-content modal-l">
-        <i class="ri-close-line modal-close"></i>
-        <div class="modal-content-body">
-            <div id="member" class="artist-modal">
-                 <div class="profile-aside">
-                    <img src="" class="artist-photo"/>
-                </div>
-                <div class="post-wrapper">
-                    <h1 class="section-heading"></h1>
-                    <h2 class="section-heading"></h2>
-                    <div class="member-desc"></div>
+            <div class="modal-content modal-l">
+                <i class="ri-close-line modal-close"></i>
+                <div class="modal-content-body">
+                    <div id="member" class="artist-modal">
+                        <div class="profile-aside">
+                            <img src="" class="artist-photo"/>
+                        </div>
+                        <div class="post-wrapper">
+                            <h1 class="section-heading"></h1>
+                            <h2 class="section-heading"></h2>
+                            <div class="member-desc"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
         <?php include('includes/global-footer.php'); ?>
     </div>
     <script src="assets/js/modal.js"></script>
+    <script src="assets/js/artists.js"></script>

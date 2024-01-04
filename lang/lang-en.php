@@ -58,7 +58,8 @@ $postDescription;
 			'more-news' => 'See more news',
 			'others-say' => 'What they say about us',
 			'supporters' => 'Who supported us',
-			'mladen' => 'Bilo je veliko zadovoljstvo biti uključen u CVU. Projekat je bio fantastičan, a organizacija na vrhunskom nivou. Volio sam čuti toliko divnih umova i raditi sa CVU posadom. Čestitamo svima koji su učestvovali u stvaranju ovako ogromnog događaja.'
+			'mladen' => 'Bilo je veliko zadovoljstvo biti uključen u CVU. Projekat je bio fantastičan, a organizacija na vrhunskom nivou. Volio sam čuti toliko divnih umova i raditi sa CVU posadom. Čestitamo svima koji su učestvovali u stvaranju ovako ogromnog događaja.',
+			'virtual-exhibition' => 'Virtual exhibition'
 		),
 
 		  'projekti' => array(
