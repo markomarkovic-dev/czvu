@@ -8,10 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
       var dataAttribute = this.getAttribute("data-trigger");
       var modal = document.querySelector('.modal[data-modal="' + dataAttribute + '"]');
       modal.classList.add("show");
-      
-      if (window.innerWidth <= 991) {
-        document.documentElement.style.overflow = "hidden";
-      }
+      document.documentElement.style.overflow = "hidden";
     });
   });
 
@@ -20,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
       var modal = this.closest(".modal");
       modal.classList.remove("show");
 
-      if (window.innerWidth <= 991 && !document.querySelector(".modal.show")) {
+      if (!document.querySelector(".modal.show")) {
         document.documentElement.style.overflow = "";
       }
     });

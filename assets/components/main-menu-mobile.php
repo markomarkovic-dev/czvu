@@ -24,6 +24,7 @@
                     </div>
                 </div>
             </div>
+            <a href="kontakt" class="slide-menu-item <?= activePage('kontakt'); ?>"><?= $lang['global']['nav-contact']?></a>
             <div class="slide-menu-accordion accordion">
                 <span class="slide-menu-item accordion-name"><?= $lang['global']['language']?></span>
                 <div class="accordion-body">

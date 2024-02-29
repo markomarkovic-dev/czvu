@@ -44,8 +44,8 @@ $postDescription;
 		),
 
 		'home' => array(
-		  	'title' => 'Home', 
-			'description' => 'Home', 
+		  	'title' => 'We are the people who do a lot for culture!', 
+			'description' => 'The main goals of the association are the promotion and development of cultural and artistic activities of national, regional and international importance.', 
 			//content
 			'subheading' => 'See more',
 			'involved' => 'Want to get involved?',

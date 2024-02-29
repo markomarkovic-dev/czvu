@@ -1904,6 +1904,9 @@ button, .btn {
 .modal.show {
   display: flex;
 }
+.modal .member-desc {
+  margin-bottom: 2.5rem;
+}
 
 .modal-content {
   width: 100%;

@@ -41,8 +41,8 @@
 		),
 
 		'home' => array(
-		  	'title' => 'Home', 
-			'description' => 'Home', 
+		  	'title' => 'Mi smo ljudi koji čine mnogo za kulturu!', 
+			'description' => 'Osnovni ciljevi udruženja su promocija i razvijanje kulturno-umjetničkih djelatnosti od nacionalnog, regionalnog i međunarodnog značaja.', 
 			//content
 			'subheading' => 'Čitaj više',
 			'involved' => 'Želite li se uključiti?',

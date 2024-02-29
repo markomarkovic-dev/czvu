@@ -18,7 +18,7 @@
         }
         else{
             // Send the email
-            $to = 'centar.vu@gmail.com'; // Replace with your email address
+            $to = 'centar.vu@gmail.com, mia.ivancevic@au.unibl.org'; // Replace with your email address
             $subject = 'Kontakt forma';
             $body = "Ime: $name\nPrezime: $surname\nEmail: $email\nTelefon: $phone\nPoruka: $message";
             $body = iconv(mb_detect_encoding($body, mb_detect_order(), true), "UTF-8", $body);
