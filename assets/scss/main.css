@@ -1725,8 +1725,9 @@ footer {
 .gallery .owl-nav .owl-next i {
   font-size: 3.2rem;
   padding: 0.4rem !important;
-  background: rgba(255, 255, 255, 0.4) !important;
+  background: rgba(255, 255, 255, 0.8) !important;
   border-radius: 1.6rem;
+  color: rgba(0, 0, 0, 0.9) !important;
 }
 .gallery-caption {
   font-size: 1.5rem;

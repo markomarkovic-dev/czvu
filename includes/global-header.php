@@ -3,10 +3,24 @@
     $checkMetaImg = isset($featureMediaImage) ? $featureMediaImage : "$siteUrl/assets/images/cvu-metaimg.png";
     $pageTitle = isset($postTitle) ? $postTitle : $lang[$pagename]['title'];
     $pageDescription = isset($postDescription) ? $postDescription : $lang[$pagename]['description'];
-    $contentLang = $language === 'en' ? "English" : "Serbian";
+
+    switch ($language) {
+        case 'en':
+            $htmlLang = "en";
+            break;
+        case 'sr':
+            $htmlLang = "sr-Latn";
+            break;
+        case 'rs':
+            $htmlLang = "sr-Cyrl";
+            break;
+        default:
+            $htmlLang = "en";
+            break;
+    }
 ?>
 <!DOCTYPE html>
-<html lang="<?php echo $language;?>">
+<html lang="<?php echo $htmlLang;?>">
 <head>
 
     <meta charset="utf-8">
@@ -17,7 +31,7 @@
     <meta name="description" content="<?= $pageDescription ?>">
     <meta name="keywords" content="">
     <meta name="robots" content="index, follow">
-    <meta name="language" content="<?= $contentLang ?>">
+    <meta name="language" content="<?= $htmlLang ?>">
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="<?= $visitor_link?>">

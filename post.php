@@ -75,23 +75,25 @@
 
                     <?php
                     foreach ($posts as $post4) {
-                        $postDate = formatDate($post4['date']);
+                        if ($post4['slug'] !== $queries['id']) {
+                            $postDate = formatDate($post4['date']);
 
-                        $featureMediaImage4 = isset($post4['_embedded']['wp:featuredmedia']) ? $post4['_embedded']['wp:featuredmedia'][0]['media_details']['sizes']['medium']['source_url'] : 'assets/images/no-image.svg';
-
-                        $postRecent = '
-                          <article class="post">
-                              <div class="post-image">
-                              <img src="' . $featureMediaImage4 . '" />
-                              </div>
-                              <div class="post-body">
-                                  <a href="post?id=' . $post4['slug'] . '" class="post-title">' . $post4['title']['rendered'] . '</a>
-                                  <div class="post-meta">
-                                      <span class="post-date">' . $postDate . '</span>
+                            $featureMediaImage4 = isset($post4['_embedded']['wp:featuredmedia']) ? $post4['_embedded']['wp:featuredmedia'][0]['media_details']['sizes']['medium']['source_url'] : 'assets/images/no-image.svg';
+    
+                            $postRecent = '
+                              <article class="post">
+                                  <div class="post-image">
+                                  <img src="' . $featureMediaImage4 . '" />
                                   </div>
-                              </div>
-                          </article>';
-                        echo $postRecent;
+                                  <div class="post-body">
+                                      <a href="post?id=' . $post4['slug'] . '" class="post-title">' . $post4['title']['rendered'] . '</a>
+                                      <div class="post-meta">
+                                          <span class="post-date">' . $postDate . '</span>
+                                      </div>
+                                  </div>
+                              </article>';
+                            echo $postRecent;
+                        }
                     }
                     ?>
                 </aside>
